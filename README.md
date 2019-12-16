@@ -1,0 +1,2 @@
+# ApromoreCE
+Apromore Community Edition
