@@ -1,0 +1,4 @@
+[submodule "ApromoreCore"]
+	path = ApromoreCore
+	url = https://github.com/apromore/ApromoreCore.git
+	branch = feature/AP-799-new-submodules
