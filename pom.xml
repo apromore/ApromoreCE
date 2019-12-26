@@ -20,5 +20,29 @@
 
     <modules>
         <module>ApromoreCore</module>
+
+        <module>APQL-Portal-Plugin</module>
+        <module>Apromore-Editor</module>
+        <module>Cmapper-Portal-Plugin</module>
+        <module>Compare-Logic</module>
+        <module>Compare-Portal-Plugin</module>
+        <module>Compare-Portal-Plugin2</module>
+        <module>Log-Filter-Portal-Plugin</module>
+        <module>PQL-Indexer-Portal-Plugin</module>
+        <module>PQL-Logic</module>
+        <module>PQL-Logic-WS</module>
+        <module>PQL-Portal-Plugin</module>
+        <module>ProDrift-Logic</module>
+        <module>ProDrift-Portal-Plugin</module>
+        <module>Quaestio-Portal-Plugin</module>
+        <module>StageMining-Logic</module>
+        <module>StageMining-Portal-Plugin</module>
+
+        <module>apql</module>
+        <module>Cmapper</module>
+        <module>Quaestio</module>
+        <module>PQLBot</module>
+
+        <module>ApromoreCore/Apromore-Assembly/PQL-Indexer-Assembly</module>
     </modules>
 </project>
