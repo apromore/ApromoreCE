@@ -26,7 +26,9 @@
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
     <import file="ApromoreCore/build.xml" as="core"/>
     
+    <filter token="portal.showSignavio" value="true"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
+
     <fileset id="pickupRepo" dir="${dir}">
         <include name="Apromore-Assembly/Manager-Assembly/src/main/resources/100-manager.plan"/>
         <include name="Apromore-Assembly/Portal-Assembly/src/main/resources/101-portal.plan"/>
