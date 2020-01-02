@@ -26,7 +26,9 @@
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
     <import file="ApromoreCore/build.xml" as="core"/>
     
+    <filter token="portal.showSignavio" value="true"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
+
     <fileset id="pickupRepo" dir="${dir}">
         <include name="Apromore-Assembly/Manager-Assembly/src/main/resources/100-manager.plan"/>
         <include name="Apromore-Assembly/Portal-Assembly/src/main/resources/101-portal.plan"/>
@@ -128,11 +130,11 @@
         <!-- <include name="Supplements/process-discoverer-1.0.20181204.jar"/> -->
 
         <!-- After creating the PQL tables in MySQL, uncomment these components to enable PQL indexing and querying
-        <include name="Apromore-Custom-Plugins/APQL-Portal-Plugin/target/apql-portal-plugin-1.1.war"/>
-        <include name="Apromore-Assembly/PQL-Indexer-Assembly/src/main/resources/103-pql-indexer.plan"/>
-        <include name="Apromore-Custom-Plugins/PQL-Logic/target/pql-logic-1.1.jar"/>
-        <include name="Apromore-Custom-Plugins/PQL-Logic-WS/target/pql-logic-ws-1.1.war"/>
-        <include name="Apromore-Custom-Plugins/PQL-Portal-Plugin/target/pql-portal-plugin-1.1.jar"/>
+        <include name="APQL-Portal-Plugin/target/apql-portal-plugin-1.1.war"/>
+        <include name="PQL-Indexer-Assembly/src/main/resources/103-pql-indexer.plan"/>
+        <include name="PQL-Logic/target/pql-logic-1.1.jar"/>
+        <include name="PQL-Logic-WS/target/pql-logic-ws-1.1.war"/>
+        <include name="PQL-Portal-Plugin/target/pql-portal-plugin-1.1.jar"/>
         -->
 
         <include name="Apromore-Core-Components/Apromore-BPMNEditor/target/apromore-bpmneditor-1.1.war"/>
@@ -193,6 +195,11 @@
         </copy>
         <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true">
             <fileset refid="usrRepo"/>
+
+            <!-- specific usr libraries for enteprise -->
+            <fileset id="usrRepo-community" dir="${basedir}">
+                <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
+            </fileset>
         </copy>
         <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true" filtering="true">
             <fileset refid="usrRepoText"/>
@@ -213,7 +220,7 @@
         <copy file="${dir}/Apromore-Plugins/plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbprove-editor-plugin-1.1.war"/>
 
         <!-- After creating the PQL tables in MySQL, uncomment this component to enable PQL indexing
-        <copy file="${dir}/Apromore-Custom-Plugins/PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~pql-indexer-portal-plugin-1.1.jar"/>
+        <copy file="PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~pql-indexer-portal-plugin-1.1.jar"/>
         -->
 
         <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
@@ -258,7 +265,7 @@
         </copy>
 
         <!-- PQL indexing bot -->
-        <copy file="${dir}/Apromore-Extras/PQLBot/target/pql-bot-1.2.one-jar.jar" tofile="${dir-virgo}/pql-bot.jar" overwrite="true"/>
+        <copy file="PQLBot/target/pql-bot-1.2.one-jar.jar" tofile="${dir-virgo}/pql-bot.jar" overwrite="true"/>
     </target>
 
     <target name="install-comparison-data" depends="cpf-importer">

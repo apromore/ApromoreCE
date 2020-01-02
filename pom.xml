@@ -28,6 +28,10 @@
         <module>Compare-Portal-Plugin</module>
         <module>Compare-Portal-Plugin2</module>
         <module>Log-Filter-Portal-Plugin</module>
+        <module>OSGi-Wrappers/lucene-osgi</module>
+        <module>OSGi-Wrappers/pql-osgi</module>
+        <module>OSGi-Wrappers/prodrift-osgi</module>
+        <module>OSGi-Wrappers/themis-osgi</module>
         <module>PQL-Indexer-Portal-Plugin</module>
         <module>PQL-Logic</module>
         <module>PQL-Logic-WS</module>
