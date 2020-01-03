@@ -46,15 +46,10 @@
 
         <include name="Apromore-Custom-Plugins/BPMNDiagramImporter-Logic/target/bpmndiagramimporter-logic-1.1.jar"/>
 
-        <include name="Apromore-Custom-Plugins/Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>
-
         <!-- BPMNMiner renamed ~BPMNMiner elsewhere as a workaround for its dependency on IBPStruct
         <include name="Apromore-Custom-Plugins/BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar"/>
         <include name="Apromore-Custom-Plugins/BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar"/>
         -->
-
-        <include name="Apromore-Custom-Plugins/Compare-Logic/target/compare-logic-1.1.jar"/>
-        <include name="Apromore-Custom-Plugins/Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
 
         <include name="Apromore-Custom-Plugins/CSVImporter-Logic/target/csvimporter-logic-1.0.jar"/>
         <include name="Apromore-Custom-Plugins/CSVImporter-Portal/target/csvimporter-portal-1.0.jar"/>
@@ -95,30 +90,11 @@
         <!-- <include name="Apromore-Custom-Plugins/Log-Visualizer-Logic-WS/target/log-visualizer-logic-ws-1.1.war"/> -->
         <!--<include name="Apromore-Custom-Plugins/Log-Visualizer-Portal-Plugin/target/log-visualizer-portal-plugin-1.1.jar"/>-->
 
-        <include name="Apromore-Custom-Plugins/Metrics-Logic/target/metrics-logic-1.1.jar"/>
-        <include name="Apromore-Custom-Plugins/Metrics-Portal-Plugin/target/metrics-portal-plugin-1.1.jar"/>
-
-        <include name="Apromore-Custom-Plugins/BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
-        <include name="Apromore-Custom-Plugins/BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
-
-        <include name="Apromore-Custom-Plugins/BProVe-Logic/target/gbprove-logic-1.1.jar"/>
-
-        <include name="Apromore-Custom-Plugins/PerformanceMiner-Logic/target/perfmining-logic-1.0.jar"/>
-        <include name="Apromore-Custom-Plugins/PerformanceMiner-Portal-Plugin/target/perfmining-portal-plugin-1.0.jar"/>
-
         <!-- logfilter-editor-plugin renamed ~logfilter-editor-plugin elsewhere as a workaround for its dependency upon logfilter-logic
         <include name="Apromore-Plugins/plugin-editor/logfilter/target/logfilter-editor-plugin-1.1.war"/>
         -->
 
-        <include name="Apromore-Custom-Plugins/ProDrift-Logic/target/prodrift-logic-1.1.jar"/>
-        <include name="Apromore-Custom-Plugins/ProDrift-Portal-Plugin/target/prodrift-portal-plugin-1.1.jar"/>
-
-        <include name="Apromore-Custom-Plugins/Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>
-
         <!-- <include name="Apromore-Custom-Plugins/Similarity-Clusters-Portal-Plugin/target/similarity-clusters-portal-plugin-1.1.jar"/> -->
-
-        <include name="Apromore-Custom-Plugins/StageMining-Logic/target/stagemining-logic-1.1.jar"/>
-        <include name="Apromore-Custom-Plugins/StageMining-Portal-Plugin/target/stagemining-portal-plugin-1.1.jar"/>
 
         <include name="Apromore-Custom-Plugins/Process-Discoverer-Logic/target/process-discoverer-logic-2.0.0.jar"/>
         <include name="Apromore-Custom-Plugins/Process-Discoverer-Portal-Plugin/target/process-discoverer-portal-plugin-2.0.0.war"/>
@@ -137,9 +113,36 @@
         <include name="PQL-Portal-Plugin/target/pql-portal-plugin-1.1.jar"/>
         -->
 
-        <include name="Apromore-Core-Components/Apromore-BPMNEditor/target/apromore-bpmneditor-1.1.war"/>
-        <include name="Apromore-Custom-Plugins/Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
         <include name="Apromore-Custom-Plugins/BIMP-Editor-Plugin2/target/bimp-editor-plugin2-1.0.war"/>
+    </fileset>
+
+    <fileset id="pickupRepo-community" dir="${basedir}">
+        <include name="Apromore-BPMNEditor/target/apromore-bpmneditor-1.1.war"/>
+
+        <include name="BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
+        <include name="BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
+
+        <include name="BProVe-Logic/target/gbprove-logic-1.1.jar"/>
+
+        <include name="Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>
+
+        <include name="Compare-Logic/target/compare-logic-1.1.jar"/>
+        <include name="Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
+        <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
+
+        <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
+        <include name="Metrics-Portal-Plugin/target/metrics-portal-plugin-1.1.jar"/>
+
+        <include name="PerformanceMiner-Logic/target/perfmining-logic-1.0.jar"/>
+        <include name="PerformanceMiner-Portal-Plugin/target/perfmining-portal-plugin-1.0.jar"/>
+
+        <include name="ProDrift-Logic/target/prodrift-logic-1.1.jar"/>
+        <include name="ProDrift-Portal-Plugin/target/prodrift-portal-plugin-1.1.jar"/>
+
+        <include name="Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>
+
+        <include name="StageMining-Logic/target/stagemining-logic-1.1.jar"/>
+        <include name="StageMining-Portal-Plugin/target/stagemining-portal-plugin-1.1.jar"/>
     </fileset>
 
     <target name="start-virgo" depends="deploy-virgo">
@@ -196,7 +199,7 @@
         <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true">
             <fileset refid="usrRepo"/>
 
-            <!-- specific usr libraries for enteprise -->
+            <!-- specific usr libraries for community -->
             <fileset id="usrRepo-community" dir="${basedir}">
                 <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
             </fileset>
@@ -206,6 +209,7 @@
         </copy>
         <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
             <fileset refid="pickupRepo"/>
+            <fileset refid="pickupRepo-community"/>
         </copy>
 
         <!-- Force the BPMN Miner plugin to be alphabetically after the iBPStruct plugin it depends upon -->
