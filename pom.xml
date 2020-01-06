@@ -57,6 +57,8 @@
         <module>Quaestio</module>
         <module>PQLBot</module>
 
-        <module>ApromoreCore/Apromore-Assembly/PQL-Indexer-Assembly</module>
+        <module>Editor-Assembly</module>
+        <module>Filestore-Assembly</module>
+        <module>PQL-Indexer-Assembly</module>
     </modules>
 </project>

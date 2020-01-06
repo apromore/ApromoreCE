@@ -32,9 +32,6 @@
     <fileset id="pickupRepo" dir="${dir}">
         <include name="Apromore-Assembly/Manager-Assembly/src/main/resources/100-manager.plan"/>
         <include name="Apromore-Assembly/Portal-Assembly/src/main/resources/101-portal.plan"/>
-        <include name="Apromore-Assembly/Filestore-Assembly/src/main/resources/102-filestore.plan"/>
-
-        <include name="Apromore-Assembly/Editor-Assembly/src/main/resources/104-editor.plan"/>
         
         <include name="Apromore-Assembly/Custom-Plugins/custom-plugins-ce.plan"/>
 
@@ -119,6 +116,9 @@
     </fileset>
 
     <fileset id="pickupRepo-community" dir="${basedir}">
+        <include name="Filestore-Assembly/src/main/resources/102-filestore.plan"/>
+        <include name="Editor-Assembly/src/main/resources/104-editor.plan"/>
+
         <include name="BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
         <include name="BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
 
