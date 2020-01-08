@@ -22,7 +22,6 @@
         <module>ApromoreCore</module>
 
         <module>APQL-Portal-Plugin</module>
-        <module>Apromore-Editor</module>
         <module>Apromore-Filestore</module>
         <module>Apromore-PQL-Indexer</module>
         <module>BEBoP-Logic</module>
@@ -57,7 +56,6 @@
         <module>Quaestio</module>
         <module>PQLBot</module>
 
-        <module>Editor-Assembly</module>
         <module>Filestore-Assembly</module>
         <module>PQL-Indexer-Assembly</module>
     </modules>
