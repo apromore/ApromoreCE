@@ -28,7 +28,7 @@
         <groupId>org.apromore.plugin</groupId>
         <artifactId>plugin</artifactId>
         <version>1.1</version>
-        <relativePath>../../Apromore-Plugins/</relativePath>
+        <relativePath>../ApromoreCore/Apromore-Plugins/pom.xml</relativePath>
     </parent>
 
     <packaging>war</packaging>
@@ -144,6 +144,11 @@
         <dependency>
             <groupId>org.jbpt</groupId>
             <artifactId>jbpt-petri-osgi</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom</artifactId>
+            <version>1.1</version>
         </dependency>
     </dependencies>
 </project>
