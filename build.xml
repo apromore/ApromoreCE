@@ -83,7 +83,6 @@
 
         <include name="Apromore-Custom-Plugins/Log-Animation-Logic/target/log-animation-logic-1.0.jar"/>
         <include name="Apromore-Custom-Plugins/Log-Animation-Portal-Plugin/target/log-animation-portal-plugin-1.0.war"/>
-        <include name="Apromore-Custom-Plugins/Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
 
         <!-- <include name="Apromore-Custom-Plugins/Log-Visualizer-Logic/target/log-visualizer-logic-1.1.jar"/> -->
         <!-- <include name="Apromore-Custom-Plugins/Log-Visualizer-Logic-WS/target/log-visualizer-logic-ws-1.1.war"/> -->
@@ -129,6 +128,8 @@
         <include name="Compare-Logic/target/compare-logic-1.1.jar"/>
         <include name="Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
         <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
+
+        <include name="Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
 
         <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
         <include name="Metrics-Portal-Plugin/target/metrics-portal-plugin-1.1.jar"/>
@@ -204,6 +205,7 @@
 
             <!-- specific usr libraries for community -->
             <fileset id="usrRepo-community" dir="${basedir}">
+                <include name="Editor-Assembly/target/repository/usr/*"/>
                 <include name="target/classes/git.properties"/>
                 <include name="Apromore-FileStore/target/filestore.war"/>
                 <include name="filestore-client/target/filestore-client.jar"/>
