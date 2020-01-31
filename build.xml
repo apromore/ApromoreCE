@@ -205,6 +205,7 @@
 
             <!-- specific usr libraries for community -->
             <fileset id="usrRepo-community" dir="${basedir}">
+                <include name="target/classes/META-INF/git.properties"/>
                 <include name="Editor-Assembly/target/repository/usr/*"/>
                 <include name="target/classes/git.properties"/>
                 <include name="Apromore-FileStore/target/filestore.war"/>
