@@ -24,7 +24,7 @@
 
     <property name="dir" location="${basedir}/ApromoreCore"/>
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
-    <import file="ApromoreCore/build.xml" as="core"/>
+    <import file="ApromoreCore/build-common.xml" as="common"/>
     
     <filter token="portal.showSignavio" value="true"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
