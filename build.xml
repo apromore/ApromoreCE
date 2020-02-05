@@ -127,6 +127,8 @@
 
         <include name="Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
 
+        <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
+
         <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
         <include name="Metrics-Portal-Plugin/target/metrics-portal-plugin-1.1.jar"/>
 
@@ -209,7 +211,6 @@
                 <include name="target/classes/git.properties"/>
                 <include name="Apromore-FileStore/target/filestore.war"/>
                 <include name="filestore-client/target/filestore-client.jar"/>
-                <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
                 <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
             </fileset>
         </copy>
