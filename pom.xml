@@ -6,7 +6,7 @@
         <groupId>org.apromore</groupId>
         <artifactId>apromore</artifactId>
         <version>1.1</version>
-        <relativePath>ApromoreCore</relativePath>
+        <relativePath>ApromoreCore/pom.xml</relativePath>
     </parent>
 
     <groupId>org.apromore</groupId>
@@ -56,8 +56,9 @@
 
         <module>OSGI-Wrappers/antlr4-runtime-osgi</module>
         <module>OSGI-Wrappers/apm-verification-osgi</module>
-        <module>OSGI-Wrappers/bpstruct-osgi</module>
+        <module>OSGI-Wrappers/declare-visualizer-osgi</module>
         <module>OSGI-Wrappers/eventstr-confchecking-osgi</module>
+        <module>OSGI-Wrappers/jbpt-petri-osgi</module>
         <module>OSGI-Wrappers/ltl-conf-check-osgi</module>
         <module>OSGI-Wrappers/ltl-to-automaton-osgi</module>
         <!--<module>OSGI-Wrappers/pnapi-bpdiff-osgi</module>-->
