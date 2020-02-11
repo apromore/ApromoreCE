@@ -35,6 +35,10 @@
         <module>Apromore-PQL-Indexer</module>
         <module>BEBoP-Logic</module>
         <module>BEBoP-Portal-Plugin</module>
+        <module>BIMP-Annotation-Logic</module>
+        <module>BIMP-Editor-Plugin</module>
+        <module>BIMP-Editor-Plugin2</module>
+        <module>BIMP-Portal-Plugin</module>
         <module>BPMNMiner-Logic</module>
         <module>BPMNMiner-Portal-Plugin</module>
         <module>BProVe-Logic</module>

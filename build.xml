@@ -39,10 +39,6 @@
 
         <include name="Apromore-Custom-Plugins/Account-Portal-Plugin/target/account-portal-plugin-1.0.jar"/>
 
-        <include name="Apromore-Custom-Plugins/BIMP-Annotation-Logic/target/bimp-annotation-logic-1.0.jar"/>
-        <include name="Apromore-Custom-Plugins/BIMP-Editor-Plugin/target/bimp-editor-plugin-1.0.war"/>
-        <include name="Apromore-Custom-Plugins/BIMP-Portal-Plugin/target/bimp-portal-plugin-1.0.jar"/>
-
         <include name="Apromore-Custom-Plugins/BPMNDiagramImporter-Logic/target/bpmndiagramimporter-logic-1.1.jar"/>
 
         <!-- BPMNMiner renamed ~BPMNMiner elsewhere as a workaround for its dependency on IBPStruct
@@ -82,8 +78,6 @@
         <include name="PQL-Logic-WS/target/pql-logic-ws-1.1.war"/>
         <include name="PQL-Portal-Plugin/target/pql-portal-plugin-1.1.jar"/>
         -->
-
-        <include name="Apromore-Custom-Plugins/BIMP-Editor-Plugin2/target/bimp-editor-plugin2-1.0.war"/>
     </fileset>
 
     <fileset id="pickupRepo-community" dir="${basedir}">
@@ -92,6 +86,11 @@
 
         <include name="BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
         <include name="BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
+
+        <include name="BIMP-Annotation-Logic/target/bimp-annotation-logic-1.0.jar"/>
+        <include name="BIMP-Editor-Plugin/target/bimp-editor-plugin-1.0.war"/>
+        <include name="BIMP-Editor-Plugin2/target/bimp-editor-plugin2-1.0.war"/>
+        <include name="BIMP-Portal-Plugin/target/bimp-portal-plugin-1.0.jar"/>
 
         <include name="BProVe-Logic/target/gbprove-logic-1.1.jar"/>
 
