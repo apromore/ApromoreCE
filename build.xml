@@ -178,22 +178,12 @@
                 <include name="**/target/eclipse-collections-osgi-1.1.jar"/>
                 <include name="**/target/bpmntk-osgi-1.1.jar"/>
                 <include name="**/target/similaritysearch-osgi-1.1.jar"/>
-                <include name="**/target/eventstr-confchecking-osgi-1.1.jar"/>
-                <include name="**/target/apm-verification-osgi-1.1.jar"/>
-<!--                <include name="**/target/uma-bpdiff-osgi-1.1.jar"/>-->
-                <include name="**/target/pn-automata-conv-osgi-1.1.jar"/>
                 <include name="**/target/jbpt-petri-osgi-0.2.433.jar"/>
                 <include name="**/target/prom6-osgi-6.0.jar"/>
-                <include name="**/target/prom-pnml-osgi-1.1.jar"/>
-                <include name="**/target/ltl-to-automaton-osgi-1.1.jar"/>
                 <include name="**/target/declare-visualizer-osgi-1.1.jar"/>
-                <!--<include name="**/target/pnapi-bpdiff-osgi-1.1.jar"/>-->
                 <include name="**/target/raffaeleconforti-osgi-1.1.jar"/>
-                <include name="**/target/ltl-conf-check-osgi-1.1.jar"/>
                 <include name="**/target/lpsolve-osgi-1.1.jar"/>
-                <!-- the PQL subsystem will add this, so it normally won't need to be done explicitly
                 <include name="**/target/json-osgi-20090211.jar"/>
-                -->
             </fileset>
 
             <!-- This bundle is a dependency for the eventstr-confchecking-code-osgi bundle, which is in turn used by Compare-Logic -->
@@ -211,6 +201,15 @@
                 <include name="target/classes/git.properties"/>
                 <include name="Apromore-FileStore/target/filestore.war"/>
                 <include name="filestore-client/target/filestore-client.jar"/>
+                <include name="OSGi-Wrappers/antlr4-runtime-osgi/target/antlr4-runtime-osgi-4.3.jar"/>
+                <include name="OSGi-Wrappers/apm-verification-osgi/target/apm-verification-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/bpstruct/target/bpstruct-osgi-1.2.jar"/>
+                <include name="OSGi-Wrappers/eventstr-confchecking-osgi/target/eventstr-confchecking-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/ltl-conf-check-osgi/target/ltl-conf-check-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/ltl-to-automaton-osgi/target/ltl-to-automaton-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/postgresql-osgi/target/postgresql-osgi-9.3-1101-jdbc41.jar"/>
+                <include name="OSGi-Wrappers/prom-pnml-osgi/target/prom-pnml-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/pn-automata-conv-osgi/target/pn-automata-conv-osgi-1.1.jar"/>
                 <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
             </fileset>
         </copy>

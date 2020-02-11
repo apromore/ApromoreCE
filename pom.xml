@@ -53,6 +53,19 @@
         <module>LTL-Conf-Portal-Plugin</module>
         <module>Metrics-Logic</module>
         <module>Metrics-Portal-Plugin</module>
+
+        <module>OSGI-Wrappers/antlr4-runtime-osgi</module>
+        <module>OSGI-Wrappers/apm-verification-osgi</module>
+        <module>OSGI-Wrappers/bpstruct-osgi</module>
+        <module>OSGI-Wrappers/eventstr-confchecking-osgi</module>
+        <module>OSGI-Wrappers/ltl-conf-check-osgi</module>
+        <module>OSGI-Wrappers/ltl-to-automaton-osgi</module>
+        <!--<module>OSGI-Wrappers/pnapi-bpdiff-osgi</module>-->
+        <module>OSGI-Wrappers/postgresql-osgi</module>
+        <module>OSGI-Wrappers/prom-pnml-osgi</module>
+        <module>OSGI-Wrappers/pn-automata-conv-osgi</module>
+        <!--<module>OSGI-Wrappers/uma-bpdiff-osgi</module>-->
+
         <module>OSGi-Wrappers/lucene-osgi</module>
         <module>OSGi-Wrappers/pql-osgi</module>
         <module>OSGi-Wrappers/prodrift-osgi</module>
