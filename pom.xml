@@ -32,6 +32,7 @@
         <module>APQL-Portal-Plugin</module>
         <module>Apromore-Editor</module>
         <module>Apromore-Filestore</module>
+        <module>Apromore-Manager-WS</module>
         <module>Apromore-PQL-Indexer</module>
         <module>BEBoP-Logic</module>
         <module>BEBoP-Portal-Plugin</module>
