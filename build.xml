@@ -284,12 +284,87 @@
         <copy file="PQLBot/target/pql-bot-1.2.one-jar.jar" tofile="${dir-virgo}/pql-bot.jar" overwrite="true"/>
     </target>
 
+    <target name="cpf-importer-uptodate">
+        <uptodate property="cpf-importer.uptodate" targetfile="cpfImporter/target/cpfImporter-1.1.one-jar.jar">
+            <srcfiles dir="cpfImporter/src/main"/>
+        </uptodate>
+    </target>
+
+    <target name="cpf-importer" depends="cpf-importer-uptodate" unless="cpf-importer.uptodate">
+        <exec dir="cpfImporter" executable="mvn">
+            <arg value="package"/>
+        </exec>
+    </target>
+
+    <target name="install-sample-data" depends="cpf-importer">
+        <java jar="cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
+            <arg value="-manager"/> <arg value="http://localhost:9000/manager/services/manager"/>
+
+            <!-- Configurable BPMN samples -->
+            <arg value="-from"/>    <arg value="CLI-Tools/bpmncmap/src/test/resources"/>
+            <arg value="-to"/>      <arg value="airport"/>
+            <arg value="International departure.bpmn"/>
+            <arg value="1 Terminal entry.bpmn"/>
+            <arg value="1x Manage LAGs in belongings.bpmn"/>
+            <arg value="2 Check-in.bpmn"/>
+            <arg value="2x Finalise Check-in.bpmn"/>
+            <arg value="2x Get restricted items checked.bpmn"/>
+            <arg value="2x Get tourist refund items checked.bpmn"/>
+            <arg value="2x Perform baggage check in.bpmn"/>
+            <arg value="2x Perform preliminary check in.bpmn"/>
+            <arg value="2x Request change of name.bpmn"/>
+            <arg value="3 Security.bpmn"/>
+            <arg value="3x Undergo Secondary screening.bpmn"/>
+            <arg value="3x Undergo preparation.bpmn"/>
+            <arg value="3x Undergo security checks.bpmn"/>
+            <arg value="4 Customs and Immigration.bpmn"/>
+            <arg value="4x Evaluate Validity.bpmn"/>
+            <arg value="4x Undergo customs and immigration checks.bpmn"/>
+            <arg value="5 Boarding.bpmn"/>
+            <arg value="5x Proceed through boarding checks.bpmn"/>
+            <arg value="6 Travel document acquisition.bpmn"/>
+            <arg value="7 LAGs.bpmn"/>
+            <arg value="91 Discretionary experience 1.bpmn"/>
+            <arg value="92 Discretionary experience 2.bpmn"/>
+            <arg value="93 Discretionary experience 3.bpmn"/>
+            <arg value="94 Discretionary experience 4.bpmn"/>
+
+            <!-- PQL samples -->
+            <!--<arg value="-from"/> <arg value="Sample-Data/pql"/>-->
+            <!--<arg value="-to"/>   <arg value="pql"/>-->
+            <!--<arg value="1.pnml"/>-->
+            <!--<arg value="2.pnml"/>-->
+            <!--<arg value="3.pnml"/>-->
+            <!--<arg value="4.pnml"/>-->
+            <!--<arg value="5.pnml"/>-->
+            <!--<arg value="6.pnml"/>-->
+            <!--<arg value="7.pnml"/>-->
+            <!--<arg value="8.pnml"/>-->
+            <!--<arg value="9.pnml"/>-->
+            <!--<arg value="10.pnml"/>-->
+
+            <!-- Log animation samples -->
+            <arg value="-from"/> <arg value="Sample-Data/repairExample"/>
+            <arg value="-to"/>   <arg value="repair"/>
+            <arg value="repairExample.bpmn"/>
+            <arg value="RepairExample20140901103825.mxml"/>
+            <arg value="repairExample_complete_lifecycle_only.xes"/>
+        </java>
+        <copy todir="${dir-deployment}/Filestore-Repository" overwrite="yes" verbose="true">
+            <!-- Configurable BPMN samples -->
+            <fileset dir="CLI-Tools/bpmncmap/src/test/resources">
+                <include name="*.cmap"/>
+                <include name="*.qml"/>
+            </fileset>
+        </copy>
+    </target>
+
     <target name="install-comparison-data" depends="cpf-importer">
-        <java jar="${dir-sups}/cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
+        <java jar="cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
             <arg value="-manager"/> <arg value="http://localhost:9000/manager/services/manager"/>
 
             <!-- Model to model -->
-            <arg value="-from"/>    <arg value="${dir-sups}/samples/model-to-model"/>
+            <arg value="-from"/>    <arg value="Sample-Data/model-to-model"/>
             <arg value="-to"/>      <arg value="Compare/Model to Model"/>
             <arg value="Model1.bpmn"/>
             <arg value="Model2.bpmn"/>

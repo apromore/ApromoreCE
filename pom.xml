@@ -43,6 +43,8 @@
         <module>BPMNMiner-Logic</module>
         <module>BPMNMiner-Portal-Plugin</module>
         <module>BProVe-Logic</module>
+        <module>CLI-Tools/bpmncmap</module>
+        <module>CLI-Tools/cpfImporter</module>
         <module>Cmapper-Portal-Plugin</module>
         <module>Compare-Logic</module>
         <module>Compare-Portal-Plugin</module>
