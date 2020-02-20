@@ -214,6 +214,12 @@
                 <include name="OSGi-Wrappers/prom-pnml-osgi/target/prom-pnml-osgi-1.1.jar"/>
                 <include name="OSGi-Wrappers/pn-automata-conv-osgi/target/pn-automata-conv-osgi-1.1.jar"/>
                 <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
+                <include name="Schema/cmap-schema/target/cmap-schema.jar"/>
+                <include name="Schema/dcl-schema/target/dcl-schema.jar"/>
+                <include name="Schema/rlf-schema/target/rlf-schema-1.1.jar"/>
+                <include name="Schema/xpdl-schema/target/xpdl-schema-1.1.jar"/>
+                <include name="Schema/yawl-schema/target/yawl-schema-1.1.jar"/>
+                <include name="ApromoreCore/Apromore-OSGI-Bundles/bpmntk-osgi/target/bpmntk-osgi-2.1.jar"/>
             </fileset>
         </copy>
         <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true" filtering="true">
@@ -240,12 +246,12 @@
         -->
 
         <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
-            <fileset dir="${dir-annotation}">
+            <fileset dir="plugin-annotation">
                 <include name="**/target/*.jar"/>
                 <exclude name="**/target/*-sources.jar"/>
                 <exclude name="**/core/**/*.jar"/>
             </fileset>
-            <fileset dir="${dir-canoniser}">
+            <fileset dir="plugin-canoniser">
                 <include name="**/target/*.jar"/>
                 <exclude name="**/target/*-sources.jar"/>
                 <exclude name="**/core/**/*.jar"/>
@@ -273,7 +279,7 @@
                 <exclude name="**/core/**/*.jar"/>
             </fileset>
             -->
-            <!--<fileset dir="${dir-deploy}">-->
+            <!--<fileset dir="plugin-deployment">-->
                 <!--<include name="**/target/*.jar"/>-->
                 <!--<exclude name="**/target/*-sources.jar"/>-->
                 <!--<exclude name="**/core/**/*.jar"/>-->

@@ -107,5 +107,149 @@
         <module>Editor-Assembly</module>
         <module>Filestore-Assembly</module>
         <module>PQL-Indexer-Assembly</module>
+
+        <!-- Canoniser Plugins -->
+        <module>plugin-canoniser/aris</module>
+        <module>plugin-canoniser/epml</module>
+        <module>plugin-canoniser/pnml</module>
+        <module>plugin-canoniser/xpdl</module>
+        <module>plugin-canoniser/yawl</module>
+
+        <!-- Annotation Post Processor Plugins -->
+        <module>plugin-annotation/epml</module>
+        <module>plugin-annotation/pnml</module>
+        <module>plugin-annotation/xpdl</module>
+        <module>plugin-annotation/yawl</module>
+
+        <!-- Schemas -->
+        <module>Schema/aris-schema</module>
+        <module>Schema/cmap-schema</module>
+        <module>Schema/dcl-schema</module>
+        <module>Schema/epml-schema</module>
+        <module>Schema/pnml-schema</module>
+        <module>Schema/rlf-schema</module>
+        <module>Schema/xpdl-schema</module>
+        <module>Schema/yawl-schema</module>
+
+        <!-- Deployment Plugins -->
+        <module>plugin-deployment/deployment-yawl</module>
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Canonisers -->
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>canoniser-aris</artifactId>
+                <version>${apromore.canoniser.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>canoniser-epml</artifactId>
+                <version>${apromore.canoniser.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>canoniser-pnml</artifactId>
+                <version>${apromore.canoniser.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>canoniser-xpdl</artifactId>
+                <version>${apromore.canoniser.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>canoniser-yawl</artifactId>
+                <version>${apromore.canoniser.plugin.version}</version>
+            </dependency>
+
+            <!-- Annotations PreProcessors -->
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>annotation-xpdl</artifactId>
+                <version>${apromore.annotation.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>annotation-epml</artifactId>
+                <version>${apromore.annotation.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>annotation-yawl</artifactId>
+                <version>${apromore.annotation.plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>annotation-pnml</artifactId>
+                <version>${apromore.annotation.plugin.version}</version>
+            </dependency>
+
+            <!-- Deployment -->
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>deployment-yawl</artifactId>
+                <version>${apromore.plugin.version}</version>
+            </dependency>
+
+            <!-- Schema -->
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>aris-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>cmap-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>epml-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>pnml-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>rlf-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>xpdl-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>yawl-schema</artifactId>
+                <version>${apromore.schema.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.easymock</groupId>
+            <artifactId>easymock</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
 </project>

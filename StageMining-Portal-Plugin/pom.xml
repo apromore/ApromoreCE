@@ -77,6 +77,11 @@
             <artifactId>prom6-osgi</artifactId>
             <version>6.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json-osgi</artifactId>
+            <version>20090211</version>
+        </dependency>
     </dependencies>
     
 <!--    <repositories>

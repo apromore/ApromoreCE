@@ -55,7 +55,7 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>${project.parent.parent.basedir}/site.properties</file>
+                                <file>${project.parent.parent.parent.basedir}/site.properties</file>
                             </files>
                         </configuration>
                     </execution>
