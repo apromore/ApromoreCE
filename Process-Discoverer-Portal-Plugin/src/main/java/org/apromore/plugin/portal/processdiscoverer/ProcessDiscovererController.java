@@ -978,7 +978,7 @@ public class ProcessDiscovererController extends BaseController implements LogFi
                     model.replaceAll("\n", "");
 
                     //XLog filtered = processDiscoverer.getFilteredLog();
-                    logAnimationPluginInterface.execute(portalContext, model, layout, filtered_log, gateways.isChecked());
+                    logAnimationPluginInterface.execute(portalContext, model, layout, filtered_log, gateways.isChecked(), log_name);
                 }
             });
 
