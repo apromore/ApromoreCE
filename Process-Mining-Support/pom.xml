@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright © 2009-2016 The Apromore Initiative.
+  ~
+  ~ This file is part of "Apromore".
+  ~
+  ~ "Apromore" is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ "Apromore" is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this program.
+  ~ If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.apromore</groupId>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <artifactId>process-mining-support</artifactId>
+    <packaging>bundle</packaging>
+    <name>Process Mining Support</name>
+    <version>1.0</version>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                        <Import-Bundle>
+                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0)"
+                        </Import-Bundle>
+                        <Import-Package>
+                            !junit.framework.*,
+                            !org.junit.*,
+                            !org.omg.spec.bpmn._20100524.model.*,
+                            ee.ut.comptech.*; version="[1.0,2.0)",
+                            org.processmining.contexts.*;version="[1.0,2.0)",
+                            org.processmining.framework.*;version="[1.0,2.0)",
+                            org.processmining.models.*;version="[1.0,2.0)",
+                            org.processmining.plugins.*;version="[1.0,2.0)",
+                            *
+                        </Import-Package>
+                        <Export-Package>
+                            com.raffaeleconforti.automaton.*,
+                            com.raffaeleconforti.bpmnminer.*,
+                            com.raffaeleconforti.conversion.*,
+                            com.raffaeleconforti.context.*,
+                            com.raffaeleconforti.foreignkeydiscovery.*,
+                            com.raffaeleconforti.ilpsolverwrapper.*,
+                            com.raffaeleconforti.log.util,
+                            com.raffaeleconforti.noisefiltering.event.*,
+                            com.raffaeleconforti.wrappers.settings.*,
+                            com.raffaeleconforti.statistics.*,
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>log-osgi</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>de.tudarmstadt</groupId>
+            <artifactId>chinese-whispers</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>eclipse-collections-osgi</artifactId>
+            <version>1.1</version>
+        </dependency>	        
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>bpmn</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom6-contexts</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom6-framework</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom6-models</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom6-plugins</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+        
+    </dependencies>
+   
+</project>
+
