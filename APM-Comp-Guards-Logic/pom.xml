@@ -26,12 +26,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apromore</groupId>
-        <artifactId>apromore</artifactId>
-        <version>1.1</version>
-        <relativePath>../ApromoreCore/</relativePath>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
     </parent>
 
     <artifactId>apm-comp-guards-logic</artifactId>
+    <version>1.1</version>
     <packaging>bundle</packaging>
     <name>APM compliance with guards logic</name>
 
@@ -70,15 +70,6 @@
             <artifactId>apm-verification-osgi</artifactId>
             <version>1.1</version>
         </dependency>
-        <!--<dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apromore</groupId>
-            <artifactId>prom6-osgi</artifactId>
-            <version>6.0</version>
-        </dependency>-->
         <dependency>
             <groupId>org.antlr.runtime</groupId>
             <artifactId>antlr-rt</artifactId>

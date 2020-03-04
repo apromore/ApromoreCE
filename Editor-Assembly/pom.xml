@@ -28,10 +28,10 @@
         <groupId>org.apromore</groupId>
         <artifactId>community</artifactId>
         <version>1.0</version>
-        <relativePath>../</relativePath>
     </parent>
 
     <artifactId>editor-assembly</artifactId>
+    <version>1.1</version>
     <packaging>pom</packaging>
     <name>Apromore Editor Bundle Assembly</name>
 

@@ -25,15 +25,15 @@
 
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.apromore.plugin</groupId>
-        <artifactId>plugin</artifactId>
-        <version>1.1</version>
-        <relativePath>../ApromoreCore/Apromore-Plugins/</relativePath>
+        <groupId>org.apromore</groupId>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
     </parent>
 
     <packaging>bundle</packaging>
     <!-- Unique name of the plug-in -->
     <artifactId>ibpstruct-portal-plugin</artifactId>
+    <version>1.1</version>
     <name>iBPStruct portal plugin</name>
     <description>Structuring Plugin</description>
 
@@ -46,7 +46,7 @@
                     <!-- Generally, no change should be necessary here unless your plug-in relies on a non-OSGi dependency -->
                     <instructions>
                         <Import-Bundle>
-                            org.apromore.raffaeleconforti-osgi;bundle-version="[1.0,2.0]"
+                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0)"
                         </Import-Bundle>
                         <Import-Package>
                             <!-- Needs to be declared because no class from org.apromore.plugin is directly used in this example! -->
@@ -94,6 +94,10 @@
         <dependency>
             <groupId>org.apromore.plugin</groupId>
             <artifactId>portal-plugin-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>prom6-osgi</artifactId>
         </dependency>
     </dependencies>
 

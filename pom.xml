@@ -6,7 +6,7 @@
         <groupId>org.apromore</groupId>
         <artifactId>apromore</artifactId>
         <version>1.1</version>
-        <relativePath>ApromoreCore/pom.xml</relativePath>
+        <relativePath>ApromoreCore</relativePath>
     </parent>
 
     <groupId>org.apromore</groupId>
@@ -20,20 +20,22 @@
 
     <modules>
         <module>ApromoreCore</module>
-
+        
         <module>Activity-Filter-Logic</module>
         <module>Activity-Filter-Portal-Plugin</module>
+        <!--
         <module>APM-Logic</module>
         <module>APM-Portal-Plugin</module>
         <module>APM-Compliance-Logic</module>
         <module>APM-Compliance-Portal-Plugin</module>
         <module>APM-Comp-Guards-Logic</module>
         <module>APM-Comp-Guards-Portal-Plugin</module>
+        -->
         <module>APQL-Portal-Plugin</module>
         <module>Apromore-Editor</module>
-        <module>Apromore-Filestore</module>
+        <module>Apromore-FileStore</module>
         <module>Apromore-Manager-WS</module>
-        <module>Apromore-PQL-Indexer</module>
+        <!--<module>Apromore-PQL-Indexer</module>-->
         <module>BEBoP-Logic</module>
         <module>BEBoP-Portal-Plugin</module>
         <module>BIMP-Annotation-Logic</module>
@@ -61,29 +63,32 @@
         <module>Metrics-Logic</module>
         <module>Metrics-Portal-Plugin</module>
 
-        <module>OSGI-Wrappers/antlr4-runtime-osgi</module>
-        <module>OSGI-Wrappers/apm-verification-osgi</module>
-        <module>OSGI-Wrappers/declare-visualizer-osgi</module>
-        <module>OSGI-Wrappers/eventstr-confchecking-osgi</module>
-        <module>OSGI-Wrappers/jbpt-petri-osgi</module>
-        <module>OSGI-Wrappers/ltl-conf-check-osgi</module>
-        <module>OSGI-Wrappers/ltl-to-automaton-osgi</module>
-        <!--<module>OSGI-Wrappers/pnapi-bpdiff-osgi</module>-->
-        <module>OSGI-Wrappers/postgresql-osgi</module>
-        <module>OSGI-Wrappers/prom-pnml-osgi</module>
-        <module>OSGI-Wrappers/pn-automata-conv-osgi</module>
-        <!--<module>OSGI-Wrappers/uma-bpdiff-osgi</module>-->
+        <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
+        <module>OSGi-Wrappers/antlr4-runtime-osgi</module>
+        <!--<module>OSGi-Wrappers/apm-verification-osgi</module>-->
+        <module>OSGi-Wrappers/declare-visualizer-osgi</module>
+        <module>OSGi-Wrappers/eventstr-confchecking-osgi</module>
+        <module>OSGi-Wrappers/jbpt-petri-osgi</module>
+        <module>OSGi-Wrappers/ltl-conf-check-osgi</module>
+        <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
+        <!--<module>OSGi-Wrappers/pnapi-bpdiff-osgi</module>-->
+        <module>OSGi-Wrappers/postgresql-osgi</module>
+        <module>OSGi-Wrappers/prom-pnml-osgi</module>
+        <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
+        <!--<module>OSGi-Wrappers/uma-bpdiff-osgi</module>-->
 
-        <module>OSGi-Wrappers/lucene-osgi</module>
-        <module>OSGi-Wrappers/pql-osgi</module>
+        <!--<module>OSGi-Wrappers/lucene-osgi</module>-->
+        <!--<module>OSGi-Wrappers/pql-osgi</module>-->
         <module>OSGi-Wrappers/prodrift-osgi</module>
         <module>OSGi-Wrappers/themis-osgi</module>
         <module>PerformanceMiner-Logic</module>
         <module>PerformanceMiner-Portal-Plugin</module>
+        <!--
         <module>PQL-Indexer-Portal-Plugin</module>
         <module>PQL-Logic</module>
         <module>PQL-Logic-WS</module>
         <module>PQL-Portal-Plugin</module>
+        -->
         <module>Process-Discoverer-Logic</module>
         <module>Process-Discoverer-Portal-Plugin</module>
         <module>ProDrift-Logic</module>
@@ -102,11 +107,11 @@
         <module>apql</module>
         <module>Cmapper</module>
         <module>Quaestio</module>
-        <module>PQLBot</module>
+        <!--<module>PQLBot</module>-->
 
         <module>Editor-Assembly</module>
         <module>Filestore-Assembly</module>
-        <module>PQL-Indexer-Assembly</module>
+        <!--<module>PQL-Indexer-Assembly</module>-->
 
         <!-- Canoniser Plugins -->
         <module>plugin-canoniser/aris</module>
@@ -235,6 +240,24 @@
                 <artifactId>yawl-schema</artifactId>
                 <version>${apromore.schema.version}</version>
             </dependency>
+            
+            <dependency>
+                <groupId>com.raffaeleconforti</groupId>
+                <artifactId>assembly</artifactId>
+                <version>1.0.20200211</version>
+            </dependency>
+            
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>raffaeleconforti-osgi</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apromore</groupId>
+                <artifactId>prodrift-osgi</artifactId>
+                <version>2.5</version>
+            </dependency>            
         </dependencies>
     </dependencyManagement>
 

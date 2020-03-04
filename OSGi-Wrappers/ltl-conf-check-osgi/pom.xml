@@ -21,12 +21,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.apromore</groupId>
-		<artifactId>apromore</artifactId>
-		<version>1.1</version>
-		<relativePath>../../ApromoreCore/</relativePath>
-	</parent>
+    <parent>
+        <groupId>org.apromore</groupId>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
+        <relativePath>../../</relativePath>
+    </parent>
 
 	<groupId>org.apromore</groupId>
 	<artifactId>ltl-conf-check-osgi</artifactId>
@@ -52,6 +52,12 @@
                             org.springframework.beans.factory.aspectj,
                             *
                         </Import-Package>
+                        <Export-Package>
+							au.ltl.domain,
+							au.ltl.utils,
+							au.ltl.main
+						</Export-Package>
+                        <!--
 						<Export-Package>
 							au.ltl.domain,
 							au.ltl.utils,
@@ -59,6 +65,7 @@
 							org.jbpt.pm,
                             hub.top.uma
 						</Export-Package>
+                        -->
 					</instructions>
 				</configuration>
 			</plugin>
@@ -94,11 +101,13 @@
 			<artifactId>jdom</artifactId>
 			<version>1.1</version>
 		</dependency>
+        <!--
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>pn-automata-conv-osgi</artifactId>
             <version>1.1</version>
         </dependency>
+        -->
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>ltl-to-automaton-osgi</artifactId>
@@ -158,24 +167,5 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>com.raffaeleconforti</groupId>-->
-			<!--<artifactId>bpmnminer-commandline</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>
-			<groupId>org.apromore</groupId>
-			<artifactId>prom6-osgi</artifactId>
-			<version>6.0</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.processmining</groupId>
-					<artifactId>bpmnminer</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>org.processmining</groupId>
-					<artifactId>petrinets</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>-->
     </dependencies>
 </project>

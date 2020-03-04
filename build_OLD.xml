@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2009-2018 The Apromore Initiative.
+  ~
+  ~ This file is part of "Apromore".
+  ~
+  ~ "Apromore" is free software; you can redistribute it and/or modify
+  ~ it under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ "Apromore" is distributed in the hope that it will be useful, but
+  ~ WITHOUT ANY WARRANTY; without even the implied warranty
+  ~ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+  ~ See the GNU Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this program.
+  ~ If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
+  -->
+
+<project>
+    <description>Community distribution</description>
+
+    <property name="dir" location="${basedir}/ApromoreCore"/>
+    <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
+    <import file="ApromoreCore/build-common.xml" as="common"/>
+    
+    <filter token="portal.showSignavio" value="true"/>
+    <filter token="version.edition" value="Apromore Community Edition"/>
+
+    <fileset id="pickupRepo" dir="${dir}">
+        <include name="Apromore-Assembly/Manager-Assembly/src/main/resources/100-manager.plan"/>
+        <include name="Apromore-Assembly/Portal-Assembly/src/main/resources/101-portal.plan"/>
+        
+        <include name="Apromore-Assembly/Custom-Plugins/custom-plugins-ce.plan"/>
+
+        <include name="Apromore-Core-Components/Apromore-BPMNEditor/target/apromore-bpmneditor-1.1.war"/>
+
+        <include name="Apromore-Custom-Plugins/Account-Portal-Plugin/target/account-portal-plugin-1.0.jar"/>
+
+        <include name="Apromore-Custom-Plugins/BPMNDiagramImporter-Logic/target/bpmndiagramimporter-logic-1.1.jar"/>
+
+        <!-- BPMNMiner renamed ~BPMNMiner elsewhere as a workaround for its dependency on IBPStruct
+        <include name="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar"/>
+        <include name="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar"/>
+        -->
+
+        <include name="Apromore-Custom-Plugins/CSVImporter-Logic/target/csvimporter-logic-1.0.jar"/>
+        <include name="Apromore-Custom-Plugins/CSVImporter-Portal/target/csvimporter-portal-1.0.jar"/>
+
+        <include name="Apromore-Custom-Plugins/Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar"/>
+        <include name="Apromore-Custom-Plugins/Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war"/>
+        <include name="Apromore-Custom-Plugins/Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war"/>
+
+        <include name="Apromore-Custom-Plugins/Log-Animation-Logic/target/log-animation-logic-1.0.jar"/>
+        <include name="Apromore-Custom-Plugins/Log-Animation-Portal-Plugin/target/log-animation-portal-plugin-1.0.war"/>
+
+        <!-- logfilter-editor-plugin renamed ~logfilter-editor-plugin elsewhere as a workaround for its dependency upon logfilter-logic
+        <include name="plugin-editor/logfilter/target/logfilter-editor-plugin-1.1.war"/>
+        -->
+
+        <!-- <include name="Apromore-Custom-Plugins/Similarity-Clusters-Portal-Plugin/target/similarity-clusters-portal-plugin-1.1.jar"/> -->
+
+        <include name="Apromore-Custom-Plugins/Process-Discoverer-Logic/target/process-discoverer-logic-2.0.0.jar"/>
+        <include name="Apromore-Custom-Plugins/Process-Discoverer-Portal-Plugin/target/process-discoverer-portal-plugin-2.0.0.war"/>
+
+        <!-- XES implementation selector -->
+        <include name="Apromore-Custom-Plugins/XES-Selection-Portal-Plugin/target/xes-selection-portal-plugin-1.0.jar"/>
+
+        <!--<include name="Supplements/ow2-bundles-externals-opencsv-1.0.36.jar"/> -->
+        <!-- <include name="Supplements/process-discoverer-1.0.20181204.jar"/> -->
+
+        <!-- After creating the PQL tables in MySQL, uncomment these components to enable PQL indexing and querying
+        <include name="APQL-Portal-Plugin/target/apql-portal-plugin-1.1.war"/>
+        <include name="PQL-Indexer-Assembly/src/main/resources/103-pql-indexer.plan"/>
+        <include name="PQL-Logic/target/pql-logic-1.1.jar"/>
+        <include name="PQL-Logic-WS/target/pql-logic-ws-1.1.war"/>
+        <include name="PQL-Portal-Plugin/target/pql-portal-plugin-1.1.jar"/>
+        -->
+    </fileset>
+
+    <fileset id="pickupRepo-community" dir="${basedir}">
+        <include name="Filestore-Assembly/src/main/resources/102-filestore.plan"/>
+        <include name="Editor-Assembly/src/main/resources/104-editor.plan"/>
+
+        <include name="BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
+        <include name="BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
+
+        <include name="BIMP-Annotation-Logic/target/bimp-annotation-logic-1.0.jar"/>
+        <include name="BIMP-Editor-Plugin/target/bimp-editor-plugin-1.0.war"/>
+        <include name="BIMP-Editor-Plugin2/target/bimp-editor-plugin2-1.0.war"/>
+        <include name="BIMP-Portal-Plugin/target/bimp-portal-plugin-1.0.jar"/>
+
+        <include name="BProVe-Logic/target/gbprove-logic-1.1.jar"/>
+
+        <include name="Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>
+
+        <include name="Compare-Logic/target/compare-logic-1.1.jar"/>
+        <include name="Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
+        <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
+
+        <include name="LTL-Conf-Logic/target/ltl-conf-logic-1.1.jar"/>
+        <include name="LTL-Conf-Portal-Plugin/target/ltl-conf-portal-plugin-1.1.war"/>
+        
+        <include name="APM-Logic/target/apm-logic-1.1.jar"/>
+        <include name="APM-Portal-Plugin/target/apm-portal-plugin-1.1.war"/>
+
+        <include name="APM-Compliance-Logic/target/apm-compliance-logic-1.1.jar"/>
+        <include name="APM-Compliance-Portal-Plugin/target/apm-compliance-portal-plugin-1.1.war"/>
+
+        <include name="APM-Comp-Guards-Logic/target/apm-comp-guards-logic-1.1.jar"/>
+        <include name="APM-Comp-Guards-Portal-Plugin/target/apm-comp-guards-portal-plugin-1.1.war"/>
+
+        <include name="Apromore-Manager-WS/target/manager-ws.war"/>
+
+        <include name="IBPStruct-Logic/target/ibpstruct-logic-1.1.jar"/>
+        <include name="IBPStruct-Portal-Plugin/target/ibpstruct-portal-plugin-1.1.jar"/>
+        <!-- ibpstruct-editor-plugin renamed ~ibpstruct-editor-plugin elsewhere as a workaround for its dependency upon ibpstruct-logic
+        <include name="plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war"/>
+        -->
+
+        <include name="Activity-Filter-Logic/target/activity-filter-logic-1.1.jar"/>
+        <include name="Activity-Filter-Portal-Plugin/target/activity-filter-portal-plugin-1.1.jar"/>
+
+        <include name="Infrequent-Behaviour-Filter-Logic/target/infrequent-behaviour-filter-logic-1.1.jar"/>
+        <include name="Infrequent-Behaviour-Filter-Portal-Plugin/target/infrequent-behaviour-filter-portal-plugin-1.1.jar"/>
+
+        <include name="Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
+
+        <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
+
+        <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
+        <include name="Metrics-Portal-Plugin/target/metrics-portal-plugin-1.1.jar"/>
+
+        <include name="PerformanceMiner-Logic/target/perfmining-logic-1.0.jar"/>
+        <include name="PerformanceMiner-Portal-Plugin/target/perfmining-portal-plugin-1.0.jar"/>
+
+        <include name="Process-Discoverer-Logic/target/process-discoverer-logic-2.0.0.jar"/>
+        <include name="Process-Discoverer-Portal-Plugin/target/process-discoverer-portal-plugin-2.0.0.war"/>
+
+        <include name="ProDrift-Logic/target/prodrift-logic-1.1.jar"/>
+        <include name="ProDrift-Portal-Plugin/target/prodrift-portal-plugin-1.1.jar"/>
+
+        <include name="Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>
+
+        <include name="StageMining-Logic/target/stagemining-logic-1.1.jar"/>
+        <include name="StageMining-Portal-Plugin/target/stagemining-portal-plugin-1.1.jar"/>
+    </fileset>
+
+    <target name="start-virgo" depends="deploy-virgo">
+        <exec dir="${dir-virgo}/bin/" executable="cmd" osfamily="windows">
+            <arg value="/c"/>
+            <arg value="startup.bat"/>
+            <arg line="${startup.args}"/>
+        </exec>
+        <exec dir="${dir-virgo}/bin/" executable="./startup.sh" osfamily="unix">
+            <arg line="${startup.args}"/>
+        </exec>
+    </target>
+
+    <target name="dist-virgo" depends="deploy-virgo">
+        <zip destfile="${dir}/Apromore.zip" includes="${dir-virgo}/*"/>
+    </target>
+
+    <target name="deploy-virgo" depends="clean-virgo, setup-virgo, copy-virgo"/>
+
+    <target name="copy-virgo" depends="clean-virgo, create-repository-dirs">
+        <copy file="${dir-sups}/liblpsolve55.jnilib" tofile="${dir-virgo}/liblpsolve55.jnilib" overwrite="true"/>
+        <copy file="${dir-sups}/liblpsolve55.lib" tofile="${dir-virgo}/liblpsolve55.lib" overwrite="true"/>
+        <copy file="${dir-sups}/liblpsolve55d.lib" tofile="${dir-virgo}/liblpsolve55d.lib" overwrite="true"/>
+        <copy file="${dir-sups}/liblpsolve55j.jnilib" tofile="${dir-virgo}/liblpsolve55j.jnilib" overwrite="true"/>
+        <copy file="${dir-sups}/lpsolve55.lib" tofile="${dir-virgo}/lpsolve55.lib" overwrite="true"/>
+        <copy file="${dir-sups}/lpsolve55.dll" tofile="${dir-virgo}/lpsolve55.dll" overwrite="true"/>
+        <copy file="${dir-sups}/lpsolve55j.dll" tofile="${dir-virgo}/lpsolve55j.dll" overwrite="true"/>
+
+        <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true">
+            <fileset dir="${dir-osgi}">
+                <include name="**/target/eclipse-collections-osgi-1.1.jar"/>              
+                <include name="**/target/prom6-osgi-6.0.jar"/>
+                <include name="**/target/bpmntk-osgi-2.1.jar"/>
+                <include name="**/target/bpstruct-osgi-1.2.jar"/>
+                <include name="**/target/similaritysearch-osgi-1.1.jar"/>
+                <include name="**/target/jbpt-petri-osgi-0.2.433.jar"/>
+                <include name="**/target/declare-visualizer-osgi-1.1.jar"/>
+                <include name="**/target/lpsolve-osgi-1.1.jar"/>
+                <include name="**/target/json-osgi-20090211.jar"/>
+            </fileset>
+
+            <!-- This bundle is a dependency for the eventstr-confchecking-code-osgi bundle, which is in turn used by Compare-Logic -->
+            <fileset dir="${dir-sups}">
+                <include name="org.apache.servicemix.bundles.gwt-dev-2.6.0_1.jar"/>
+            </fileset>
+        </copy>
+        <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true">
+            <fileset refid="usrRepo"/>
+
+            <!-- specific usr libraries for community -->
+            <fileset id="usrRepo-community" dir="${basedir}">
+                <include name="target/classes/META-INF/git.properties"/>
+                <include name="Editor-Assembly/target/repository/usr/*"/>
+                <include name="target/classes/git.properties"/>
+                <include name="Apromore-FileStore/target/filestore.war"/>
+                <include name="filestore-client/target/filestore-client.jar"/>
+                <include name="OSGi-Wrappers/raffaeleconforti-osgi/target/raffaeleconforti-osgi-1.1.1.jar"/>
+                <include name="OSGi-Wrappers/antlr4-runtime-osgi/target/antlr4-runtime-osgi-4.3.jar"/>
+                <include name="OSGi-Wrappers/apm-verification-osgi/target/apm-verification-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/declare-visualizer-osgi/target/declare-visualizer-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/eventstr-confchecking-osgi/target/eventstr-confchecking-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/jbpt-petri-osgi/target/jbpt-petri-osgi-0.2.433.jar"/>
+                <include name="OSGi-Wrappers/ltl-conf-check-osgi/target/ltl-conf-check-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/ltl-to-automaton-osgi/target/ltl-to-automaton-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/postgresql-osgi/target/postgresql-osgi-9.3-1101-jdbc41.jar"/>
+                <include name="OSGi-Wrappers/prom-pnml-osgi/target/prom-pnml-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/pn-automata-conv-osgi/target/pn-automata-conv-osgi-1.1.jar"/>
+                <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
+                <include name="Schema/cmap-schema/target/cmap-schema.jar"/>
+                <include name="Schema/dcl-schema/target/dcl-schema.jar"/>
+                <include name="Schema/rlf-schema/target/rlf-schema-1.1.jar"/>
+                <include name="Schema/xpdl-schema/target/xpdl-schema-1.1.jar"/>
+                <include name="Schema/yawl-schema/target/yawl-schema-1.1.jar"/>
+            </fileset>
+        </copy>
+        <copy todir="${dir-virgo}/repository/usr" flatten="true" overwrite="true" filtering="true">
+            <fileset refid="usrRepoText"/>
+        </copy>
+        <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
+            <fileset refid="pickupRepo"/>
+            <fileset refid="pickupRepo-community"/>
+        </copy>
+
+        <!-- Force the BPMN Miner plugin to be alphabetically after the iBPStruct plugin it depends upon -->
+        <copy file="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-logic-1.1.jar"/>
+        <copy file="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~bpmnminer-portal-plugin-1.1.jar"/>
+
+        <!-- Force the editor plugins to be alphabetically after the logic plugins they depends upon -->
+        <copy file="plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~ibpstruct-editor-plugin-1.1.war"/>
+        <copy file="plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~metrics-editor-plugin-1.1.war"/>
+        <copy file="plugin-editor/metrics2/target/metrics-editor-plugin2-1.1.war" tofile="${dir-virgo}/pickup/~metrics-editor-plugin2-1.1.war"/>
+        <copy file="plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbebop-editor-plugin-1.1.war"/>
+        <copy file="plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" tofile="${dir-virgo}/pickup/~gbprove-editor-plugin-1.1.war"/>
+
+        <!-- After creating the PQL tables in MySQL, uncomment this component to enable PQL indexing
+        <copy file="PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar" tofile="${dir-virgo}/pickup/~pql-indexer-portal-plugin-1.1.jar"/>
+        -->
+
+        <copy todir="${dir-virgo}/pickup" flatten="true" overwrite="true">
+            <fileset dir="plugin-annotation">
+                <include name="**/target/*.jar"/>
+                <exclude name="**/target/*-sources.jar"/>
+                <exclude name="**/core/**/*.jar"/>
+            </fileset>
+            <fileset dir="plugin-canoniser">
+                <include name="**/target/*.jar"/>
+                <exclude name="**/target/*-sources.jar"/>
+                <exclude name="**/core/**/*.jar"/>
+            </fileset>
+            <!--<fileset dir="${dir-portal-templates}">-->
+                <!--<include name="**/target/*.jar"/>-->
+                <!--<exclude name="**/target/*-sources.jar"/>-->
+                <!--<exclude name="**/core/**/*.jar"/>-->
+            <!--</fileset>-->
+            <fileset dir="${dir-logic-plugins}">
+                <include name="**/target/*.jar"/>
+                <exclude name="**/target/*-sources.jar"/>
+                <exclude name="**/core/**/*.jar"/>
+            </fileset>
+            <fileset dir="${dir-portal-plugins}">
+                <include name="**/target/*.jar"/>
+                <exclude name="**/target/*-sources.jar"/>
+                <exclude name="**/core/**/*.jar"/>
+                <exclude name="sample/target/*.jar"/>
+            </fileset>
+            <!--
+            <fileset dir="${dir-editor-plugins}">
+                <include name="**/target/*.war"/>
+                <exclude name="**/target/*-sources.jar"/>
+                <exclude name="**/core/**/*.jar"/>
+            </fileset>
+            -->
+            <!--<fileset dir="plugin-deployment">-->
+                <!--<include name="**/target/*.jar"/>-->
+                <!--<exclude name="**/target/*-sources.jar"/>-->
+                <!--<exclude name="**/core/**/*.jar"/>-->
+            <!--</fileset>-->
+        </copy>
+
+        <!-- PQL indexing bot -->
+        <copy file="PQLBot/target/pql-bot-1.2.one-jar.jar" tofile="${dir-virgo}/pql-bot.jar" overwrite="true"/>
+    </target>
+
+    <target name="cpf-importer-uptodate">
+        <uptodate property="cpf-importer.uptodate" targetfile="cpfImporter/target/cpfImporter-1.1.one-jar.jar">
+            <srcfiles dir="cpfImporter/src/main"/>
+        </uptodate>
+    </target>
+
+    <target name="cpf-importer" depends="cpf-importer-uptodate" unless="cpf-importer.uptodate">
+        <exec dir="cpfImporter" executable="mvn">
+            <arg value="package"/>
+        </exec>
+    </target>
+
+    <target name="install-sample-data" depends="cpf-importer">
+        <java jar="cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
+            <arg value="-manager"/> <arg value="http://localhost:9000/manager/services/manager"/>
+
+            <!-- Configurable BPMN samples -->
+            <arg value="-from"/>    <arg value="CLI-Tools/bpmncmap/src/test/resources"/>
+            <arg value="-to"/>      <arg value="airport"/>
+            <arg value="International departure.bpmn"/>
+            <arg value="1 Terminal entry.bpmn"/>
+            <arg value="1x Manage LAGs in belongings.bpmn"/>
+            <arg value="2 Check-in.bpmn"/>
+            <arg value="2x Finalise Check-in.bpmn"/>
+            <arg value="2x Get restricted items checked.bpmn"/>
+            <arg value="2x Get tourist refund items checked.bpmn"/>
+            <arg value="2x Perform baggage check in.bpmn"/>
+            <arg value="2x Perform preliminary check in.bpmn"/>
+            <arg value="2x Request change of name.bpmn"/>
+            <arg value="3 Security.bpmn"/>
+            <arg value="3x Undergo Secondary screening.bpmn"/>
+            <arg value="3x Undergo preparation.bpmn"/>
+            <arg value="3x Undergo security checks.bpmn"/>
+            <arg value="4 Customs and Immigration.bpmn"/>
+            <arg value="4x Evaluate Validity.bpmn"/>
+            <arg value="4x Undergo customs and immigration checks.bpmn"/>
+            <arg value="5 Boarding.bpmn"/>
+            <arg value="5x Proceed through boarding checks.bpmn"/>
+            <arg value="6 Travel document acquisition.bpmn"/>
+            <arg value="7 LAGs.bpmn"/>
+            <arg value="91 Discretionary experience 1.bpmn"/>
+            <arg value="92 Discretionary experience 2.bpmn"/>
+            <arg value="93 Discretionary experience 3.bpmn"/>
+            <arg value="94 Discretionary experience 4.bpmn"/>
+
+            <!-- PQL samples -->
+            <!--<arg value="-from"/> <arg value="Sample-Data/pql"/>-->
+            <!--<arg value="-to"/>   <arg value="pql"/>-->
+            <!--<arg value="1.pnml"/>-->
+            <!--<arg value="2.pnml"/>-->
+            <!--<arg value="3.pnml"/>-->
+            <!--<arg value="4.pnml"/>-->
+            <!--<arg value="5.pnml"/>-->
+            <!--<arg value="6.pnml"/>-->
+            <!--<arg value="7.pnml"/>-->
+            <!--<arg value="8.pnml"/>-->
+            <!--<arg value="9.pnml"/>-->
+            <!--<arg value="10.pnml"/>-->
+
+            <!-- Log animation samples -->
+            <arg value="-from"/> <arg value="Sample-Data/repairExample"/>
+            <arg value="-to"/>   <arg value="repair"/>
+            <arg value="repairExample.bpmn"/>
+            <arg value="RepairExample20140901103825.mxml"/>
+            <arg value="repairExample_complete_lifecycle_only.xes"/>
+        </java>
+        <copy todir="${dir-deployment}/Filestore-Repository" overwrite="yes" verbose="true">
+            <!-- Configurable BPMN samples -->
+            <fileset dir="CLI-Tools/bpmncmap/src/test/resources">
+                <include name="*.cmap"/>
+                <include name="*.qml"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="install-comparison-data" depends="cpf-importer">
+        <java jar="cpfImporter/target/cpfImporter-1.1.one-jar.jar" fork="yes">
+            <arg value="-manager"/> <arg value="http://localhost:9000/manager/services/manager"/>
+
+            <!-- Model to model -->
+            <arg value="-from"/>    <arg value="Sample-Data/model-to-model"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Model"/>
+            <arg value="Model1.bpmn"/>
+            <arg value="Model2.bpmn"/>
+
+            <!-- Model to log -->
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/CAUSCONC-1"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/CAUSCONC-1"/>
+            <arg value="bp3.bpmn"/>
+            <arg value="bpLog3.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/CAUSCONC-2"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/CAUSCONC-2"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog4.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/CONFLICT-1"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/CONFLICT-1"/>
+            <arg value="bp5.bpmn"/>
+            <arg value="bpLog4.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/CONFLICT-2"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/CONFLICT-2"/>
+            <arg value="bp3.bpmn"/>
+            <arg value="bpLog5.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/CONFLICT-3"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/CONFLICT-3"/>
+            <arg value="bp5.bpmn"/>
+            <arg value="bpLog3.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/CONFLICT-4"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/CONFLICT-4"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog5.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKABS-1"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKABS-1"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog12.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKABS-2"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKABS-2"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog2.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKABS-3"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKABS-3"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog3B.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKABS-4"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKABS-4"/>
+            <arg value="bp4.bpmn"/>
+            <arg value="bpLog3.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKRELOC-1"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKRELOC-1"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog10.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKSKIP-1"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKSKIP-1"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog11.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKSKIP-2"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKSKIP-2"/>
+            <arg value="bp6.bpmn"/>
+            <arg value="bpLog3.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/TASKSUB"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/TASKSUB"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog9.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/UNMREPETITION"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/UNMREPETITION"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog8.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/UNOBSACYCLICINTER"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/UNOBSACYCLICINTER"/>
+            <arg value="bp2.bpmn"/>
+            <arg value="bpLog2.xes"/>
+            <arg value="-from"/>    <arg value="Compare-Logic/src/test/resources/UNOBSCYCLICINTER"/>
+            <arg value="-to"/>      <arg value="Compare/Model to Log/UNOBSCYCLICINTER"/>
+            <arg value="bp.bpmn"/>
+            <arg value="bpLog.xes"/>
+        </java>
+    </target>
+
+</project>

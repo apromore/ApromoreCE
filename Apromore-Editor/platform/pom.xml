@@ -55,7 +55,7 @@
                         </goals>
                         <configuration>
                             <files>
-                                <file>${project.parent.parent.parent.basedir}/site.properties</file>
+                                <file>${project.parent.parent.basedir}/ApromoreCore/site.properties</file>
                             </files>
                         </configuration>
                     </execution>
@@ -454,7 +454,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json-osgi</artifactId>
-            <version>20090211</version>
+            <version>1.0</version>
         </dependency>
 
         <!-- Signavio platform extensions -->

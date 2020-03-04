@@ -33,6 +33,7 @@
     <packaging>bundle</packaging>
     <!-- Unique name of the plug-in -->
     <artifactId>perfmining-portal-plugin</artifactId>
+    <version>1.0</version>
     <name>Performance Mining portal plugin</name>
     <description>Some description</description>
 
@@ -115,7 +116,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json-osgi</artifactId>
-            <version>20090211</version>
+            <version>1.0</version>
         </dependency>
         <dependency>
             <groupId>org.apromore</groupId>
@@ -129,6 +130,6 @@
 
 
     </dependencies>
-    <version>1.0</version>
+    
 
 </project>

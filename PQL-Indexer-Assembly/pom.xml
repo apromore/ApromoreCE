@@ -26,12 +26,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apromore</groupId>
-        <artifactId>apromore</artifactId>
-        <version>1.1</version>
-        <relativePath>../ApromoreCore/pom.xml</relativePath>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
     </parent>
 
     <artifactId>pql-indexer-assembly</artifactId>
+    <version>1.0</version>
     <packaging>pom</packaging>
     <name>Apromore PQL Indexer Bundle Assembly</name>
 
@@ -43,7 +43,7 @@
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>apromore-pql-indexer</artifactId>
-            <version>${project.version}</version>
+            <version>1.1</version>
             <type>war</type>
         </dependency>
         <dependency>

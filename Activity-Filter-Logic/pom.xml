@@ -26,12 +26,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.apromore</groupId>
-        <artifactId>apromore</artifactId>
-        <version>1.1</version>
-        <relativePath>../ApromoreCore/</relativePath>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
     </parent>
 
     <artifactId>activity-filter-logic</artifactId>
+    <version>1.1</version>
     <packaging>bundle</packaging>
     <name>Activity Filter Logic</name>
 
@@ -44,12 +44,16 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                        <Import-Bundle>
+                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0)"
+                        </Import-Bundle>
                         <Import-Package>
                             org.springframework.beans.factory.aspectj,
-                            org.processmining.contexts.*;version="[6.0,10.0)",
-                            org.processmining.framework.*;version="[6.0,10.0)",
-                            org.processmining.models.*;version="[6.0,10.0)",
-                            org.processmining.plugins.*;version="[6.0,10.0)",
+                            org.processmining.contexts.*;version="[1.0,2.0)",
+                            org.processmining.framework.*;version="[1.0,2.0)",
+                            org.processmining.models.*;version="[1.0,2.0)",
+                            org.processmining.plugins.*;version="[1.0,2.0)",
                             *
                         </Import-Package>
                         <Export-Package>
@@ -78,7 +82,6 @@
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>prom6-osgi</artifactId>
-            <version>6.0</version>
         </dependency>
         <dependency>
             <groupId>org.processmining</groupId>

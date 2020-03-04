@@ -100,7 +100,7 @@
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json-osgi</artifactId>
-            <version>20090211</version>
+            <version>1.0</version>
             <scope>provided</scope>
         </dependency>
 

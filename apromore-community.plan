@@ -1,0 +1,127 @@
+<plan name="org.apromore.community" version="1.1" scoped="false" atomic="false" provisioning="auto"
+        xmlns="http://www.eclipse.org/virgo/schema/plan"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.eclipse.org/virgo/schema/plan http://www.eclipse.org/virgo/schema/plan/eclipse-virgo-plan.xsd">
+    
+    <artifact type="configuration" name="site" version="0" />
+    <artifact type="configuration" name="git" version="0" />
+    
+    <!-- Apromore Core  -->
+    <artifact type="plan" name="org.apromore.core" version="[1.1.0,1.1.0]" />
+    
+    <!-- FILESTORE -->
+    
+    <artifact type="bundle" name="org.apromore.filestore-client" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.filestore" version="[1.0.0, 2)" />    
+    
+    <!-- OSGI LIBRARIES -->
+    
+    <artifact type="bundle" name="org.apromore.raffaeleconforti-osgi" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.antlr.antlr4-osgi" version="[4.0.0, 5)"/>
+    <!--<artifact type="bundle" name="org.apromore.apm-verification-osgi" version="[1.0.0, 2)"/>-->
+    <artifact type="bundle" name="org.apromore.declare-visualizer-osgi" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.eventstr-confchecking-osgi" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.jbpt.petri-osgi" version="[0.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.ltl-to-automaton-osgi" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.ltl-conf-check-osgi" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.postgresql.osgi" version="[9.0.0, 10)"/>
+    <artifact type="bundle" name="org.apromore.prom-pnml-osgi" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.pn-automata-conv-osgi" version="[1.0.0, 2)"/>-->
+    <artifact type="bundle" name="org.apromore.prodrift-osgi" version="[2.0.0, 3)"/>    
+    
+    <!-- SCHEMA -->
+    
+    <artifact type="bundle" name="org.apromore.cmap-schema" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.dcl-schema" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.rlf-schema" version="[1.0.0, 2)" />   
+    <artifact type="bundle" name="org.apromore.xpdl-schema" version="[1.0.0, 2)" /> 
+    <artifact type="bundle" name="org.apromore.yawl-schema" version="[1.0.0, 2)" />     
+    
+    <!-- EDITOR PLUGINS -->
+    
+    <artifact type="bundle" name="org.apromore.manager-client"                          version="[1.1, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-diagram"       version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-bpmn2_0"       version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-downloader"    version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-epc"           version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-jpdl"          version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-pdf"           version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-petrinet"      version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-syntaxchecker" version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-xpdl"          version="[1.2, 2)"/>
+    <artifact type="bundle" name="org.apromore.editor-platform-extension-yawl"          version="[1.2, 2)"/>
+    
+    <!-- CORE CUSTOM PLUGINS -->
+    
+    <artifact type="bundle" name="org.apromore.gbebop-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.gbebop-portal-plugin" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.gbebop-editor-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.bimp-annotation-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.bimp-editor-plugin" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.bimp-editor-plugin2" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.bimp-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.gbprove-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.gbprove-editor-plugin" version="[1.0.0, 2)"/>
+    
+    
+    <!--<artifact type="bundle" name="com.processconfiguration.cmapper" version="[2.0.0, 3)"/>-->
+    <artifact type="bundle" name="org.apromore.cmapper-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.compare-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.compareBP-portal-plugin" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.compareBP-portal-plugin2" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.ltl-conf-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.ltl-conf-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <!--
+    <artifact type="bundle" name="org.apromore.apm-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.apm-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.apm-compliance-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.apm-compliance-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.apm-comp-guards-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.apm-comp-guards-portal-plugin" version="[1.0.0, 2)"/>
+    -->
+    
+    <artifact type="bundle" name="org.apromore.manager-ws" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.ibpstruct-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.ibpstruct-portal-plugin" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.ibpstruct-editor-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.activity-filter-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.activity-filter-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.infrequent-behaviour-filter-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.infrequent-behaviour-filter-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.log-animation-portal-plugin2" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.log-filter-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.metrics-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.metrics-portal-plugin" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.metrics-editor-plugin" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.metrics-editor-plugin2" version="[1.0.0, 2)"/>    
+    
+    <artifact type="bundle" name="org.apromore.perfmining-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.perfmining-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.process-discoverer-logic" version="[2.0.0, 3)"/>
+    <artifact type="bundle" name="org.apromore.process-discoverer-portal-plugin" version="[2.0.0, 3)"/>
+    
+    <artifact type="bundle" name="org.apromore.prodrift-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.prodrift-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.quaestio-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.stagemining-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.stagemining-portal-plugin" version="[1.0.0, 2)"/>
+    
+    <artifact type="bundle" name="org.apromore.bpmnminer-logic" version="[1.0.0, 2)"/>
+    <artifact type="bundle" name="org.apromore.bpmnminer-portal-plugin" version="[1.0.0, 2)"/>
+</plan>
