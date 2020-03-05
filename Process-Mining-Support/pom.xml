@@ -41,7 +41,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
+                <version>3.5.0</version> <!-- Note: 2.3.7 raises an ArrayIndexOutOfBound error, invalid class GrubbTest.class -->
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -50,10 +50,12 @@
                             org.apromore.prom6-osgi;bundle-version="[1.0,2.0)"
                         </Import-Bundle>
                         <Import-Package>
+                            <!--
                             !junit.framework.*,
                             !org.junit.*,
                             !org.omg.spec.bpmn._20100524.model.*,
                             ee.ut.comptech.*; version="[1.0,2.0)",
+                            -->
                             org.processmining.contexts.*;version="[1.0,2.0)",
                             org.processmining.framework.*;version="[1.0,2.0)",
                             org.processmining.models.*;version="[1.0,2.0)",
@@ -346,7 +348,13 @@
             <groupId>org.processmining</groupId>
             <artifactId>lpengine</artifactId>
             <version>6.5.20190808</version>
-        </dependency>    
+        </dependency>  
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>properties</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>         
 
     
         
