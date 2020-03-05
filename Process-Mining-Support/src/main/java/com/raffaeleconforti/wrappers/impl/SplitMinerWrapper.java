@@ -20,7 +20,6 @@ package com.raffaeleconforti.wrappers.impl;
 import au.edu.qut.processmining.miners.splitminer.SplitMiner;
 import au.edu.qut.processmining.miners.splitminer.ui.dfgp.DFGPUIResult;
 import au.edu.qut.processmining.miners.splitminer.ui.miner.SplitMinerUIResult;
-import au.edu.qut.promplugins.SplitMinerPlugin;
 import com.raffaeleconforti.context.FakePluginContext;
 import com.raffaeleconforti.conversion.bpmn.BPMNToPetriNetConverter;
 import com.raffaeleconforti.conversion.petrinet.PetriNetToBPMNConverter;
@@ -120,7 +119,7 @@ public class SplitMinerWrapper implements MiningAlgorithm {
             output = yam.mineBPMNModel(log, xEventClassifier, eta, epsilon, DFGPUIResult.FilterType.WTH, parallelismsFirst, replaceORs, removeLoopActivities, SplitMinerUIResult.StructuringTime.NONE);
 //            export(output, "log_"+System.currentTimeMillis());
         } else {
-            output = SplitMinerPlugin.discoverBPMNModelWithSplitMiner(context, log);
+            output = null;
         }
         return output;
     }

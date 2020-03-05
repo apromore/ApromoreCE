@@ -33,7 +33,8 @@
     <artifactId>process-mining-support</artifactId>
     <packaging>bundle</packaging>
     <name>Process Mining Support</name>
-    <version>1.0</version>
+    <version>1.0</version>    
+   
 
     <build>
         <plugins>
@@ -78,16 +79,17 @@
     </build>
 
     <dependencies>
+        <!-- OSGi Dependencies -->
+    
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>log-osgi</artifactId>
         </dependency>
         
         <dependency>
-            <groupId>de.tudarmstadt</groupId>
-            <artifactId>chinese-whispers</artifactId>
-            <version>1.0</version>
-        </dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>bpmntk-osgi</artifactId>
+        </dependency>        
         
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -98,13 +100,61 @@
             <groupId>org.apromore</groupId>
             <artifactId>eclipse-collections-osgi</artifactId>
             <version>1.1</version>
-        </dependency>	        
+        </dependency>	 
         
         <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>bpmn</artifactId>
-            <version>6.5.20170418</version>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>        
+        
+        
+        <!-- Non-OSGi Embbeded Dependencies. They are all provided on ApromoreDev repo for version consistency -->
+
+        <dependency>
+            <groupId>commons-cli</groupId>
+            <artifactId>commons-cli </artifactId>
+            <version>1.0</version>
+        </dependency>         
+        
+        <dependency>
+            <groupId>colt</groupId>
+            <artifactId>colt</artifactId>
+            <version>1.0</version>
+        </dependency>   
+        
+        <dependency>
+            <groupId>net.sf</groupId>
+            <artifactId>javailp</artifactId>
+            <version>1.2a</version>
+        </dependency>        
+        
+        <dependency>
+            <groupId>gurobi</groupId>
+            <artifactId>gurobi</artifactId>
+            <version>8.0</version>
+        </dependency>   
+
+        <dependency>
+            <groupId>org.uncommons</groupId>
+            <artifactId>uncommons-maths</artifactId>
+            <version>1.2.3</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.kxml2</groupId>
+            <artifactId>kxml2</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>grappa</groupId>
+            <artifactId>grappa</artifactId>
+            <version>1.0</version>
+        </dependency>        
+        
+
+        <!-- ProM6 plugins dependencies, all available on ApromoreDev. They are provided in Virgo via prom6-osgi -->
 
         <dependency>
             <groupId>org.processmining</groupId>
@@ -130,6 +180,177 @@
             <version>6.5.20170418</version>
         </dependency>
         
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom5-models</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>     
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom5-plugins</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>   
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>prom5-framework</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>      
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>basicutils</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>         
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>uitopia</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>  
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>slickerbox1</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>         
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>widgets</artifactId>
+            <version>6.5.20170418</version>
+        </dependency> 
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>petrinets</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>  
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>bpmn</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>   
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>log</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>          
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>logabstractions</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>heuristicsminer</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>ilpminer</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>hybridilpminer</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>        
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>evolutionarytreeminer</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>       
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>fodina</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>       
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>inductiveminer</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>          
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>inductiveminer-deprecated</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>        
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>processtree</artifactId>
+            <version>6.5.20170418</version>
+        </dependency> 
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>pnetreplayer</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>  
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>efficientstorage</artifactId>
+            <version>6.5.20170418</version>
+        </dependency> 
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>alignment</artifactId>
+            <version>6.5.20170418</version>
+        </dependency>  
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>causalmatrix</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>  
+        
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>causalmatrixcreator</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>      
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>causalmatrixminer</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>           
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>causalgraphcreator</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>     
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>causalactivitygraph</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>         
+
+        <dependency>
+            <groupId>org.processmining</groupId>
+            <artifactId>lpengine</artifactId>
+            <version>6.5.20190808</version>
+        </dependency>    
+
+    
+        
+       
     </dependencies>
    
 </project>
