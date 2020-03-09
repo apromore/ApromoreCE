@@ -25,10 +25,11 @@ import java.util.HashMap;
 import java.util.ArrayList;
 
 import org.apromore.model.ExportFormatResultType;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.apromore.graph.canonical.Canonical;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+
 import plugin.bpmn.to.maude.handlers.PostMultipleParameters;
 
 /**

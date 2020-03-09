@@ -7,7 +7,6 @@ import java.util.Set;
 import org.deckfour.xes.extension.std.XConceptExtension;
 import org.deckfour.xes.model.XLog;
 import org.deckfour.xes.model.XTrace;
-import org.processmining.contexts.uitopia.UIPluginContext;
 
 public class TraceAttributeFilterParameters extends AttributeFilterParameters {
 
@@ -15,7 +14,7 @@ public class TraceAttributeFilterParameters extends AttributeFilterParameters {
 		super();
 	}
 
-	public TraceAttributeFilterParameters(UIPluginContext context, XLog log) {
+	public TraceAttributeFilterParameters(XLog log) {
 		super();
 		filter = new HashMap<String, Set<String>>();
 		for (XTrace trace : log) {
@@ -27,7 +26,7 @@ public class TraceAttributeFilterParameters extends AttributeFilterParameters {
 					filter.get(key).add(trace.getAttributes().get(key).toString());
 				}
 			}
-			context.getProgress().inc();
+			//context.getProgress().inc();
 		}
 		name = XConceptExtension.instance().extractName(log);
 	}

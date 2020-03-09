@@ -45,17 +45,11 @@
                 <configuration>
                     <!-- Generally, no change should be necessary here unless your plug-in relies on a non-OSGi dependency -->
                     <instructions>
-                        <Import-Bundle>
-                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0)"
-                        </Import-Bundle>
                         <Import-Package>
                             <!-- Needs to be declared because no class from org.apromore.plugin is directly used in this example! -->
                             org.apromore.plugin,
                             org.springframework.beans.factory.aspectj,
-                            org.processmining.contexts.*;version="[1.0,2.0)",
-                            org.processmining.framework.*;version="[1.0,2.0)",
-                            org.processmining.models.*;version="[1.0,2.0)",
-                            org.processmining.plugins.*;version="[1.0,2.0)",
+                            org.apromore.processmining.models.*;version="[1.0,2.0)",
                             org.apromore.service.ibpstruct; version="[1.1.0,2.0.0)",
                             *
                         </Import-Package>
@@ -97,7 +91,8 @@
         </dependency>
         <dependency>
             <groupId>org.apromore</groupId>
-            <artifactId>prom6-osgi</artifactId>
+            <artifactId>prom-bpmn-osgi</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 

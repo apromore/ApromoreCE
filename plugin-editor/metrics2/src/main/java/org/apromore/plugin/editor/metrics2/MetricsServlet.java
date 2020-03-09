@@ -36,7 +36,6 @@ import javax.xml.bind.JAXBContext;
 // Third party
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 // Apromore
@@ -47,6 +46,8 @@ import de.hpi.bpmn2_0.model.extension.synergia.ConfigurationAnnotationAssociatio
 import de.hpi.bpmn2_0.model.extension.synergia.ConfigurationAnnotationShape;
 import de.hpi.bpmn2_0.model.extension.synergia.Variants;
 import de.hpi.bpmn2_0.transformation.Diagram2BpmnConverter;
+
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.apromore.service.bpmndiagramimporter.BPMNDiagramImporter;
 import org.apromore.service.metrics.MetricsService;
 import org.oryxeditor.server.diagram.basic.BasicDiagram;

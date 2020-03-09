@@ -45,19 +45,10 @@
                 <configuration>
                     <unpackBundle>false</unpackBundle> <!-- This is important so that embedded JAR's don't show up twice -->
                     <instructions>
-                        <Import-Bundle>
-                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0]"
-                        </Import-Bundle>
                         <Import-Package>
                             org.springframework.beans.factory.aspectj,
                             au.edu.qut.bpmn.structuring,
-                            <!--!au.edu.qut.bpmn.structuring; version="[1.1.0,2.0.0)",-->
-                            au.edu.qut.bpmn.exporter.*,
-                            au.edu.qut.bpmn.exporter.impl.*,
-                            org.processmining.contexts.*;version="[1.0,2.0)",
-                            org.processmining.framework.*;version="[1.0,2.0)",
-                            org.processmining.models.*;version="[1.0,2.0)",
-                            org.processmining.plugins.*;version="[1.0,2.0)",
+                            org.apromore.processmining.models.*;version="[1.0,2.0)",
                             *
                         </Import-Package>
                         <Export-Package>
@@ -89,7 +80,8 @@
         </dependency>
         <dependency>
             <groupId>org.apromore</groupId>
-            <artifactId>prom6-osgi</artifactId>
+            <artifactId>prom-bpmn-osgi</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>

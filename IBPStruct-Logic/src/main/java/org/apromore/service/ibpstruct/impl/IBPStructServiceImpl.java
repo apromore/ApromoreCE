@@ -20,10 +20,10 @@
 
 package org.apromore.service.ibpstruct.impl;
 
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.apromore.service.ibpstruct.IBPStructService;
 
 import au.edu.qut.bpmn.structuring.StructuringService;

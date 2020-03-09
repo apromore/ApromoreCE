@@ -93,10 +93,6 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.apromore</groupId>
-            <artifactId>prom6-osgi</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
         </dependency>

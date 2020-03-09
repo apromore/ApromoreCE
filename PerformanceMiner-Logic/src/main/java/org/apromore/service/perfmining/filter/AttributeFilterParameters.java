@@ -9,7 +9,6 @@ import org.deckfour.xes.extension.std.XConceptExtension;
 import org.deckfour.xes.model.XEvent;
 import org.deckfour.xes.model.XLog;
 import org.deckfour.xes.model.XTrace;
-import org.processmining.framework.plugin.PluginContext;
 
 public class AttributeFilterParameters {
 
@@ -21,7 +20,7 @@ public class AttributeFilterParameters {
 		name = "";
 	}
 
-	public AttributeFilterParameters(PluginContext context, XLog log) {
+	public AttributeFilterParameters(XLog log) {
 		filter = new HashMap<String, Set<String>>();
 		for (XTrace trace : log) {
 			for (XEvent event : trace) {

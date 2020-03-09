@@ -20,7 +20,7 @@
 
 package org.apromore.service.ibpstruct;
 
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 
 /**
  * Created by Adriano Augusto on 18/04/2016.

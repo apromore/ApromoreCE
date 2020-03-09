@@ -56,8 +56,7 @@
                         <Import-Bundle>
                             org.apromore.manager-client;version="[1.1,1.1]",
                             org.apromore.manager-ws-model;version="[1.1,1.1]",
-                            org.springframework.ws;version="[2.1.0.RELEASE,2.1.0.RELEASE]",
-                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0]"
+                            org.springframework.ws;version="[2.1.0.RELEASE,2.1.0.RELEASE]"
                         </Import-Bundle>
                         <Import-Package>
                             !hub.top.*,
@@ -69,7 +68,7 @@
                             org.springframework.beans.factory.aspectj,
                             org.apromore.plugin,
                             org.apromore.plugin.editor,
-                            org.processmining.models.*;version="[1.0,2.0)",
+                            org.apromore.processmining.models.*;version="[1.0,2.0)",
                             *
                         </Import-Package>
                         <!-- Context path, please use a unique path -->
@@ -179,6 +178,11 @@
             <artifactId>com.springsource.javax.xml.bind</artifactId>
             <version>${jaxb-api.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>prom-bpmn-osgi</artifactId>
+            <version>1.0</version>
+        </dependency>         
     </dependencies>
 
 </project>

@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import org.deckfour.xes.model.XLog;
-import org.processmining.contexts.uitopia.UIPluginContext;
 
 /*
  * This class manages all user-defined settings
@@ -18,7 +17,6 @@ public class SPFConfig {
 	private Map<String, String> eventStageMap = new HashMap<String, String>();
 	private final List<String> caseStatusList = new ArrayList<String>();
 	private List<String> exitTypeList = new ArrayList<String>();
-	private UIPluginContext context = null;
 	private XLog log;
 	private int timeStep = 3600; //seconds
 	private TimeZone timezone = null;
@@ -33,14 +31,6 @@ public class SPFConfig {
 
 	public void setXLog(XLog newLog) {
 		log = newLog;
-	}
-
-	public UIPluginContext getContext() {
-		return context;
-	}
-
-	public void setContext(UIPluginContext context) {
-		this.context = context;
 	}
 
 	public void setStageList(List<String> stageList) {
