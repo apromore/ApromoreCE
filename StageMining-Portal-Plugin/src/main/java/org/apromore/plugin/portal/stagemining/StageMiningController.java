@@ -47,7 +47,6 @@ public class StageMiningController {
     private final StageMiningService stageMiningService;
     private Window entryW;
     private boolean showImportButton = true;
-    private Button logFileUpload;
     private Button OKbutton;
 
     private org.zkoss.util.media.Media logFile = null;
@@ -79,43 +78,17 @@ public class StageMiningController {
             }
         }
         else {
-            this.showImportButton = true;
+            //this.showImportButton = true;
+        	showError("Please select one log on the portal!");
+        	return;
         }
         
         this.entryW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/stagemining.zul", null, null);
         this.entryW.setTitle("Stage Mining Parameters");
-        this.logFileUpload = (Button) this.entryW.getFellow("logFileUpload");
         final Label l = (Label) this.entryW.getFellow("fileName");
-        this.logFileUpload.setVisible(showImportButton);
         this.OKbutton = (Button) this.entryW.getFellow("OKButton");
         OKbutton.setDisabled(showImportButton);
         Button cancelButton = (Button) this.entryW.getFellow("CancelButton");
-
-        this.logFileUpload.addEventListener("onUpload", new EventListener<Event>() {
-            public void onEvent(Event event) throws Exception {
-                UploadEvent uEvent = (UploadEvent) event;
-                logFile = uEvent.getMedia();
-                if (logFile == null) {
-                    showError("Upload error. No file uploaded.");
-                    return;
-                }
-                logFileName = logFile.getName();
-                OpenLogFilePlugin logImporter = new OpenLogFilePlugin();
-                try {
-                    System.out.println("Import log file");
-                    log = (XLog)logImporter.importFromStream(logFile.getStreamData(), logFileName);
-                    LogUtilites.addStartEndEvents(log);
-                    OKbutton.setDisabled(false);
-                }
-                catch (Exception e) {
-                    showError(e.getMessage());
-                    OKbutton.setDisabled(true);
-                }
-
-                Session sess = Sessions.getCurrent();
-                sess.setAttribute("log", log);
-            }
-        });
 
         this.OKbutton.addEventListener("onClick", new EventListener<Event>() {
             public void onEvent(Event event) throws Exception {
