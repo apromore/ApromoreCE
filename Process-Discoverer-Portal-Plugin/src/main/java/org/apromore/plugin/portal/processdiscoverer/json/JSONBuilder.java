@@ -20,38 +20,31 @@
 
 package org.apromore.plugin.portal.processdiscoverer.json;
 
-import org.apache.commons.lang.StringUtils;
 import org.apromore.plugin.portal.processdiscoverer.util.ColorGradient;
-import org.apromore.plugin.portal.processdiscoverer.util.StringValues;
 import org.apromore.plugin.portal.processdiscoverer.util.TimeConverter;
 import org.apromore.processdiscoverer.AbstractionParams;
 import org.apromore.processdiscoverer.VisualizationType;
 import org.apromore.processdiscoverer.dfg.abstraction.AbstractAbstraction;
 import org.apromore.processdiscoverer.dfg.abstraction.Abstraction;
-import org.apromore.processdiscoverer.dfg.abstraction.BPMNAbstraction;
 import org.apromore.processdiscoverer.dfg.vis.BPMNDiagramLayouter;
 import org.apromore.processdiscoverer.dfg.vis.LayoutElement;
 import org.apromore.processdiscoverer.logprocessors.SimplifiedLog;
-import org.eclipse.collections.impl.map.mutable.primitive.ObjectIntHashMap;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
-import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
-import org.processmining.models.graphbased.directed.bpmn.BPMNNode;
-import org.processmining.models.graphbased.directed.bpmn.elements.Event;
-import org.processmining.models.graphbased.directed.bpmn.elements.Gateway;
-import org.processmining.models.graphbased.directed.bpmn.elements.SubProcess;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNNode;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Event;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Gateway;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.SubProcess;
 
-import com.google.common.base.CharMatcher;
 
 import java.awt.*;
 import java.awt.geom.Point2D;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.util.*;
-import java.util.List;
 
 /**
  * Created by Raffaele Conforti (conforti.raffaele@gmail.com) on 05/08/2018.

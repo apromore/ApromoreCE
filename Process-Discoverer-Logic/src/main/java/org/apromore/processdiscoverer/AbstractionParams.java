@@ -7,7 +7,7 @@ import org.apromore.processdiscoverer.dfg.ArcType;
 import org.apromore.processdiscoverer.dfg.abstraction.DFGAbstraction;
 import org.apromore.processdiscoverer.logprocessors.EventClassifier;
 
-import  org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import  org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 
 /**
  * 

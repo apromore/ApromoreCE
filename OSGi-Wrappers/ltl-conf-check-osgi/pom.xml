@@ -48,6 +48,9 @@
 						<Embed-Transitive>false</Embed-Transitive>
 						<Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
 						<Bundle-Name>LTL based conformance checker OSGi component</Bundle-Name>
+						<Import-Bundle>
+                            org.apromore.raffaeleconforti-osgi;bundle-version="[1.0,2.0]"
+                        </Import-Bundle>						
                         <Import-Package>
                             org.springframework.beans.factory.aspectj,
                             *
@@ -157,6 +160,7 @@
             <artifactId>prom-pnml-osgi</artifactId>
             <version>1.1</version>
         </dependency>
+        <!-- 
 		<dependency>
 			<groupId>org.apromore</groupId>
 			<artifactId>prom6-osgi</artifactId>
@@ -167,5 +171,11 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		-->
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>raffaeleconforti-osgi</artifactId>
+             <version>1.1.1</version>
+        </dependency> 		
     </dependencies>
 </project>

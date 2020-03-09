@@ -46,12 +46,18 @@ import org.eclipse.collections.impl.map.mutable.UnifiedMap;
 import org.processmining.contexts.uitopia.UIContext;
 import org.processmining.contexts.uitopia.UIPluginContext;
 import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.processmining.models.graphbased.directed.bpmn.BPMNDiagramImpl;
+import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.processmining.models.graphbased.directed.bpmn.BPMNNode;
 import org.processmining.models.graphbased.directed.bpmn.elements.Activity;
+import org.processmining.models.graphbased.directed.bpmn.elements.Event;
+import org.processmining.models.graphbased.directed.bpmn.elements.Event.EventType;
 import org.processmining.plugins.bpmn.BpmnDefinitions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-
+import org.apache.commons.collections15.map.HashedMap;
+import org.apromore.prom.adapters.BPMNAdapter;
 import org.apromore.service.bpmnminer.BPMNMinerService;
 import org.apromore.service.ibpstruct.IBPStructService;
 
@@ -142,7 +148,11 @@ public class BPMNMinerServiceImpl implements BPMNMinerService {
             }
         }
 
-        if( structProcess ) diagram = ibpstructService.structureProcess(diagram);
+        BPMNAdapter bpmnAdapter = new BPMNAdapter();
+        if( structProcess ) {
+        	org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram newDiagram = ibpstructService.structureProcess(bpmnAdapter.convert(diagram));
+        	diagram = bpmnAdapter.convertReverse(newDiagram);
+        }
 
         UIContext context = new UIContext();
         UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());

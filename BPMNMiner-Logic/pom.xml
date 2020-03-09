@@ -51,8 +51,7 @@
                     <instructions>
                         <Import-Bundle>
                             org.apromore.raffaeleconforti-osgi;bundle-version="[1.0,2.0]",
-                            org.apromore.eclipse-collections-osgi;bundle-version="[1.1,2.0]",
-                            org.apromore.prom6-osgi;bundle-version="[1.0,2.0)"
+                            org.apromore.eclipse-collections-osgi;bundle-version="[1.1,2.0]"
                         </Import-Bundle>
                         <Import-Package>
                             org.apromore.service.ibpstruct; version="[1.1.0,2.0.0)",
@@ -67,6 +66,7 @@
                             org.processmining.framework.*;version="[1.0,2.0)",
                             org.processmining.models.*;version="[1.0,2.0)",
                             org.processmining.plugins.*;version="[1.0,2.0)",
+                            org.apromore.processmining.models.*;version="[1.0,2.0)",
                             org.springframework.beans.factory.aspectj,
                             javax.inject,
                             javax.swing,
@@ -115,36 +115,16 @@
         <dependency>
             <groupId>org.eclipse.collections</groupId>
             <artifactId>eclipse-collections</artifactId>
-        </dependency>        
-        
-        <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>bpmn</artifactId>
-            <version>6.5.20170418</version>
         </dependency>
-
         <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>prom6-contexts</artifactId>
-            <version>6.5.20170418</version>
-        </dependency>
-        
+            <groupId>org.apromore</groupId>
+            <artifactId>prom-bpmn-osgi</artifactId>
+            <version>1.0</version>
+        </dependency>   
         <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>prom6-framework</artifactId>
-            <version>6.5.20170418</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>prom6-models</artifactId>
-            <version>6.5.20170418</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>prom6-plugins</artifactId>
-            <version>6.5.20170418</version>
-        </dependency>
+            <groupId>org.apromore</groupId>
+    		<artifactId>prom-adapters-osgi</artifactId>
+    		<version>1.0</version>
+    	</dependency>     
     </dependencies>
 </project>

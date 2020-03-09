@@ -3,8 +3,8 @@ package org.apromore.processdiscoverer.dfg.abstraction;
 import org.apromore.processdiscoverer.AbstractionParams;
 import org.apromore.processdiscoverer.dfg.TraceDFG;
 import org.apromore.processdiscoverer.dfg.vis.BPMNDiagramLayouter;
-import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
-import org.processmining.models.graphbased.directed.bpmn.BPMNNode;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNNode;
 
 /**
  * 

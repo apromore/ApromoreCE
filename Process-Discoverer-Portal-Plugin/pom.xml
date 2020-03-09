@@ -46,15 +46,13 @@
                     <instructions>
                         <Import-Package>
                             org.apromore.portal.servlet,
-														com.sun.xml.bind.v2,
-														org.apromore.manager.client.*,
-														org.apromore.portal.*,
-														org.apromore.plugin,
-                            org.processmining.contexts.*;version="[1.0,2.0)",
-                            org.processmining.framework.*;version="[1.0,2.0)",
-                            org.processmining.models.*;version="[1.0,2.0)",
-                            org.processmining.plugins.*;version="[1.0,2.0)",
-														org.eclipse.virgo.web.dm,
+							com.sun.xml.bind.v2,
+							org.apromore.manager.client.*,
+							org.apromore.portal.*,
+							org.apromore.plugin,
+                            org.apromore.processmining.models.*;version="[1.0,2.0)",
+                            org.apromore.processmining.plugins.*;version="[1.0,2.0)",
+							org.eclipse.virgo.web.dm,
                             org.springframework.beans.factory.aspectj,
                             org.springframework.security.web.session,
                             org.springframework.web.context,
@@ -71,13 +69,13 @@
                             org.zkoss.zel.impl,
                             org.zkoss.zk.au.http,
                             org.zkoss.zk.ui.http,
-														org.zkoss.zul.impl,
+							org.zkoss.zul.impl,
                             *
                         </Import-Package>
                         <Export-Package>
                             org.apromore.plugin.portal.processdiscoverer
                         </Export-Package>
-												<Web-ContextPath>processdiscoverer</Web-ContextPath>
+						<Web-ContextPath>processdiscoverer</Web-ContextPath>
                     </instructions>
                 </configuration>
             </plugin>		
@@ -116,12 +114,6 @@
             <artifactId>process-discoverer-logic</artifactId>
 			<version>2.0.0</version>
         </dependency>
-				
-		<!-- <dependency> -->
-			<!-- <groupId>org.apromore.plugin</groupId> -->
-            <!-- <artifactId>log-filter-logic</artifactId> -->
-			<!-- <version>1.0.0</version> -->
-        <!-- </dependency>			 -->
 		
         <dependency>
             <groupId>org.apromore</groupId>
@@ -180,7 +172,19 @@
             <groupId>org.apromore</groupId>
             <artifactId>eclipse-collections-osgi</artifactId>
             <version>1.1</version>
-        </dependency>		
+        </dependency>	
+        
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>prom-bpmn-osgi</artifactId>
+            <version>1.0</version>
+        </dependency>        
+        
+       	<dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>prom-adapters-osgi</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 </project>
 

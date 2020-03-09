@@ -17,11 +17,11 @@ import org.apromore.processdiscoverer.dfg.vis.BPMNDiagramLayouter;
 import org.apromore.processdiscoverer.logprocessors.LogUtils;
 import org.apromore.processdiscoverer.logprocessors.SimplifiedLog;
 import org.eclipse.collections.impl.set.mutable.UnifiedSet;
-import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
-import org.processmining.models.graphbased.directed.bpmn.BPMNNode;
-import org.processmining.models.graphbased.directed.bpmn.elements.Activity;
-import org.processmining.models.graphbased.directed.bpmn.elements.Event;
-import org.processmining.models.graphbased.directed.bpmn.elements.Gateway;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNNode;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Activity;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Event;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Gateway;
 import java.util.HashSet;
 
 /**

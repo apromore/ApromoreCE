@@ -14,12 +14,10 @@ import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.property.RequestParameterType;
 import org.apromore.portal.dialogController.SelectDynamicListController;
 import org.apromore.service.bimp_annotation.BIMPAnnotationService;
-import org.processmining.contexts.uitopia.UIContext;
-import org.processmining.contexts.uitopia.UIPluginContext;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
-import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
-import org.processmining.models.graphbased.directed.bpmn.elements.Flow;
-import org.processmining.plugins.bpmn.BpmnDefinitions;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Flow;
+import org.apromore.processmining.plugins.bpmn.BpmnDefinitions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zkoss.zk.ui.Executions;
@@ -166,14 +164,11 @@ public class ExportBPMNHandler implements EventListener<Event> {
         for (Flow flow : newDiagram.getFlows()) {
             flow.setLabel("");
         }
-        for (org.processmining.models.graphbased.directed.bpmn.elements.Event event1 : newDiagram.getEvents()) {
+        for (org.apromore.processmining.models.graphbased.directed.bpmn.elements.Event event1 : newDiagram.getEvents()) {
             event1.getAttributeMap().put("ProM_Vis_attr_label", "");
         }
 
-        UIContext context = new UIContext();
-        UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        UIPluginContext uiPluginContext = context.getMainPluginContext();
-        BpmnDefinitions.BpmnDefinitionsBuilder definitionsBuilder = new BpmnDefinitions.BpmnDefinitionsBuilder(uiPluginContext, newDiagram);
+        BpmnDefinitions.BpmnDefinitionsBuilder definitionsBuilder = new BpmnDefinitions.BpmnDefinitionsBuilder(newDiagram);
         BpmnDefinitions definitions = new BpmnDefinitions("definitions", definitionsBuilder);
 
         minedModel = ("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +

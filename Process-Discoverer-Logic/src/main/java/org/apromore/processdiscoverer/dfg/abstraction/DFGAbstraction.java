@@ -15,9 +15,9 @@ import org.apromore.processdiscoverer.dfg.vis.BPMNDiagramLayouter;
 import org.apromore.processdiscoverer.dfg.vis.Layout;
 import org.apromore.processdiscoverer.logprocessors.SimplifiedLog;
 import org.eclipse.collections.impl.list.mutable.primitive.LongArrayList;
-import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
-import org.processmining.models.graphbased.directed.bpmn.BPMNNode;
-import org.processmining.models.graphbased.directed.bpmn.elements.Event;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNNode;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Event;
 
 /**
  * This class represents the directly-follows graph abstraction of logs

@@ -103,10 +103,9 @@ import org.deckfour.xes.model.XTrace;
 import org.eclipse.collections.impl.map.mutable.primitive.ObjectIntHashMap;
 import org.eclipse.collections.impl.set.mutable.UnifiedSet;
 import org.json.JSONArray;
-import org.processmining.contexts.uitopia.UIContext;
-import org.processmining.contexts.uitopia.UIPluginContext;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
-import org.processmining.plugins.bpmn.BpmnDefinitions;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.prom.adapters.BPMNAdapter;
+import org.apromore.processmining.plugins.bpmn.BpmnDefinitions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.zkoss.util.media.AMedia;
@@ -911,7 +910,7 @@ public class ProcessDiscovererController extends BaseController implements LogFi
 
                     BPMNDiagram bpmnDiagram = gateways.isChecked() ? diagram : BPMNDiagramBuilder.insertBPMNGateways(diagram);
                     EventClassifier eventClassifier = new ActivityClassifier(processDiscoverer.getAbstractionParams().getClassifier().getAttributes());
-                    double fitness = AlignmentBasedFitness.measureFitness(bpmnDiagram, filtered_log, eventClassifier);
+                    double fitness = AlignmentBasedFitness.measureFitness(BPMNAdapter.convertReverse(bpmnDiagram), filtered_log, eventClassifier);
                     
                     Listcell listcell2 = new Listcell(decimalFormat.format(fitness));
                     Listcell listcell3 = new Listcell(decimalFormat.format(fitness * 100) + "%");
@@ -955,10 +954,7 @@ public class ProcessDiscovererController extends BaseController implements LogFi
                     // The log animation needs to identify the start and end events by names
                    // BPMNDiagramBuilder.updateStartEndEventLabels(validDiagram);
 
-                    UIContext context = new UIContext();
-                    UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-                    UIPluginContext uiPluginContext = context.getMainPluginContext();
-                    BpmnDefinitions.BpmnDefinitionsBuilder definitionsBuilder = new BpmnDefinitions.BpmnDefinitionsBuilder(uiPluginContext, validDiagram);
+                    BpmnDefinitions.BpmnDefinitionsBuilder definitionsBuilder = new BpmnDefinitions.BpmnDefinitionsBuilder(validDiagram);
                     BpmnDefinitions definitions = new BpmnDefinitions("definitions", definitionsBuilder);
 
                     StringBuilder sb = new StringBuilder();

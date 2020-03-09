@@ -1,13 +1,13 @@
 package org.apromore.processdiscoverer.dfg.vis;
 
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
-import com.jgraph.layout.JGraphFacade;
-import com.jgraph.layout.JGraphLayout;
-import com.jgraph.layout.hierarchical.JGraphHierarchicalLayout;
-import org.processmining.models.jgraph.ProMGraphModel;
-import org.processmining.models.jgraph.ProMJGraph;
-import org.processmining.models.jgraph.elements.ProMGraphPort;
-import org.processmining.models.jgraph.elements.ProMGraphEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.jgraph.layout.JGraphFacade;
+import org.apromore.jgraph.layout.JGraphLayout;
+import org.apromore.jgraph.layout.hierarchical.JGraphHierarchicalLayout;
+import org.apromore.processmining.models.jgraph.ProMGraphModel;
+import org.apromore.processmining.models.jgraph.ProMJGraph;
+import org.apromore.processmining.models.jgraph.elements.ProMGraphPort;
+import org.apromore.processmining.models.jgraph.elements.ProMGraphEdge;
 
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -20,22 +20,22 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import javax.swing.SwingConstants;
-import org.jgraph.graph.AbstractCellView;
-import org.jgraph.graph.DefaultGraphCell;
-import org.processmining.models.connections.GraphLayoutConnection;
-import org.processmining.models.graphbased.AttributeMap;
-import org.processmining.models.graphbased.ViewSpecificAttributeMap;
-import org.processmining.models.graphbased.directed.DirectedGraph;
-import org.processmining.models.graphbased.directed.DirectedGraphNode;
-import org.processmining.models.graphbased.directed.bpmn.BPMNEdge;
-import org.processmining.models.graphbased.directed.bpmn.BPMNNode;
-import org.processmining.models.graphbased.directed.bpmn.elements.Activity;
-import org.processmining.models.graphbased.directed.bpmn.elements.Event;
-import org.processmining.models.graphbased.directed.bpmn.elements.Gateway;
-import org.processmining.models.graphbased.directed.bpmn.elements.SubProcess;
-import org.processmining.models.graphbased.directed.bpmn.elements.Swimlane;
-import org.processmining.models.jgraph.elements.ProMGraphCell;
-import org.processmining.models.jgraph.views.JGraphPortView;
+import org.apromore.jgraph.graph.AbstractCellView;
+import org.apromore.jgraph.graph.DefaultGraphCell;
+import org.apromore.processmining.models.connections.GraphLayoutConnection;
+import org.apromore.processmining.models.graphbased.AttributeMap;
+import org.apromore.processmining.models.graphbased.ViewSpecificAttributeMap;
+import org.apromore.processmining.models.graphbased.directed.DirectedGraph;
+import org.apromore.processmining.models.graphbased.directed.DirectedGraphNode;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNEdge;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNNode;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Activity;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Event;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Gateway;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.SubProcess;
+import org.apromore.processmining.models.graphbased.directed.bpmn.elements.Swimlane;
+import org.apromore.processmining.models.jgraph.elements.ProMGraphCell;
+import org.apromore.processmining.models.jgraph.views.JGraphPortView;
 
 /**
  * Layout BPMN diagrams using JGraph hierarchical layout method 

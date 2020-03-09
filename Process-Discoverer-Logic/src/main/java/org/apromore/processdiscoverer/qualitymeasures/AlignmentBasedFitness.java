@@ -2,8 +2,6 @@ package org.apromore.processdiscoverer.qualitymeasures;
 
 import java.util.Map;
 
-import org.apromore.processdiscoverer.dfg.vis.BPMNDiagramBuilder;
-import org.apromore.processdiscoverer.logprocessors.ActivityClassifier;
 import org.apromore.processdiscoverer.logprocessors.EventClassifier;
 import org.deckfour.xes.classification.XEventClass;
 import org.deckfour.xes.classification.XEventClassifier;
