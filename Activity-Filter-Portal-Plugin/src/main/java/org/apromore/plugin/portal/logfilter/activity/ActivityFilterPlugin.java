@@ -21,33 +21,41 @@
 package org.apromore.plugin.portal.logfilter.activity;
 
 // Java 2 Standard Edition packages
-import java.io.*;
-import java.util.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.GregorianCalendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.Set;
 
 // Java 2 Enterprise Edition packages
 import javax.inject.Inject;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
 
 // Third party packages
 import org.apromore.model.LogSummaryType;
 import org.apromore.model.SummaryType;
+// Local packages
+import org.apromore.model.VersionSummaryType;
+import org.apromore.plugin.portal.PortalContext;
+import org.apromore.portal.custom.gui.plugin.PluginCustomGui;
 import org.apromore.service.EventLogService;
 import org.apromore.service.logfilter.activity.ActivityFilterService;
 import org.deckfour.xes.model.XLog;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.zkoss.zk.ui.event.*;
-import org.zkoss.zul.*;
-
-// Local packages
-import org.apromore.model.VersionSummaryType;
-import org.apromore.plugin.portal.PortalContext;
-import org.apromore.portal.custom.gui.plugin.PluginCustomGui;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zul.Button;
+import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listitem;
+import org.zkoss.zul.Messagebox;
+import org.zkoss.zul.Slider;
+import org.zkoss.zul.Window;
 
 /**
  * Metrics service. Created by Raffaele Conforti 18/04/2016
@@ -161,7 +169,7 @@ public class ActivityFilterPlugin extends PluginCustomGui {
             eventLogService.importLog(portalContext.getCurrentUser().getUsername(), folderId,
                     logST.getName() + "_activity_filtered", new ByteArrayInputStream(outputStream.toByteArray()), "xes.gz",
                     logST.getDomain(), DatatypeFactory.newInstance().newXMLGregorianCalendar(new GregorianCalendar()).toString(),
-                    logST.isMakePublic());
+                    false);
 
             window.detach();
             portalContext.refreshContent();
