@@ -73,7 +73,7 @@
                             org.springframework.web.context,
                             org.springframework.beans.factory.aspectj,
                             org.apromore.plugin,
-                            org.apromore.plugin.editor
+                            org.apromore.plugin.editor,
                             *
                         </Import-Package>
                         <!-- Context path, please use a unique path -->

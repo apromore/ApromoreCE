@@ -20,28 +20,9 @@
 
 package org.apromore.plugin.editor.bprove;
 
-import static javax.xml.XMLConstants.W3C_XML_SCHEMA_NS_URI;
-import static javax.xml.bind.Marshaller.JAXB_FORMATTED_OUTPUT;
-
-import com.sun.xml.bind.marshaller.NamespacePrefixMapper;
-import java.nio.charset.*;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.ValidationEvent;
-import javax.xml.bind.ValidationEventHandler;
-import javax.xml.validation.SchemaFactory;
-
-import de.hpi.bpmn2_0.transformation.BPMNPrefixMapper;
-
 // Java 2 Standard
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.File;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.ArrayList;
 
 // Java 2 Enterprise
 import javax.inject.Inject;
@@ -50,16 +31,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+//grafics import
+import javax.swing.JFrame;
 import javax.xml.bind.JAXBContext;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 
 // Third party
 import org.apache.log4j.Logger;
+
+//added for IDS
+
+import org.apromore.service.ProcessService;
+import org.apromore.service.bpmndiagramimporter.BPMNDiagramImporter;
+import org.apromore.service.bprove.BproveService;
 import org.json.JSONObject;
-import org.json.JSONArray;
-import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.oryxeditor.server.diagram.basic.BasicDiagram;
+import org.oryxeditor.server.diagram.basic.BasicDiagramBuilder;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 // Apromore
@@ -70,27 +56,6 @@ import de.hpi.bpmn2_0.model.extension.synergia.ConfigurationAnnotationAssociatio
 import de.hpi.bpmn2_0.model.extension.synergia.ConfigurationAnnotationShape;
 import de.hpi.bpmn2_0.model.extension.synergia.Variants;
 import de.hpi.bpmn2_0.transformation.Diagram2BpmnConverter;
-import org.apromore.service.bpmndiagramimporter.BPMNDiagramImporter;
-import org.apromore.service.bprove.BproveService;
-import org.oryxeditor.server.diagram.basic.BasicDiagram;
-import org.oryxeditor.server.diagram.basic.BasicDiagramBuilder;
-
-//added for IDS
-import org.oryxeditor.server.diagram.generic.GenericDiagram;
-import org.oryxeditor.server.diagram.generic.GenericEdge;
-import org.oryxeditor.server.diagram.generic.GenericShape;
-import org.apromore.plugin.editor.bprove.*;
-
-import org.apromore.service.ProcessService;
-//grafics import
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import java.io.*;
-import javax.script.*;
-import java.util.StringTokenizer;
-
-import javax.swing.JOptionPane;
 //import plugin.bpmn.to.maude.handlers.MaudeOperationEditor;
 
 //import plugin.bpmn.to.maude.handlers.MaudeOperation;
