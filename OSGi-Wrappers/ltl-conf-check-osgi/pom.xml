@@ -160,18 +160,6 @@
             <artifactId>prom-pnml-osgi</artifactId>
             <version>1.1</version>
         </dependency>
-        <!-- 
-		<dependency>
-			<groupId>org.apromore</groupId>
-			<artifactId>prom6-osgi</artifactId>
-			<exclusions>
-				<exclusion>
-					<groupId>com.raffaeleconforti</groupId>
-					<artifactId>assembly</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		-->
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>raffaeleconforti-osgi</artifactId>

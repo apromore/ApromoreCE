@@ -146,7 +146,6 @@
                             com.raffaeleconforti.wrappers.settings.*,
                             com.raffaeleconforti.statistics.*,
 
-                            <!--
                             org.processmining,
                             org.processmining.analysis,
                             org.processmining.basicutils.models,
@@ -489,7 +488,6 @@
                             org.processmining.plugins.nikefsmonitor,
 
                             nl.tue.astar.*
-                            -->
                         </Export-Package>
                         
                     </instructions>

@@ -47,7 +47,7 @@
                                 By doing so these non-osgi dependencies are not included in the assembly projects!
                              -->
                             artifactId=<!--jfreechart| -->
-                            java_cup|jsc|lingpipe|jama|spex|weka-dev|prodrift
+                            java_cup|jsc|lingpipe|jama|spex|weka-dev|jfreechart|jcommon
                         </Embed-Dependency>
                         <Embed-Transitive>false</Embed-Transitive>
                         <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
@@ -137,7 +137,11 @@
     <dependencies>
 
         <!-- prodrift-->
-
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>log-osgi</artifactId>
+        </dependency>
+        
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>raffaeleconforti-osgi</artifactId>
@@ -149,12 +153,13 @@
             <artifactId>log-osgi</artifactId>
             <version>1.1</version>
         </dependency>
-
+    
         <dependency>
             <groupId>org.jfree</groupId>
             <artifactId>jfreechart</artifactId>
             <version>1.0.19</version>
         </dependency>
+        
         <dependency>
             <groupId>jsc</groupId>
             <artifactId>jsc</artifactId>
@@ -172,20 +177,19 @@
             <version>1.5.0</version>
         </dependency>
 
+		<!-- 
         <dependency>
             <groupId>org.deckfour</groupId>
             <artifactId>spex</artifactId>
         </dependency>
-
+		-->
+		
         <dependency>
             <groupId>weka</groupId>
             <artifactId>weka-dev</artifactId>
             <version>3.7.12</version>
         </dependency>
-
-
-
-
+        <!--
         <dependency>
             <groupId>org.processmining</groupId>
             <artifactId>log</artifactId>
@@ -196,16 +200,19 @@
             <artifactId>logabstractions</artifactId>
             <version>6.5.20170418</version>
         </dependency>
+        -->
         <dependency>
             <groupId>org.jbpt</groupId>
             <artifactId>jbpt-core</artifactId>
             <version>0.2.433</version>
         </dependency>
+        
         <dependency>
             <groupId>org.processmining</groupId>
             <artifactId>jcommon</artifactId>
             <version>1.0</version>
         </dependency>
+        
         <dependency>
             <groupId>org.processmining</groupId>
             <artifactId>weka</artifactId>
