@@ -31,7 +31,7 @@
         <module>APM-Comp-Guards-Logic</module>
         <module>APM-Comp-Guards-Portal-Plugin</module>
         -->
-        <module>APQL-Portal-Plugin</module>
+        <!--<module>APQL-Portal-Plugin</module> -->
         <module>Apromore-Editor</module>
         <module>Apromore-FileStore</module>
         <module>Apromore-Manager-WS</module>
@@ -73,14 +73,15 @@
         <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
         <!--<module>OSGi-Wrappers/pnapi-bpdiff-osgi</module>-->
         <module>OSGi-Wrappers/postgresql-osgi</module>
-        <module>OSGi-Wrappers/prom-pnml-osgi</module>
         <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
+        <!--<module>OSGi-Wrappers/prom-pnml-osgi</module>-->
         <!--<module>OSGi-Wrappers/uma-bpdiff-osgi</module>-->
-
         <!--<module>OSGi-Wrappers/lucene-osgi</module>-->
         <!--<module>OSGi-Wrappers/pql-osgi</module>-->
         <module>OSGi-Wrappers/prodrift-osgi</module>
         <module>OSGi-Wrappers/themis-osgi</module>
+        <module>OSGi-Wrappers/prom-adapters-osgi</module>
+        
         <module>PerformanceMiner-Logic</module>
         <module>PerformanceMiner-Portal-Plugin</module>
         <!--
@@ -104,9 +105,9 @@
         <module>plugin-editor/metrics2</module>
         <module>plugin-editor/sample</module>
 
-        <module>apql</module>
-        <module>Cmapper</module>
-        <module>Quaestio</module>
+        <!-- <module>apql</module> -->
+        <!--<module>Cmapper</module>-->
+        <!--<module>Quaestio</module>-->
         <!--<module>PQLBot</module>-->
 
         <module>Editor-Assembly</module>

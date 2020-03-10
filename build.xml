@@ -37,10 +37,11 @@
         <include name="OSGi-Wrappers/ltl-conf-check-osgi/target/ltl-conf-check-osgi-1.1.jar"/>
         <include name="OSGi-Wrappers/ltl-to-automaton-osgi/target/ltl-to-automaton-osgi-1.1.jar"/>
         <include name="OSGi-Wrappers/postgresql-osgi/target/postgresql-osgi-9.3.jar"/>
-        <include name="OSGi-Wrappers/prom-pnml-osgi/target/prom-pnml-osgi-1.1.jar"/>
+        <!--<include name="OSGi-Wrappers/prom-pnml-osgi/target/prom-pnml-osgi-1.1.jar"/>-->
         <!--<include name="OSGi-Wrappers/pn-automata-conv-osgi/target/pn-automata-conv-osgi-1.1.jar"/>-->
         <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
         <include name="OSGi-Wrappers/raffaeleconforti-osgi/target/raffaeleconforti-osgi-1.1.1.jar"/>
+        <include name="OSGi-Wrappers/prom-adapters-osgi/target/prom-adapters-osgi-1.0.jar"/>
     </fileset>
     
     <fileset id="fileset-community-foundation" dir="${basedir}">

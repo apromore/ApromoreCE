@@ -25,9 +25,10 @@
     <artifact type="bundle" name="org.apromore.ltl-to-automaton-osgi" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.ltl-conf-check-osgi" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.postgresql.osgi" version="[9.0.0, 10)"/>
-    <artifact type="bundle" name="org.apromore.prom-pnml-osgi" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.prom-pnml-osgi" version="[1.0.0, 2)"/>-->
     <!--<artifact type="bundle" name="org.apromore.pn-automata-conv-osgi" version="[1.0.0, 2)"/>-->
     <artifact type="bundle" name="org.apromore.prodrift-osgi" version="[2.0.0, 3)"/>    
+    <artifact type="bundle" name="org.apromore.prom-adapters-osgi" version="[1.0.0, 2)"/>
     
     <!-- SCHEMA -->
     
