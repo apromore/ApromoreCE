@@ -21,7 +21,6 @@
 package org.apromore.plugin.portal.metrics;
 
 // Java 2 Standard Edition packages
-import java.io.IOException;
 import java.util.*;
 
 // Java 2 Enterprise Edition packages
@@ -35,11 +34,10 @@ import org.apromore.model.LogSummaryType;
 import org.apromore.model.SummaryType;
 import org.apromore.service.EventLogService;
 import org.deckfour.xes.model.XLog;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import org.zkoss.zk.ui.event.*;
 import org.zkoss.zul.*;
 
 // Local packages

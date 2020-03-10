@@ -85,15 +85,9 @@
             <version>1.1.1</version>
         </dependency>
         <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>log</artifactId>
-            <version>6.5.20170418</version>
-        </dependency>
-        <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>prom6-framework</artifactId>
-            <version>6.5.20170418</version>
-        </dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>log-osgi</artifactId>
+        </dependency>        
     </dependencies>
 </project>
 

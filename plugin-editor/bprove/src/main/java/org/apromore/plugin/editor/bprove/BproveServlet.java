@@ -59,7 +59,7 @@ import javax.xml.transform.stream.StreamSource;
 import org.apache.log4j.Logger;
 import org.json.JSONObject;
 import org.json.JSONArray;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 // Apromore

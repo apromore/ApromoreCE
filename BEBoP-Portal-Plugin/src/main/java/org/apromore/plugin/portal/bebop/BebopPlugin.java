@@ -40,7 +40,7 @@ import org.apromore.service.EventLogService;
 import org.deckfour.xes.model.XLog;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
+import org.apromore.processmining.models.graphbased.directed.bpmn.BPMNDiagram;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
