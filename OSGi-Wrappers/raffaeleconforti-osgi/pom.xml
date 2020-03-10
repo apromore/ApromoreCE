@@ -486,8 +486,16 @@
                             org.processmining.plugins.kutoolbox.utils,
                             org.processmining.plugins.kutoolbox.visualizators,
                             org.processmining.plugins.nikefsmonitor,
+                            
+                            com.fluxicon.slickerbox.colors,
+                            com.fluxicon.slickerbox.components,
+                            com.fluxicon.slickerbox.components.glasspane,
+                            com.fluxicon.slickerbox.factory,
+                            com.fluxicon.slickerbox.ui,
+                            com.fluxicon.slickerbox.util,
 
-                            nl.tue.astar.*
+                            nl.tue.astar.*,
+                            java_cup.runtime
                         </Export-Package>
                         
                     </instructions>
