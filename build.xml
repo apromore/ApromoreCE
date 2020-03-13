@@ -20,9 +20,10 @@
   -->
 
 <project>
-    <description>Community distribution</description>
+    <description>Apromore Community Distribution</description>
 
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
+    
     <import file="ApromoreCore/build-core.xml" as="core"/>
     
     <filter token="portal.showSignavio" value="true"/>
@@ -44,12 +45,15 @@
         <include name="OSGi-Wrappers/prom-adapters-osgi/target/prom-adapters-osgi-1.0.jar"/>
     </fileset>
     
-    <fileset id="fileset-community-foundation" dir="${basedir}">
+    <fileset id="fileset-community-assembly" dir="${basedir}">
+        <include name="Apromore-Assembly/Editor-Assembly/target/repository/usr/*"/>
+        <include name="Apromore-Assembly/Filestore-Assembly/target/repository/usr/*"/>
+        <include name="Apromore-Assembly/Predictive-Monitor-Assembly/target/repository/usr/*"/>
+    </fileset>     
+    
+    <fileset id="fileset-community-properties" dir="${basedir}">
         <include name="target/classes/META-INF/git.properties"/>
-        <include name="Editor-Assembly/target/repository/usr/*"/>
         <include name="target/classes/git.properties"/>
-        <include name="Apromore-FileStore/target/filestore.war"/>
-        <include name="filestore-client/target/filestore-client.jar"/>
     </fileset> 
 
     <fileset id="fileset-community-schema" dir="${basedir}">
@@ -61,6 +65,9 @@
     </fileset>     
 
     <fileset id="fileset-community-custom-plugins" dir="${basedir}">
+        <include name="Apromore-FileStore/target/filestore.war"/>
+        <include name="filestore-client/target/filestore-client.jar"/>
+        
         <include name="BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
         <include name="BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
 
@@ -127,6 +134,14 @@
         <include name="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar"/>
         <include name="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" />
         
+        <include name="Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar"/>
+        <include name="Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war"/>
+        <include name="Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war"/>
+        
+        <include name="XES-Selection-Portal-Plugin/target/xes-selection-portal-plugin-1.0.jar"/>
+        
+        <include name="Theme-Selection-Portal-Plugin/target/theme-selection-portal-plugin-1.0.jar"/>
+        
         <include name="plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" />
         <include name="plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" />
         <include name="plugin-editor/metrics2/target/metrics-editor-plugin2-1.1.war" />
@@ -171,11 +186,12 @@
         </copy>
     </target>
     
-    <target name="copy-virgo-community" depends="clean-virgo, create-repository-dirs, copy-core">
+    <target name="copy-virgo-community" depends="clean-virgo, setup-virgo, create-repository-dirs, copy-core">
         <copy todir="${core-dir-virgo}/repository/usr" flatten="true" overwrite="true">
+            <fileset refid="fileset-community-properties"/> 
             <fileset refid="fileset-community-osgi-lib"/> 
             <fileset refid="fileset-community-schema"/>   
-            <fileset refid="fileset-community-foundation"/>
+            <fileset refid="fileset-community-assembly"/>
             <fileset refid="fileset-community-custom-plugins"/>    
             <fileset refid="fileset-community-old-plugin-annotation"/>  
             <fileset refid="fileset-community-old-plugin-canoniser"/>  

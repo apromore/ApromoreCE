@@ -110,9 +110,17 @@
         <!--<module>Quaestio</module>-->
         <!--<module>PQLBot</module>-->
 
-        <module>Editor-Assembly</module>
-        <module>Filestore-Assembly</module>
+        <module>Apromore-Assembly/Editor-Assembly</module>
+        <module>Apromore-Assembly/Filestore-Assembly</module>
+        <module>Apromore-Assembly/Predictive-Monitor-Assembly</module>
         <!--<module>PQL-Indexer-Assembly</module>-->
+        
+        <module>Predictive-Monitor-Logic</module>
+        <module>Predictive-Monitor-Portal-Plugin</module>
+        <module>Predictor-Training-Portal-Plugin</module>
+        
+        <module>XES-Selection-Portal-Plugin</module>
+        <module>Theme-Selection-Portal-Plugin</module>
 
         <!-- Canoniser Plugins -->
         <module>plugin-canoniser/aris</module>
