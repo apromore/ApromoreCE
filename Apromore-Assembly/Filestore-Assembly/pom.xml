@@ -28,6 +28,7 @@
         <groupId>org.apromore</groupId>
         <artifactId>community</artifactId>
         <version>1.0</version>
+        <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>filestore-assembly</artifactId>

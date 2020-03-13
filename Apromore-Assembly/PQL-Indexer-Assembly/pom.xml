@@ -28,31 +28,31 @@
         <groupId>org.apromore</groupId>
         <artifactId>community</artifactId>
         <version>1.0</version>
+        <relativePath>../../</relativePath>
     </parent>
 
-    <artifactId>editor-assembly</artifactId>
-    <version>1.1</version>
+    <artifactId>pql-indexer-assembly</artifactId>
+    <version>1.0</version>
     <packaging>pom</packaging>
-    <name>Apromore Editor Bundle Assembly</name>
+    <name>Apromore PQL Indexer Bundle Assembly</name>
 
     <properties>
         <deploy.dir>${project.build.directory}/repository</deploy.dir>
-        <editor.version>1.2</editor.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.apromore</groupId>
-            <artifactId>apromore-editor</artifactId>
-            <version>${editor.version}</version>
+            <artifactId>apromore-pql-indexer</artifactId>
+            <version>1.1</version>
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>org.apromore</groupId>
-            <artifactId>apromore-editor</artifactId>
-            <version>${editor.version}</version>
-            <classifier>classes</classifier>
+            <groupId>org.pql</groupId>
+            <artifactId>pql-osgi</artifactId>
         </dependency>
+
+        <!-- Contains the RemoveNonOSGIJars Maven plugin -->
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>build-tools</artifactId>
@@ -75,25 +75,17 @@
                         <configuration>
                             <outputDirectory>${deploy.dir}/usr</outputDirectory>
                             <overWriteIfNewer>true</overWriteIfNewer>
-                            <includeScope>compile</includeScope>
                             <excludeTransitive>false</excludeTransitive>
-                            <!-- Those artifacts are OSGI bundles already in Virgo -->
                             <excludeArtifactIds>
-                                logback-core,logback-classic,
-                                javax.persistence,
+                                org.junit,org.apromore,com.springsource.org.aopalliance,fluent-hc,httpclient,httpcore,jcl-over-slf4j,logback-core,
+                                jaxb2-basics-runtime,org.eclipse.gemini.blueprint.extender,org.eclipse.gemini.blueprint.io,logback-classic
+                                org.eclipse.gemini.blueprint.core,org.eclipse.osgi,org.eclipse.osgi.services,slf4j-api,org.springframework.aop,
+                                org.springframework.asm,org.springframework.beans,org.springframework.context,org.springframework.core,
+                                org.springframework.expression,org.springframework.jdbc,org.springframework.jms,org.springframework.orm,
+                                org.springframework.oxm,org.springframework.transaction,org.springframework.web,org.springframework.web.servlet,
+                                org.springframework.aspects,org.springframework.context.support,commons-httpclient,javax.persistence,
                                 com.springsource.javax.xml.bind
                             </excludeArtifactIds>
-                            <!-- Spring and Gemini are already bundled with Virgo -->
-                            <excludeGroupIds>
-                                org.springframework,
-                                org.springframework.security,
-                                org.eclipse.gemini,
-                                org.eclipse.osgi
-                            </excludeGroupIds>
-                            <!-- Exclude the manager-classes.jar which is only used to pull in transitive dependencies -->
-                            <excludeClassifiers>
-                                classes
-                            </excludeClassifiers>
                         </configuration>
                     </execution>
                 </executions>
