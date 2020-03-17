@@ -47,6 +47,7 @@
         <module>BProVe-Logic</module>
         <module>CLI-Tools/bpmncmap</module>
         <module>CLI-Tools/cpfImporter</module>
+		<module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
         <module>Cmapper-Portal-Plugin</module>
         <module>Compare-Logic</module>
         <module>Compare-Portal-Plugin</module>
@@ -94,6 +95,7 @@
         <module>Process-Discoverer-Portal-Plugin</module>
         <module>ProDrift-Logic</module>
         <module>ProDrift-Portal-Plugin</module>
+		<module>Quaestio</module> <!-- this module is compiled but not deployed to Virgo -->
         <module>Quaestio-Portal-Plugin</module>
         <module>StageMining-Logic</module>
         <module>StageMining-Portal-Plugin</module>
@@ -106,8 +108,6 @@
         <module>plugin-editor/sample</module>
 
         <!-- <module>apql</module> -->
-        <!--<module>Cmapper</module>-->
-        <!--<module>Quaestio</module>-->
         <!--<module>PQLBot</module>-->
 
         <module>Apromore-Assembly/Editor-Assembly</module>
