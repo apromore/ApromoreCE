@@ -79,7 +79,7 @@
         <!--<module>OSGi-Wrappers/lucene-osgi</module>-->
         <!--<module>OSGi-Wrappers/pql-osgi</module>-->
         <module>OSGi-Wrappers/prodrift-osgi</module>
-        <module>OSGi-Wrappers/themis-osgi</module>
+        <!--<module>OSGi-Wrappers/themis-osgi</module>-->
         <module>OSGi-Wrappers/prom-adapters-osgi</module>
         
         <module>PerformanceMiner-Logic</module>
