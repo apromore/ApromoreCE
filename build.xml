@@ -163,11 +163,13 @@
 
     <target name="start-virgo-community" depends="deploy-community">
         <exec dir="${core-dir-virgo}/bin/" executable="cmd" osfamily="windows">
+            <env key="JAVA_OPTS" value="${startup.java.opts}"/>
             <arg value="/c"/>
             <arg value="startup.bat"/>
             <arg line="${startup.args}"/>
         </exec>
         <exec dir="${core-dir-virgo}/bin/" executable="./startup.sh" osfamily="unix">
+            <env key="JAVA_OPTS" value="${startup.java.opts}"/>
             <arg line="${startup.args}"/>
         </exec>
     </target>
