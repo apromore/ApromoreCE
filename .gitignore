@@ -6,8 +6,15 @@
 **/*.iws
 *.iml
 
+# Eclipse IDE artifacts
+**/*.project
+**/*.prefs
+**/*.classpath
+**/*.gitignore
+
 # macOS Finder artifacts
 **/.DS_Store
 
 # vi editor artifacts
 **/*.swp
+/.metadata/
