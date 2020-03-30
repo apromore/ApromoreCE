@@ -61,7 +61,9 @@
     <artifact type="bundle" name="org.apromore.editor-platform-extension-syntaxchecker" version="[1.2, 2)"/>
     <artifact type="bundle" name="org.apromore.editor-platform-extension-xpdl"          version="[1.2, 2)"/>
     <artifact type="bundle" name="org.apromore.editor-platform-extension-yawl"          version="[1.2, 2)"/>
-    
+
+    <artifact type="bundle" name="org.apromore.plugin.file-legacy-portal-plugin" version="[1.0.0, 2)"/>
+
     <!-- CUSTOM PLUGINS -->
     
     <artifact type="bundle" name="org.apromore.gbebop-logic" version="[1.0.0, 2)"/>

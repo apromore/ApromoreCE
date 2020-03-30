@@ -85,6 +85,8 @@
         <include name="Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
         <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
 
+        <include name="File-Legacy-Portal-Plugin/target/file-legacy-portal-plugin-1.0.jar"/>
+
         <include name="LTL-Conf-Logic/target/ltl-conf-logic-1.1.jar"/>
         <include name="LTL-Conf-Portal-Plugin/target/ltl-conf-portal-plugin-1.1.war"/>
         

@@ -52,6 +52,7 @@
         <module>Compare-Logic</module>
         <module>Compare-Portal-Plugin</module>
         <module>Compare-Portal-Plugin2</module>
+        <module>File-Legacy-Portal-Plugin</module>
         <module>filestore-client</module>
         <module>IBPStruct-Logic</module>
         <module>IBPStruct-Portal-Plugin</module>
