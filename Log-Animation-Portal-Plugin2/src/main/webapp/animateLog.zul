@@ -55,7 +55,6 @@
 
         <!-- JavaScript Dependencies of Signavio Process Editor -->
         <script src="/${arg.editor}/libs/prototype-1.5.1.js" type="text/javascript"/>
-        <script src="/${arg.editor}/libs/path_parser.js" type="text/javascript"/>
         <script src="/${arg.editor}/libs/ext-2.0.2/adapter/ext/ext-base.js" type="text/javascript"/>
         <script src="/${arg.editor}/libs/ext-2.0.2/ext-all.js" type="text/javascript"/>
         <script src="/${arg.editor}/libs/ext-2.0.2/color-field.js" type="text/javascript"/>
