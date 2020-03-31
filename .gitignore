@@ -15,6 +15,9 @@
 # macOS Finder artifacts
 **/.DS_Store
 
+# Tomcat artifacts
+**/catalina.home_IS_UNDEFINED/**
+
 # vi editor artifacts
 **/*.swp
 /.metadata/

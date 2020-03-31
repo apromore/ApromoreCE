@@ -26,7 +26,6 @@
     
     <import file="ApromoreCore/build-core.xml" as="core"/>
     
-    <filter token="portal.showSignavio" value="true"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
     
     <fileset id="fileset-community-osgi-lib" dir="${basedir}">
