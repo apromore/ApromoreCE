@@ -22,10 +22,11 @@
 <project>
     <description>Apromore Community Distribution</description>
 
+    <import file="ApromoreCore/build-core.xml" as="core"/>
+
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
     
-    <import file="ApromoreCore/build-core.xml" as="core"/>
-    
+    <filter token="csvimporter-logic.bundle" value="org.apromore.csvimporter-logic"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
     
     <fileset id="fileset-community-osgi-lib" dir="${basedir}">
@@ -191,6 +192,7 @@
     
     <target name="copy-virgo-community" depends="clean-virgo, setup-virgo, create-repository-dirs, copy-core">
         <copy todir="${core-dir-virgo}/repository/usr" flatten="true" overwrite="true">
+            <file file="ApromoreCore/Apromore-Custom-Plugins/CSVImporter-Logic/target/csvimporter-logic-1.0.jar"/>
             <fileset refid="fileset-community-properties"/> 
             <fileset refid="fileset-community-osgi-lib"/> 
             <fileset refid="fileset-community-schema"/>   
