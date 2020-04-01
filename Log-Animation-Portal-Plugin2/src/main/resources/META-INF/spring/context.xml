@@ -45,6 +45,11 @@
         <beans:property name="label" value="Animate logs (legacy editor)" />
     </beans:bean>
     
+    <beans:bean id="plugin2" class="org.apromore.plugin.portal.loganimation2.LogAnimationPlugin">
+        <beans:property name="groupLabel" value="" />
+        <beans:property name="label" value="" />
+    </beans:bean>
+    
     <beans:bean id="editorPlugin" class="org.apromore.plugin.editor.loganimation2.LogAnimationPlugin">
         <beans:property name="javaScriptURI" value="/loganimation2/FileUploadField.js+editor_plugin.js" />
         <beans:property name="javaScriptPackage" value="ORYX.Plugins.LogAnimation" />
@@ -56,4 +61,5 @@
     	</service-properties>
     </service>
     <service ref="portalPlugin" interface="org.apromore.plugin.portal.PortalPlugin" />
+    <service ref="plugin2" interface="org.apromore.plugin.portal.loganimation2.LogAnimationPluginInterface" />
 </beans:beans>

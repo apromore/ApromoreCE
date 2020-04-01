@@ -43,7 +43,7 @@ import org.apromore.service.EventLogService;
 import org.apromore.service.loganimation.LogAnimationService;
 import org.deckfour.xes.model.XLog;
 
-public class LogAnimationPlugin extends DefaultPortalPlugin {
+public class LogAnimationPlugin extends DefaultPortalPlugin implements LogAnimationPluginInterface {
 
     private String label = ""; //initialized in Spring beans
     private String groupLabel = ""; //initialized in Spring beans
@@ -167,6 +167,75 @@ public class LogAnimationPlugin extends DefaultPortalPlugin {
      */
     private static String escapeQuotedJavascript(String json) {
         return json.replace("\n", " ").replace("'", "\\u0027").trim();
+    }
+    
+    @Override
+    /**
+     * The log will be replayed on the process model represented by bpmn param.
+     * However, the model displayed in the animation is different from the replayed model
+     * For example: if it's a graph, all XOR gateways should be removed to show it as a graph
+     * Therefore,  BPMNUpdater is used to create an updated BPMN based on the original bpmn
+     * But then it requires the replay result to be also updated to make it relevant for 
+     * the displayed BPMN only because it is created for the original BPMN. That's why 
+     * AnimationUpdater is used to create an updated animation data from the created animation data
+     */
+    public void execute(PortalContext portalContext, String bpmn, String layout, XLog eventlog, boolean maintain_gateways, String logName) {
+        try {
+            List<LogAnimationService.Log> logs = new ArrayList<>();
+            Iterator<String> colors = Arrays.asList("#0088FF", "#FF8800", "#88FF00").iterator();
+            LogAnimationService.Log log = new LogAnimationService.Log();
+            log.fileName = logName;
+            log.xlog     = eventlog;
+            log.color    = colors.hasNext() ? colors.next() : "red";
+            logs.add(log);
+
+            String username = portalContext.getCurrentUser().getUsername();
+
+            ProcessSummaryType processSummaryType = new ProcessSummaryType();
+            processSummaryType.setDomain("Log-Visualizer");
+            processSummaryType.setName("Log-Visualizer-Model");
+            processSummaryType.setId(1);
+            processSummaryType.setMakePublic(true);
+
+            VersionSummaryType versionSummaryType = new VersionSummaryType();
+            versionSummaryType.setName("Log-Visualizer-Model");
+            versionSummaryType.setVersionNumber("1.0");
+
+            EditSessionType editSession = createEditSession(username, processSummaryType, versionSummaryType, "BPMN 2.0", null);
+            Set<RequestParameterType<?>> requestParameterTypes = new HashSet<>();
+            SignavioSession session = new SignavioSession(editSession, null, null, processSummaryType, versionSummaryType, null, null, requestParameterTypes);
+
+            //Bruce: Do not escape here because it will make the name containing quotes in BPMN different from the name in layout  
+            //String updatedBPMN = escapeQuotedJavascript(bpmn);
+            String updatedBPMN = bpmn;
+
+            BPMNUpdater bpmnUpdater = new BPMNUpdater();
+            updatedBPMN = bpmnUpdater.getUpdatedBPMN(updatedBPMN, layout, !maintain_gateways);
+
+            System.out.println("Final BPMN");
+//            System.out.println(jsonDataEscape);
+            session.put("bpmnXML", updatedBPMN);
+
+            if (logAnimationService != null) {  // logAnimationService is null if invoked from the editor toobar
+                String animationData = logAnimationService.createAnimation(bpmn, logs);
+
+                AnimationUpdater animationUpdater = new AnimationUpdater();
+                animationData = animationUpdater.updateAnimationData(animationData, bpmnUpdater.getRemovedFlowIDs());
+
+                session.put("animationData", escapeQuotedJavascript(animationData));
+                System.out.println("ANIMATIONDATA");
+//                System.out.println(escapeQuotedJavascript(animationData));
+            }
+
+            session.put("logs", logs);
+
+            String id = UUID.randomUUID().toString();
+            UserSessionManager.setEditSession(id, session);
+            //Clients.evalJavaScript("window.open('../loganimation/animateLog.zul?id=" + id + "')");
+            Clients.evalJavaScript("window.open('/loganimation/animateLog.zul?id=" + id + "')");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
    
 }

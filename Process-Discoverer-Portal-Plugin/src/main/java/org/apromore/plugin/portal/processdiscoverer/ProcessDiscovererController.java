@@ -63,7 +63,7 @@ import org.apromore.logman.stats.LogStatistics;
 import org.apromore.model.LogSummaryType;
 import org.apromore.model.SummaryType;
 import org.apromore.plugin.portal.PortalContext;
-import org.apromore.plugin.portal.loganimation.LogAnimationPluginInterface;
+import org.apromore.plugin.portal.loganimation2.LogAnimationPluginInterface;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterContext;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterInputParams;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterOutputResult;
