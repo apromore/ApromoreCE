@@ -30,7 +30,7 @@ import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.property.RequestParameterType;
 import org.apromore.portal.common.UserSessionManager;
 import org.apromore.portal.dialogController.MainController;
-import org.apromore.portal.dialogController.dto.SignavioSession;
+import org.apromore.portal.dialogController.dto.ApromoreSession;
 import org.apromore.processdiscoverer.VisualizationType;
 import org.zkoss.zul.Messagebox;
 import java.util.HashSet;
@@ -106,7 +106,7 @@ public class ProcessDiscovererAbstractPlugin extends DefaultPortalPlugin {
             version.setVersionNumber("1.0");
             
             EditSessionType editSession1 = createEditSession(username, process, version);
-            SignavioSession session = new SignavioSession(editSession1, null, 
+            ApromoreSession session = new ApromoreSession(editSession1, null,
             												(MainController)context.getMainController(), 
             												process, version, null, null, 
             												new HashSet<RequestParameterType<?>>());
