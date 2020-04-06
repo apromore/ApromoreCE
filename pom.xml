@@ -131,10 +131,13 @@
         <module>plugin-canoniser/yawl</module>
 
         <!-- Annotation Post Processor Plugins -->
+        <!--
+        <module>plugin-annotation/bpmn</module>
         <module>plugin-annotation/epml</module>
         <module>plugin-annotation/pnml</module>
         <module>plugin-annotation/xpdl</module>
         <module>plugin-annotation/yawl</module>
+        -->
 
         <!-- Schemas -->
         <module>Schema/aris-schema</module>
@@ -180,6 +183,11 @@
             </dependency>
 
             <!-- Annotations PreProcessors -->
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>annotation-bpmn</artifactId>
+                <version>${apromore.annotation.plugin.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apromore.plugin</groupId>
                 <artifactId>annotation-xpdl</artifactId>

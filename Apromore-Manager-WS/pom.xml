@@ -554,6 +554,7 @@
             <scope>test</scope>
         </dependency>
 
+<!--
         <dependency>
             <groupId>org.apromore.plugin</groupId>
             <artifactId>annotation-bpmn</artifactId>
@@ -579,6 +580,7 @@
             <artifactId>annotation-pnml</artifactId>
             <scope>test</scope>
         </dependency>
+-->
     </dependencies>
 
 </project>
