@@ -74,7 +74,7 @@ import org.apromore.plugin.portal.processdiscoverer.util.StringValues;
 import org.apromore.plugin.portal.processdiscoverer.util.TimeConverter;
 import org.apromore.portal.common.UserSessionManager;
 import org.apromore.portal.dialogController.BaseController;
-import org.apromore.portal.dialogController.dto.SignavioSession;
+import org.apromore.portal.dialogController.dto.ApromoreSession;
 import org.apromore.processdiscoverer.AbstractionParams;
 import org.apromore.processdiscoverer.ProcessDiscoverer;
 import org.apromore.processdiscoverer.VisualizationAggregation;
@@ -322,7 +322,7 @@ public class ProcessDiscovererController extends BaseController implements LogFi
             throw new AssertionError("No id parameter in URL");
         }
 
-        SignavioSession session = UserSessionManager.getEditSession(id);
+        ApromoreSession session = UserSessionManager.getEditSession(id);
         if (session == null) {
             throw new AssertionError("No edit session associated with id " + id);
         }
