@@ -59,7 +59,7 @@ import org.apromore.logfilter.criteria.factory.LogFilterCriterionFactory;
 import org.apromore.logfilter.criteria.model.Action;
 import org.apromore.logfilter.criteria.model.Containment;
 import org.apromore.logfilter.criteria.model.Level;
-import org.apromore.logman.stats.LogStatistics;
+import org.apromore.logfilter.stats.LogStatistics;
 import org.apromore.model.LogSummaryType;
 import org.apromore.model.SummaryType;
 import org.apromore.plugin.portal.PortalContext;
@@ -1934,7 +1934,7 @@ public class ProcessDiscovererController extends BaseController implements LogFi
 	@Override
 	public void onPluginExecutionFinished(LogFilterOutputResult outputParams) throws Exception {
 		this.setFilteredLog(outputParams.getLog());
-        this.setCriteria(outputParams.getFilterCriteria());
+        this.setCriteria(logFilterCriterionFactory.convertFilterCriteria(outputParams.getFilterCriteria()));
 		this.refreshCriteria(outputParams.getFilterCriteria().isEmpty());
 	}
 }
