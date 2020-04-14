@@ -36,7 +36,7 @@ import org.apromore.logfilter.criteria.model.Action;
 import org.apromore.logfilter.criteria.model.Containment;
 import org.apromore.logfilter.criteria.model.Level;
 import org.apromore.logfilter.criteria.model.LogFilterTypeSelector;
-import org.apromore.logman.stats.LogStatistics;
+import org.apromore.logfilter.stats.LogStatistics;
 import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterOutputResult;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterResultListener;

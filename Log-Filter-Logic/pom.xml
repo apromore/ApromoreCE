@@ -53,6 +53,7 @@
                         </Import-Package>
                         <Export-Package>
                             org.apromore.logfilter,
+                            org.apromore.logfilter.stats,
                             org.apromore.logfilter.criteria,
                             org.apromore.logfilter.criteria.model,
                             org.apromore.logfilter.criteria.factory
