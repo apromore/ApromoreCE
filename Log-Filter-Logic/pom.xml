@@ -25,11 +25,10 @@
 
     <modelVersion>4.0.0</modelVersion>
 	
-		<parent>
-        <groupId>org.apromore.plugin</groupId>
-        <artifactId>plugin</artifactId>
-        <version>1.1</version>
-        <relativePath>../../Apromore-Plugins/</relativePath>
+    <parent>
+        <groupId>org.apromore</groupId>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
     </parent>
 	
     <artifactId>log-filter-logic</artifactId>

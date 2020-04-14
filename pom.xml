@@ -59,6 +59,7 @@
         <module>Infrequent-Behaviour-Filter-Logic</module>
         <module>Infrequent-Behaviour-Filter-Portal-Plugin</module>
         <module>Log-Animation-Portal-Plugin2</module>
+        <module>Log-Filter-Logic</module>
         <module>Log-Filter-Portal-Plugin</module>
         <module>LTL-Conf-Logic</module>
         <module>LTL-Conf-Portal-Plugin</module>

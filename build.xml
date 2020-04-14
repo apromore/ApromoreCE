@@ -114,6 +114,7 @@
 
         <include name="Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
 
+        <include name="Log-Filter-Logic/target/log-filter-logic-1.0.0.jar"/>
         <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
 
         <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
