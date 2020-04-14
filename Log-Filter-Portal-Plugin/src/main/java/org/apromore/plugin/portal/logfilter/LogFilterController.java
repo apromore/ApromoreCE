@@ -20,15 +20,26 @@
 
 package org.apromore.plugin.portal.logfilter;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.apromore.apmlog.filter.rules.LogFilterRule;
 import org.apromore.logfilter.LogFilterService;
 import org.apromore.logfilter.criteria.LogFilterCriterion;
 import org.apromore.logfilter.criteria.factory.LogFilterCriterionFactory;
-import org.apromore.logfilter.criteria.model.*;
+import org.apromore.logfilter.criteria.model.Action;
+import org.apromore.logfilter.criteria.model.Containment;
+import org.apromore.logfilter.criteria.model.Level;
+import org.apromore.logfilter.criteria.model.LogFilterTypeSelector;
 import org.apromore.logman.stats.LogStatistics;
 import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterOutputResult;
 import org.apromore.plugin.portal.logfilter.generic.LogFilterResultListener;
-import org.deckfour.xes.model.XAttributeMap;
 import org.deckfour.xes.model.XLog;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -37,8 +48,6 @@ import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Messagebox;
 import org.zkoss.zul.Window;
-import java.io.IOException;
-import java.util.*;
 
 /**
  * This is the main window controller for log filter plugin
@@ -86,7 +95,7 @@ public class LogFilterController {
     	this.logFilterService = logFilterService;
     	this.logFilterCriterionFactory = logFilterCriterionFactory;
     	this.resultListener = resultListener;
-    	initialize(portalContext, log, "concept:name", new ArrayList<LogFilterCriterion>(), stats.getStatistics(), 
+    	initialize(portalContext, log, "concept:name", new ArrayList<LogFilterRule>(), stats.getStatistics(), 
     				stats.getMinTimestamp(), stats.getMaxTimetamp());
     }
     
@@ -94,7 +103,7 @@ public class LogFilterController {
     							LogFilterService logFilterService,
     							LogFilterCriterionFactory logFilterCriterionFactory,
     							XLog log, String classifierAttribute, 
-								List<LogFilterCriterion> originalCriteria, 
+								List<LogFilterRule> originalCriteria, 
 								LogFilterResultListener resultListener) throws IOException {
         /**
          * Get the log with case-variant values
@@ -113,14 +122,15 @@ public class LogFilterController {
     }
     
     private void initialize(PortalContext portalContext, XLog log, String label, 
-    							List<LogFilterCriterion> originalCriteria, 
+    							List<LogFilterRule> originalCriteria, 
     							Map<String, Map<String, Integer>> options_frequency, 
     							long min, long max) throws IOException {
     	this.portalContext = portalContext;
     	this.log = log;
 //    	logFilterService = (LogFilterService)beanFactory.getBean("logFilterService");
 //    	logFilterCriterionFactory = (LogFilterCriterionFactory)beanFactory.getBean("LogFilterCriterionFactory");
-        this.criteria = logFilterCriterionFactory.copyFilterCriterionList(originalCriteria);
+        //this.criteria = logFilterCriterionFactory.copyFilterCriterionList(originalCriteria);
+    	this.criteria = logFilterCriterionFactory.convertFilterCriteria(originalCriteria);
         
         //filterSelectorW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/filterCriteria.zul", null, null);
         //filterSelectorW = (Window) Executions.createComponents("/zul/filterCriteria.zul", null, null);
@@ -140,16 +150,19 @@ public class LogFilterController {
         Button removeAllButton = (Button) filterSelectorW.getFellow("filterRemoveAllButton");
 
         okButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws InterruptedException {
                 save();
             }
         });
         cancelButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws InterruptedException {
             	filterSelectorW.detach();
             }
         });        
         createButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 new FilterCriterionDialog(portalContext, label, LogFilterController.this,
                 							logFilterCriterionFactory,
@@ -157,6 +170,7 @@ public class LogFilterController {
             }
         });
         editButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 if (criteriaList.getSelectedIndex() > -1) {
                     new FilterCriterionDialog(portalContext, label, LogFilterController.this,
@@ -166,6 +180,7 @@ public class LogFilterController {
             }
         });
         moveUpButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 if(criteriaList.getSelectedIndex() > 0) {
                     int pos = criteriaList.getSelectedIndex();
@@ -177,6 +192,7 @@ public class LogFilterController {
             }
         });
         moveDownButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 if(criteriaList.getSelectedIndex() > -1 && criteriaList.getSelectedIndex() < criteria.size() - 1) {
                     int pos = criteriaList.getSelectedIndex();
@@ -188,6 +204,7 @@ public class LogFilterController {
             }
         });
         removeButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) {
                 int selected = criteriaList.getSelectedIndex();
                 if(selected > -1) {
@@ -197,6 +214,7 @@ public class LogFilterController {
             }
         });
         removeAllButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) {
                 criteria.clear();
                 updateList();
