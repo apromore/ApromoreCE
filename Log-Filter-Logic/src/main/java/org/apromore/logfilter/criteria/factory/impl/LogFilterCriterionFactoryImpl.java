@@ -135,7 +135,9 @@ public class LogFilterCriterionFactoryImpl implements LogFilterCriterionFactory 
 	@Override
     public List<LogFilterCriterion> convertFilterCriteria(List<LogFilterRule> list) {
 	    List<LogFilterCriterion> criteria = new ArrayList<>();
-	    list.forEach(rule -> criteria.add(this.convertFilterCriteria(rule)));
+	    for (LogFilterRule rule : list) {
+	    	criteria.add(this.convertFilterCriteria(rule));
+	    }
 	    return criteria;
 	}
 	
