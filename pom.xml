@@ -93,8 +93,6 @@
         <module>PQL-Logic-WS</module>
         <module>PQL-Portal-Plugin</module>
         -->
-        <module>Process-Discoverer-Logic</module>
-        <module>Process-Discoverer-Portal-Plugin</module>
         <module>ProDrift-Logic</module>
         <module>ProDrift-Portal-Plugin</module>
 		<module>Quaestio</module> <!-- this module is compiled but not deployed to Virgo -->
