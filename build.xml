@@ -49,6 +49,7 @@
         <include name="Apromore-Assembly/Editor-Assembly/target/repository/usr/*"/>
         <include name="Apromore-Assembly/Filestore-Assembly/target/repository/usr/*"/>
         <include name="Apromore-Assembly/Predictive-Monitor-Assembly/target/repository/usr/*"/>
+        <include name="Community-Assembly/target/dependency/*.jar"/>
     </fileset>     
     
     <fileset id="fileset-community-properties" dir="${basedir}">

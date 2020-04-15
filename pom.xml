@@ -49,6 +49,7 @@
         <module>CLI-Tools/cpfImporter</module>
 		<module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
         <module>Cmapper-Portal-Plugin</module>
+        <module>Community-Assembly</module>
         <module>Compare-Logic</module>
         <module>Compare-Portal-Plugin</module>
         <module>Compare-Portal-Plugin2</module>
