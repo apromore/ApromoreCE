@@ -153,6 +153,14 @@
         <!-- Deployment Plugins -->
         <module>plugin-deployment/deployment-yawl</module>
     </modules>
+    
+    <repositories>
+        <repository>
+            <id>ApromoreCE_SupportLibs.mvn-repo</id>
+            <name>Maven repository for JARs specific to the Apromore CE project</name>
+            <url>https://raw.github.com/apromore/ApromoreCE_SupportLibs/master/mvn-repo/</url>
+        </repository>    
+    </repositories>
 
     <dependencyManagement>
         <dependencies>

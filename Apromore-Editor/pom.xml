@@ -59,7 +59,6 @@
                     <version>2.0.0</version>
                     <configuration>
                         <licenseResolver>${project.baseUri}../ApromoreCore/Apromore-Custom-Plugins/Apromore-Editor/src/license</licenseResolver>
-                        <licenseResolver>file:/Users/raboczi/Work/Apromore7/ApromoreCE/ApromoreCore/Apromore-Custom-Plugins/Apromore-Editor/src/license</licenseResolver>
                     </configuration>
                 </plugin>
             </plugins>
