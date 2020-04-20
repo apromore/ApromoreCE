@@ -18,24 +18,33 @@
   ~ If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
   -->
 
-<window width="95%" position="center" title="XES Implementation Registry">
-    <vbox>
-        <listbox id="xFactoryRegistryListbox">
-            <listhead>
-                <listheader label="Name" hflex="2"/>
-                <listheader label="Author" hflex="1"/>
-                <listheader label="Description" hflex="7"/>
-            </listhead>
-            <template name="model">
-                <listitem>
-                    <listcell label="${each.name}"/>
-                    <listcell label="${each.author}"/>
-                    <listcell label="${each.description}"/>
-                </listitem>
-            </template>
-        </listbox>
-        <div align="center">
-            <button id="okButton" label="OK" image="img/ok.png"></button>
-        </div>
-    </vbox>
+<window width="95%"
+        position="center"
+        title="XES Implementation Registry">
+  <vbox>
+    <listbox id="xFactoryRegistryListbox">
+      <listhead>
+        <listheader label="Name"
+                    hflex="2"/>
+        <listheader label="Author"
+                    hflex="1"/>
+        <listheader label="Description"
+                    hflex="7"/>
+      </listhead>
+      <template name="model">
+        <listitem>
+          <listcell label="${each.name}"/>
+          <listcell label="${each.author}"/>
+          <listcell label="${each.description}"/>
+        </listitem>
+      </template>
+    </listbox>
+    <div sclass="ap-window-footer-actions">
+      <div align="right">
+        <button id="okButton"
+                label="OK"
+                iconSclass="z-icon-check-circle"></button>
+      </div>
+    </div>
+  </vbox>
 </window>
