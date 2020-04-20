@@ -120,7 +120,7 @@
         </row>
         <row spans="2"
              sclass="ap-window-footer-actions">
-          <div align="center">
+          <div align="right">
             <button id="ibpsOKButton"
                     label="Structure"
                     iconSclass="z-icon-check-circle"></button>
