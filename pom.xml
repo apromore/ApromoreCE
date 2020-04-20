@@ -21,6 +21,22 @@
     <modules>
         <module>ApromoreCore</module>
         
+        <module>OSGi-Wrappers/bpstruct-osgi</module>
+        <module>OSGi-Wrappers/bpmntk-osgi</module>
+        <module>OSGi-Wrappers/antlr4-runtime-osgi</module>
+        <!--<module>OSGi-Wrappers/apm-verification-osgi</module>-->
+        <module>OSGi-Wrappers/declare-visualizer-osgi</module>
+        <module>OSGi-Wrappers/eventstr-confchecking-osgi</module>
+        <module>OSGi-Wrappers/jbpt-petri-osgi</module>
+        <module>OSGi-Wrappers/ltl-conf-check-osgi</module>
+        <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
+        <module>OSGi-Wrappers/postgresql-osgi</module>
+        <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
+        <module>OSGi-Wrappers/prodrift-osgi</module>
+        <module>OSGi-Wrappers/themis-osgi</module>
+        <module>OSGi-Wrappers/prom-adapters-osgi</module>
+        <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
+        
         <module>Activity-Filter-Logic</module>
         <module>Activity-Filter-Portal-Plugin</module>
         <!--
@@ -66,26 +82,6 @@
         <module>LTL-Conf-Portal-Plugin</module>
         <module>Metrics-Logic</module>
         <module>Metrics-Portal-Plugin</module>
-
-        <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
-        <module>OSGi-Wrappers/antlr4-runtime-osgi</module>
-        <!--<module>OSGi-Wrappers/apm-verification-osgi</module>-->
-        <module>OSGi-Wrappers/declare-visualizer-osgi</module>
-        <module>OSGi-Wrappers/eventstr-confchecking-osgi</module>
-        <module>OSGi-Wrappers/jbpt-petri-osgi</module>
-        <module>OSGi-Wrappers/ltl-conf-check-osgi</module>
-        <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
-        <!--<module>OSGi-Wrappers/pnapi-bpdiff-osgi</module>-->
-        <module>OSGi-Wrappers/postgresql-osgi</module>
-        <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
-        <!--<module>OSGi-Wrappers/prom-pnml-osgi</module>-->
-        <!--<module>OSGi-Wrappers/uma-bpdiff-osgi</module>-->
-        <!--<module>OSGi-Wrappers/lucene-osgi</module>-->
-        <!--<module>OSGi-Wrappers/pql-osgi</module>-->
-        <module>OSGi-Wrappers/prodrift-osgi</module>
-        <module>OSGi-Wrappers/themis-osgi</module>
-        <module>OSGi-Wrappers/prom-adapters-osgi</module>
-        
         <module>PerformanceMiner-Logic</module>
         <module>PerformanceMiner-Portal-Plugin</module>
         <!--

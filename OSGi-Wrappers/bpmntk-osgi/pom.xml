@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.apromore</groupId>
+        <artifactId>community</artifactId>
+        <version>1.0</version>
+        <relativePath>../../</relativePath>
+    </parent>
+
+    <artifactId>bpmntk-osgi</artifactId>
+    <version>2.1</version>
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Import-Package>
+                            org.apromore.processmining.models.*;version="[1.0,2.0)",
+                            org.apromore.processmining.plugins.*;version="[1.0,2.0)",
+                            *
+                        </Import-Package>
+                        <Export-Package>
+                            au.edu.qut.bpmn.structuring,
+                            au.edu.qut.bpmn.structuring.core,
+                            au.edu.qut.bpmn.structuring.graph,
+                            au.edu.qut.bpmn.metrics,
+                            au.edu.qut.bpmn.exporter,
+                            au.edu.qut.bpmn.exporter.impl
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>log-osgi</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>bpstruct-osgi</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>prom-bpmn-osgi</artifactId>
+            <version>1.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.apromore</groupId>
+            <artifactId>hpi-bpt-osgi</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
+</project>
