@@ -103,7 +103,7 @@ public class IBPStructPlugin extends DefaultPortalPlugin {
     private Slider maxDepth;
     private Button cancelButton;
     private Button okButton;
-    private Groupbox advancedOptions;
+    // private Groupbox advancedOptions;
 
     @Inject
     public IBPStructPlugin(final IBPStructService    ibpstructService,
@@ -157,9 +157,9 @@ public class IBPStructPlugin extends DefaultPortalPlugin {
         try {
             this.settings = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/ibpstruct.zul", null, null);
 
-            this.advancedOptions = (Groupbox) this.settings.getFellow("advancedOptions");
-            this.advancedOptions.setOpen(false);
-            this.advancedOptions.setClosable(true);
+            // this.advancedOptions = (Groupbox) this.settings.getFellow("advancedOptions");
+            // this.advancedOptions.setOpen(false);
+            // this.advancedOptions.setClosable(true);
 
             this.structProcName = (Textbox) this.settings.getFellow("structProcName");
             this.structProcName.setValue("structured_" + psm.getName());
