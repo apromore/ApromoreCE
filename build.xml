@@ -43,6 +43,7 @@
         <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
         <include name="OSGi-Wrappers/raffaeleconforti-osgi/target/raffaeleconforti-osgi-1.1.1.jar"/>
         <include name="OSGi-Wrappers/prom-adapters-osgi/target/prom-adapters-osgi-1.0.jar"/>
+        <include name="OSGi-Wrappers/jdom2-osgi/target/jdom2-osgi-2.0.6.jar"/>
     </fileset>
     
     <fileset id="fileset-community-assembly" dir="${basedir}">

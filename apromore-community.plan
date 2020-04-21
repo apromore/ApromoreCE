@@ -31,6 +31,7 @@
     <artifact type="bundle" name="org.apromore.prom-adapters-osgi" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bpstruct-osgi" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bpmntk-osgi" version="[2.0.0, 3)"/>
+    <artifact type="bundle" name="org.apromore.jdom2-osgi" version="[2.0.0, 3)"/>
     
     <!-- SCHEMA -->
     

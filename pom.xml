@@ -36,6 +36,7 @@
         <module>OSGi-Wrappers/themis-osgi</module>
         <module>OSGi-Wrappers/prom-adapters-osgi</module>
         <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
+        <module>OSGi-Wrappers/jdom2-osgi</module>
         
         <module>Activity-Filter-Logic</module>
         <module>Activity-Filter-Portal-Plugin</module>
