@@ -19,7 +19,6 @@
   -->
 <popup id="popupID">
     <vbox width="100px">
-
         <listbox id="myBox" model="${characterizationStatements}" height="200px" width="100%">
             <listhead>
                 <listheader label="Load On Demand"/>
@@ -27,7 +26,5 @@
             <listitem label="${each.characterizationStatement}">
             </listitem>
         </listbox>
-
     </vbox>
-
 </popup>
