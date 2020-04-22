@@ -64,10 +64,6 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <!--
-                    There is some problem in the bpstruct JAR that causes the newer version to throw an error!
-                    So we use the older version as workaround
-                -->
                 <version>2.3.7</version>
                 <extensions>true</extensions>
                 <configuration>
@@ -145,16 +141,6 @@
                             org.springframework.ws.soap.server.endpoint,
                             org.springframework.ws.server.endpoint.mapping,
                             org.springframework.ws.transport.http,
-                            !edu.sussex.nlp.jws,
-                            !junit*,
-                            !net.didion.jwnl*,
-                            !de.hpi.bpt.process.*,
-                            !de.hpi.bpt.process.checks.structural,
-                            !ee.ut.bpstruct,
-                            !de.hpi.bpt.graph,
-                            !de.hpi.bpt.graph.abs,
-                            !de.hpi.bpt.hypergraph.abs,
-                            !de.hpi.bpt.graph.algo.*,
                             *
                         </Import-Package>
                         <JPA-PersistenceUnits>Apromore</JPA-PersistenceUnits>
