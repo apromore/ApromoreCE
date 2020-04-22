@@ -48,6 +48,7 @@
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>bpstruct-osgi</artifactId>
+            <version>1.2</version>
         </dependency>
         
         <dependency>
