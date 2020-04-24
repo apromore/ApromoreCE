@@ -3,10 +3,14 @@
         position="center,center" closable="true" id="stageminingresult" sizable="false" maximizable="true" width="100%" height="100%" contentStyle="overflow:auto">
 
 	<n:div id="myDiagramDiv" style="border: solid 1px black; height: 80%; width: 100%; position: absolute"></n:div>
-    <button id="stageminingresult_layout" xmlns:w="client" w:onClick="layout();">Layout (Dagre)</button>
-	<button id="stageminingresult_layout_cola" xmlns:w="client" w:onClick="layout_cola();">Layout (Cola)</button>
-    <button id="stageminingresult_createLogButton">Create Staged Log...</button>
-    
+		<div sclass="ap-window-footer-actions">
+			<div align="left">
+				<button id="stageminingresult_layout" xmlns:w="client" w:onClick="layout();">Layout (Dagre)</button>
+				<button id="stageminingresult_layout_cola" xmlns:w="client" w:onClick="layout_cola();">Layout (Cola)</button>
+				<button id="stageminingresult_createLogButton">Create Staged Log</button>
+			</div>
+		</div>
+
     <script type="text/javascript">
 		var diagram;
 		

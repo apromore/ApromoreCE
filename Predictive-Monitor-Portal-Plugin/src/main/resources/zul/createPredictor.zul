@@ -21,9 +21,15 @@
 <window xmlns:n="http://www.zkoss.org/2005/zk/native"
         xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
+        width="500px"
         closable="true" position="center" title="Predictive Monitoring: Create Predictor">
-    <vbox width="500px">
-        <grid>
+    <style>
+        .z-auxheader {
+        border-right-width: 0
+        }
+    </style>
+    <vbox>
+        <grid sclass="ap-grid">
             <columns>
                <column width="8em"/>
                <column/>
@@ -47,9 +53,11 @@
                 </row>
             </rows>
         </grid>
-        <div align="center">
-            <button id="ok" label="OK" iconSclass="z-icon-check-circle"/>
-            <button id="cancel" label="Cancel" iconSclass="z-icon-times-circle"/>
+        <div sclass="ap-window-footer-actions">
+            <div align="center">
+                <button id="ok" label="OK" iconSclass="z-icon-check-circle"/>
+                <button id="cancel" label="Cancel" iconSclass="z-icon-times-circle"/>
+            </div>
         </div>
     </vbox>
 </window>
