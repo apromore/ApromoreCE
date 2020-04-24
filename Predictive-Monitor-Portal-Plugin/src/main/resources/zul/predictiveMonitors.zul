@@ -21,14 +21,18 @@
 <window xmlns:n="http://www.zkoss.org/2005/zk/native"
         xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
+        width="700px"
         closable="true" position="center" title="Predictive Monitoring setup">
     <caption>
-        <a href="http://apromore.org/documentation/features/visualize-performance-predictions-via-dashboard" target="_blank">
-            <button label="Help" image="img/Help.png" style="margin-left: 350px"></button>
-        </a>
+        <toolbarbutton iconSclass="ap-icon ap-icon-help" href="https://apromore.org/documentation/features/visualize-performance-predictions-via-dashboard/" target="_blank" />
     </caption>
+    <style>
+        .z-auxheader {
+            border-right-width: 0
+        }
+    </style>
     <vbox>
-        <listbox id="predictiveMonitors" width="600px" checkmark="true">
+        <listbox id="predictiveMonitors" hflex="1" checkmark="true">
             <auxhead>
                 <auxheader>Predictive Monitors</auxheader>
             </auxhead>
@@ -41,11 +45,13 @@
                 </listitem>
             </template>
         </listbox>
+        <div sclass="ap-window-footer-actions">
         <div align="center">
             <button id="create"  label="Create dataflow" />
             <button id="delete"  label="Delete dataflow" />
             <button id="load"    label="Stream log to dataflow" />
             <button id="monitor" label="Show dashboard" />
+        </div>
         </div>
     </vbox>
 </window>

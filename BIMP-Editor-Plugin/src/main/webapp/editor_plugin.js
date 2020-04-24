@@ -37,7 +37,7 @@ ORYX.Plugins.BIMPSimulator = ORYX.Plugins.AbstractPlugin.extend({
             'functionality': this.simulate.bind(this),
             'group': 'Configuration',
             'icon': "/bimp/icon.png",
-            'description': 'Upload file to BIMP Simulator (plugin)',
+            'description': 'Simulate in BIMP',
             'index': 1
         });
     },

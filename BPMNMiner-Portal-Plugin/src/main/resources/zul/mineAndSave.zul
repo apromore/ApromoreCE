@@ -22,6 +22,10 @@
     <vbox align="center" width="100%" style="padding: 4px">
         <label id="description" value="&#xA0;" hflex="1"/>
         <progressmeter id="fractionComplete" hflex="1"/>
-        <button id="cancel" label="Cancel" image="img/cancel2.png"></button>
+        <div sclass="ap-window-footer-actions">
+            <div align="center">
+                <button id="cancel" label="Cancel" iconSclass="z-icon-times-circle"></button>
+            </div>
+        </div>
     </vbox>
 </window>

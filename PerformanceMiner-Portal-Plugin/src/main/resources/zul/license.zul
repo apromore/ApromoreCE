@@ -18,7 +18,7 @@
   ~ If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
   -->
 
-<window id="perfmining_license" width="600px" height="400px" closable="false" sizable="false" maximizable="false" minimizable="false" position="center,center" title="Conditions of Use">
+<window id="perfmining_license" width="600px" closable="false" sizable="false" maximizable="false" minimizable="false" position="center,center" title="Conditions of Use">
 
     <style>
 
@@ -56,6 +56,7 @@
                 </row>
 
                 <row id="Buttons" spans="2">
+
                     <div align="center">
                         <button id="OKButton" label="OK" iconSclass="z-icon-check-circle" height="30px"></button>
                         <button id="CancelButton" label="Cancel" iconSclass="z-icon-times-circle" height="30px"></button>

@@ -18,8 +18,9 @@
   ~ If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
   -->
 
-<window width="95%"
+<window width="80%"
         position="center"
+        closable="true"
         title="XES Implementation Registry">
   <vbox>
     <listbox id="xFactoryRegistryListbox">
@@ -40,7 +41,7 @@
       </template>
     </listbox>
     <div sclass="ap-window-footer-actions">
-      <div align="right">
+      <div align="center">
         <button id="okButton"
                 label="OK"
                 iconSclass="z-icon-check-circle"></button>
