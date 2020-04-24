@@ -2,7 +2,7 @@
 
 # Apromore Community Edition
 
-This repository contains source code of [Apromore Community Edition](https://apromore.org/platform/editions/). This edition includes all the experimental plugins developed by the open-source community on top of Apromore Core. You can choose to use the H2 or MySQL database, the plugins you want to install, configure LDAP access and Apromore Portal’s URL, etc. Below you can find instructions to build this edition locally. Alternatively, you can run it from our public node in [Estonia](http://apromore-ce.cloud.ut.ee) or download a contenarized image in [Docker] (https://github.com/apromore/ApromoreDocker/releases).
+This repository contains source code of [Apromore Community Edition](https://apromore.org/platform/editions/). This edition includes all the experimental plugins developed by the open-source community on top of Apromore Core. You can choose to use the H2 or MySQL database, the plugins you want to install, configure LDAP access and Apromore Portal’s URL, etc. Below you can find instructions to build this edition locally. Alternatively, you can run it from our public node in [Estonia](http://apromore-ce.cloud.ut.ee) or download a contenarized image in [Docker](https://github.com/apromore/ApromoreDocker/releases).
 
 
 ## System Requirements
