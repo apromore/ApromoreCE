@@ -65,18 +65,18 @@
         <module>CLI-Tools/bpmncmap</module>
         <module>CLI-Tools/cpfImporter</module>
         <module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
-        <module>Cmapper-Portal-Plugin</module>
+        <!--<module>plugin-legacy/Cmapper-Portal-Plugin</module>-->
         <module>Community-Assembly</module>
         <module>Compare-Logic</module>
-        <module>Compare-Portal-Plugin</module>
+        <!--<module>plugin-legacy/Compare-Portal-Plugin</module>-->
         <module>Compare-Portal-Plugin2</module>
-        <module>File-Legacy-Portal-Plugin</module>
+        <!--<module>plugin-legacy/File-Legacy-Portal-Plugin</module>-->
         <module>filestore-client</module>
         <module>IBPStruct-Logic</module>
         <module>IBPStruct-Portal-Plugin</module>
         <module>Infrequent-Behaviour-Filter-Logic</module>
         <module>Infrequent-Behaviour-Filter-Portal-Plugin</module>
-        <module>Log-Animation-Portal-Plugin2</module>
+        <!--<module>plugin-legacy/Log-Animation-Portal-Plugin2</module>-->
         <module>Log-Filter-Logic</module>
         <module>Log-Filter-Portal-Plugin</module>
         <module>LTL-Conf-Logic</module>
@@ -94,7 +94,7 @@
         <module>ProDrift-Logic</module>
         <module>ProDrift-Portal-Plugin</module>
         <module>Quaestio</module> <!-- this module is compiled but not deployed to Virgo -->
-        <module>Quaestio-Portal-Plugin</module>
+        <!--<module>plugin-legacy/Quaestio-Portal-Plugin</module>-->
         <module>Sample-Portal-Plugin</module>
         <module>StageMining-Logic</module>
         <module>StageMining-Portal-Plugin</module>
@@ -119,7 +119,7 @@
         <module>Predictor-Training-Portal-Plugin</module>
         
         <module>XES-Selection-Portal-Plugin</module>
-        <module>Theme-Selection-Portal-Plugin</module>
+        <!--<module>plugin-legacy/Theme-Selection-Portal-Plugin</module>-->
 
         <!-- Canoniser Plugins -->
         <module>plugin-canoniser/aris</module>

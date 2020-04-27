@@ -81,13 +81,13 @@
         <include name="BProVe-Logic/target/gbprove-logic-1.1.jar"/>
 
         <!--<include name="Cmapper/target/cmapper-2.0.jar"/>-->
-        <include name="Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>
+        <!--<include name="plugin-legacy/Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>-->
 
         <include name="Compare-Logic/target/compare-logic-1.1.jar"/>
-        <include name="Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
+        <!--<include name="plugin-legacy/Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>-->
         <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
 
-        <include name="File-Legacy-Portal-Plugin/target/file-legacy-portal-plugin-1.0.jar"/>
+        <!--<include name="plugin-legacy/File-Legacy-Portal-Plugin/target/file-legacy-portal-plugin-1.0.jar"/>-->
 
         <include name="LTL-Conf-Logic/target/ltl-conf-logic-1.1.jar"/>
         <include name="LTL-Conf-Portal-Plugin/target/ltl-conf-portal-plugin-1.1.war"/>
@@ -114,7 +114,7 @@
         <include name="Infrequent-Behaviour-Filter-Logic/target/infrequent-behaviour-filter-logic-1.1.jar"/>
         <include name="Infrequent-Behaviour-Filter-Portal-Plugin/target/infrequent-behaviour-filter-portal-plugin-1.1.jar"/>
 
-        <include name="Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
+        <!--<include name="plugin-legacy/Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>-->
 
         <include name="Log-Filter-Logic/target/log-filter-logic-1.0.0.jar"/>
         <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
@@ -128,7 +128,7 @@
         <include name="ProDrift-Logic/target/prodrift-logic-1.1.jar"/>
         <include name="ProDrift-Portal-Plugin/target/prodrift-portal-plugin-1.1.jar"/>
 
-        <include name="Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>
+        <!--<include name="plugin-legacy/Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>-->
 
         <include name="StageMining-Logic/target/stagemining-logic-1.1.jar"/>
         <include name="StageMining-Portal-Plugin/target/stagemining-portal-plugin-1.1.jar"/>
@@ -142,7 +142,7 @@
         
         <include name="XES-Selection-Portal-Plugin/target/xes-selection-portal-plugin-1.0.jar"/>
         
-        <include name="Theme-Selection-Portal-Plugin/target/theme-selection-portal-plugin-1.0.jar"/>
+        <!--<include name="plugin-legacy/Theme-Selection-Portal-Plugin/target/theme-selection-portal-plugin-1.0.jar"/>-->
         
         <include name="plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" />
         <include name="plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" />

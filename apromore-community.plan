@@ -69,7 +69,7 @@
     <artifact type="bundle" name="org.apromore.editor-platform-extension-xpdl"          version="[1.2, 2)"/>
     <artifact type="bundle" name="org.apromore.editor-platform-extension-yawl"          version="[1.2, 2)"/>
 
-    <artifact type="bundle" name="org.apromore.file-legacy-portal-plugin" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.file-legacy-portal-plugin" version="[1.0.0, 2)"/>-->
 
     <!-- CUSTOM PLUGINS -->
     
@@ -87,10 +87,10 @@
     
     
     <!--<artifact type="bundle" name="com.processconfiguration.cmapper" version="[2.0.0, 3)"/>-->
-    <artifact type="bundle" name="org.apromore.cmapper-portal-plugin" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.cmapper-portal-plugin" version="[1.0.0, 2)"/>-->
     
     <artifact type="bundle" name="org.apromore.compare-logic" version="[1.0.0, 2)"/>
-    <artifact type="bundle" name="org.apromore.compareBP-portal-plugin" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.compareBP-portal-plugin" version="[1.0.0, 2)"/>-->
     <artifact type="bundle" name="org.apromore.compareBP-portal-plugin2" version="[1.0.0, 2)"/>
     
     <artifact type="bundle" name="org.apromore.ltl-conf-logic" version="[1.0.0, 2)"/>
@@ -119,7 +119,7 @@
     <artifact type="bundle" name="org.apromore.infrequent-behaviour-filter-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.infrequent-behaviour-filter-portal-plugin" version="[1.0.0, 2)"/>
     
-    <artifact type="bundle" name="org.apromore.log-animation-portal-plugin2" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.log-animation-portal-plugin2" version="[1.0.0, 2)"/>-->
     
     <artifact type="bundle" name="org.apromore.log-filter-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.log-filter-portal-plugin" version="[1.0.0, 2)"/>
@@ -135,7 +135,7 @@
     <artifact type="bundle" name="org.apromore.prodrift-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.prodrift-portal-plugin" version="[1.0.0, 2)"/>
     
-    <artifact type="bundle" name="org.apromore.quaestio-portal-plugin" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.quaestio-portal-plugin" version="[1.0.0, 2)"/>-->
     
     <artifact type="bundle" name="org.apromore.stagemining-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.stagemining-portal-plugin" version="[1.0.0, 2)"/>
@@ -143,7 +143,7 @@
     <artifact type="bundle" name="org.apromore.bpmnminer-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bpmnminer-portal-plugin" version="[1.0.0, 2)"/>
     
-    <artifact type="bundle" name="org.apromore.theme-selection-portal-plugin" version="[1.0.0, 2)"/>
+    <!--<artifact type="bundle" name="org.apromore.theme-selection-portal-plugin" version="[1.0.0, 2)"/>-->
     
     <artifact type="bundle" name="org.apromore.xes-selection-portal-plugin" version="[1.0.0, 2)"/>    
     
