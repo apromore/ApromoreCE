@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Copyright © 2009-2018 The Apromore Initiative.
-  ~
-  ~ This file is part of "Apromore".
-  ~
-  ~ "Apromore" is free software; you can redistribute it and/or modify
-  ~ it under the terms of the GNU Lesser General Public License as
-  ~ published by the Free Software Foundation; either version 3 of the
-  ~ License, or (at your option) any later version.
-  ~
-  ~ "Apromore" is distributed in the hope that it will be useful, but
-  ~ WITHOUT ANY WARRANTY; without even the implied warranty
-  ~ of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  ~ See the GNU Lesser General Public License for more details.
-  ~
-  ~ You should have received a copy of the GNU Lesser General Public
-  ~ License along with this program.
-  ~ If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
-  -->
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -53,45 +34,10 @@
     <build>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>license-maven-plugin</artifactId>
-                    <version>2.0.0</version>
-                    <configuration>
-                        <licenseResolver>${project.baseUri}../ApromoreCore/Apromore-Custom-Plugins/Apromore-Editor/src/license</licenseResolver>
-                        <licenseResolver>file:/Users/raboczi/Work/Apromore7/ApromoreCE/ApromoreCore/Apromore-Custom-Plugins/Apromore-Editor/src/license</licenseResolver>
-                    </configuration>
-                </plugin>
             </plugins>
         </pluginManagement>
 
         <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <configuration>
-                    <licenseName>signavio_core_components</licenseName>
-                    <organizationName>Philipp Berger, Martin Czuchra, Gero Decker,
-Ole Eckermann, Lutz Gericke,
-Alexander Hold, Alexander Koglin, Oliver Kopp, Stefan Krumnow,
-Matthias Kunze, Philipp Maschke, Falko Menge, Christoph Neijenhuis,
-Hagen Overdick, Zhen Peng, Nicolas Peters, Kerstin Pfitzner, Daniel Polak,
-Steffen Ryll, Kai Schlichting, Jan-Felix Schwarz, Daniel Taschik,
-Willi Tscheschner, Björn Wagner, Sven Wagner-Boysen, Matthias Weidlich</organizationName>
-                    <projectName>Signavio Core Components</projectName>
-                    <inceptionYear>2006</inceptionYear>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
-                    <excludes>
-                        <exclude>**/package-info.java</exclude>
-                        <exclude>**/Combination.java</exclude>
-                        <exclude>**/EPCEdgeLayouter.java</exclude>
-                        <exclude>**/EPCTopToBottomGridLayouter.java</exclude>
-                        <exclude>**/EPMLToJSONConverter.java</exclude>
-                    </excludes>
-               </configuration>
-            </plugin>
         </plugins>
     </build>
 
