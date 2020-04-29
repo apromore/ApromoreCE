@@ -30,14 +30,18 @@
 <window xmlns:n="http://www.zkoss.org/2005/zk/native"
         xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
+        width="600px"
         closable="true" position="center" title="Predictive Monitoring: Create Predictive Monitor">
-    <caption style="width: 100%">
-        <a href="http://apromore.org/documentation/features/visualize-performance-predictions-via-dashboard" target="_blank">
-            <button label="Help" image="img/Help.png" style="margin-left: 230px"></button>
-        </a>
+    <caption>
+        <toolbarbutton iconSclass="ap-icon ap-icon-help" href="https://apromore.org/documentation/features/visualize-performance-predictions-via-dashboard/" target="_blank" />
     </caption>
-    <vbox width="500px">
-        <grid>
+    <style>
+        .z-auxheader {
+        border-right-width: 0
+        }
+    </style>
+    <vbox>
+        <grid sclass="ap-grid">
             <columns>
                <column width="8em"/>
                <column/>
@@ -49,7 +53,7 @@
                 </row>
             </rows>
         </grid>
-        <listbox id="predictors" width="600px" checkmark="true">
+        <listbox id="predictors" checkmark="true">
             <auxhead>
                 <auxheader colspan="2">Imported Predictors</auxheader>
             </auxhead>
@@ -64,11 +68,13 @@
                 </listitem>
             </template>
         </listbox>
+        <div sclass="ap-window-footer-actions">
         <div align="center">
             <button id="create" label="Create Monitor" iconSclass="z-icon-check-circle"/>
-            <button id="loadPredictorFile" label="Load predictor file" height="32px"/>
-            <button id="deletePredictors" label="Delete predictor" height="32px"/>
+            <button id="loadPredictorFile" label="Load predictor file" />
+            <button id="deletePredictors" label="Delete predictor" />
             <button id="cancel" label="Cancel" iconSclass="z-icon-times-circle"/>
+        </div>
         </div>
     </vbox>
 </window>

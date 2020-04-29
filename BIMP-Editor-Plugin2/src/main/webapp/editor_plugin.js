@@ -36,7 +36,7 @@ ORYX.Plugins.BIMPSimulator = Clazz.extend({
             'functionality': this.simulate.bind(this),
             'group': 'Configuration',
             'icon': "/bimp2/icon.png",
-            'description': 'Upload file to BIMP Simulator (plugin)',
+            'description': 'Simulate in BIMP',
             'index': 1
         });
     },

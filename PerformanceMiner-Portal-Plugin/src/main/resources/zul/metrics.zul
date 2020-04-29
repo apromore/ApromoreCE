@@ -23,8 +23,7 @@
   -->
 <window xmlns:n="http://www.zkoss.org/2005/zk/native" xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
-        position="nocenter" top="0px" left="320px" id="perfmining_metricsview" closable="true" sizable="false" maximizable="false" minimizable="false" width="920px" height="600px">
-
+        position="nocenter" top="0px" left="400px" id="perfmining_metricsview" closable="true" sizable="false" maximizable="false" minimizable="false" width="920px" height="600px">
     <style>
 
         <!-- Make Plain Grid -->

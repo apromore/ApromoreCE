@@ -66,7 +66,7 @@ import org.apromore.model.VersionSummaryType;
 import org.apromore.plugin.property.RequestParameterType;
 import org.apromore.portal.ConfigBean;
 import org.apromore.portal.common.UserSessionManager;
-import org.apromore.portal.dialogController.dto.SignavioSession;
+import org.apromore.portal.dialogController.dto.ApromoreSession;
 import org.apromore.portal.exception.ExceptionFormats;
 import org.apromore.portal.util.StreamUtil;
 import org.apromore.service.compare.CompareService;
@@ -110,7 +110,7 @@ public class ModelToLogComparisonController extends BaseController {
 
 		String id = Executions.getCurrent().getParameter("id");
 		if (id != null) {
-			SignavioSession session = userSessionManager.getEditSession(id);
+			ApromoreSession session = userSessionManager.getEditSession(id);
 			if (session == null) {
 				throw new AssertionError("No edit session associated with id " + id);
 			}

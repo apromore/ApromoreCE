@@ -34,7 +34,7 @@ import org.apromore.model.VersionSummaryType;
 import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.property.RequestParameterType;
 import org.apromore.portal.common.UserSessionManager;
-import org.apromore.portal.dialogController.dto.SignavioSession;
+import org.apromore.portal.dialogController.dto.ApromoreSession;
 import org.apromore.service.compare.CompareService;
 import org.deckfour.xes.extension.std.XConceptExtension;
 import org.deckfour.xes.factory.XFactory;
@@ -279,7 +279,7 @@ public class CompareController {
         try {
             String id = UUID.randomUUID().toString();
 
-            SignavioSession session = new SignavioSession(editSession1, editSession2, null, process1, version1, process2, version2, requestParameterTypes);
+            ApromoreSession session = new ApromoreSession(editSession1, editSession2, null, process1, version1, process2, version2, requestParameterTypes);
             UserSessionManager.setEditSession(id, session);
 
             String url = "../compare2/compareModels.zul?id=" + id;
@@ -302,7 +302,7 @@ public class CompareController {
         try {
             String id = UUID.randomUUID().toString();
 
-            SignavioSession session = new SignavioSession(editSession1, null, null, process1, version1, null, null, requestParameterTypes);
+            ApromoreSession session = new ApromoreSession(editSession1, null, null, process1, version1, null, null, requestParameterTypes);
             session.setLog(log);
             UserSessionManager.setEditSession(id, session);
 

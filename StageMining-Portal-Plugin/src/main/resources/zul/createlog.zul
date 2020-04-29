@@ -34,17 +34,15 @@
 
     </style>
     <vbox>
-        <grid>
+        <grid sclass="ap-grid ap-form">
             <columns sizable="true">
                 <column width="50%"></column>
                 <column width="50%"></column>
             </columns>
             <rows>
-
                 <row spans="2">
                     <label id="errorLabel" value="" width="100%" style="color: red"/>
                 </row>
-
                 <row width="100%" spans="2">
                     <groupbox width="100%">
                         <caption label="Parameters"/>
@@ -64,9 +62,8 @@
                         </grid>
                     </groupbox>
                 </row>
-
-                <row id="Buttons" spans="2">
-                    <div align="center">
+                <row id="Buttons" spans="2" sclass="ap-window-footer-actions">
+                    <div align="right">
                         <button id="createLogOKButton" label="OK" iconSclass="z-icon-check-circle" disabled="false" height="30px"></button>
                         <button id="createLogCancelButton" label="Cancel" iconSclass="z-icon-times-circle" height="30px"></button>
                     </div>

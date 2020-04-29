@@ -35,7 +35,7 @@ import org.apromore.portal.context.EditorPluginResolver;
 import org.apromore.portal.dialogController.BaseController;
 import org.apromore.portal.dialogController.MainController;
 import org.apromore.portal.dialogController.SaveAsDialogController;
-import org.apromore.portal.dialogController.dto.SignavioSession;
+import org.apromore.portal.dialogController.dto.ApromoreSession;
 import org.apromore.portal.exception.ExceptionFormats;
 import org.apromore.portal.util.StreamUtil;
 import org.apromore.service.CanoniserService;
@@ -96,7 +96,7 @@ public class ModelMisconformanceController extends BaseController {
 
         String id = Executions.getCurrent().getParameter("id");
         if (id != null) {
-            SignavioSession session = userSessionManager.getEditSession(id);
+            ApromoreSession session = userSessionManager.getEditSession(id);
             if (session == null) {
                 throw new AssertionError("No edit session associated with id " + id);
             }

@@ -25,14 +25,16 @@
 <project>
     <description>Apromore Community Distribution</description>
 
+    <import file="ApromoreCore/build-core.xml" as="core"/>
+
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
     
-    <import file="ApromoreCore/build-core.xml" as="core"/>
-    
-    <filter token="portal.showSignavio" value="true"/>
+    <filter token="csvimporter-logic.bundle" value="org.apromore.csvimporter-logic"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
     
     <fileset id="fileset-community-osgi-lib" dir="${basedir}">
+        <include name="OSGi-Wrappers/bpstruct-osgi/target/bpstruct-osgi-1.2.jar"/>
+        <include name="OSGi-Wrappers/bpmntk-osgi/target/bpmntk-osgi-2.1.jar"/>
         <include name="OSGi-Wrappers/antlr4-runtime-osgi/target/antlr4-runtime-osgi-4.3.jar"/>
         <!--<include name="OSGi-Wrappers/apm-verification-osgi/target/apm-verification-osgi-1.1.jar"/>-->
         <include name="OSGi-Wrappers/declare-visualizer-osgi/target/declare-visualizer-osgi-1.1.jar"/>
@@ -41,17 +43,17 @@
         <include name="OSGi-Wrappers/ltl-conf-check-osgi/target/ltl-conf-check-osgi-1.1.jar"/>
         <include name="OSGi-Wrappers/ltl-to-automaton-osgi/target/ltl-to-automaton-osgi-1.1.jar"/>
         <include name="OSGi-Wrappers/postgresql-osgi/target/postgresql-osgi-9.3.jar"/>
-        <!--<include name="OSGi-Wrappers/prom-pnml-osgi/target/prom-pnml-osgi-1.1.jar"/>-->
-        <!--<include name="OSGi-Wrappers/pn-automata-conv-osgi/target/pn-automata-conv-osgi-1.1.jar"/>-->
         <include name="OSGi-Wrappers/prodrift-osgi/target/prodrift-osgi-2.5.jar"/>
         <include name="OSGi-Wrappers/raffaeleconforti-osgi/target/raffaeleconforti-osgi-1.1.1.jar"/>
         <include name="OSGi-Wrappers/prom-adapters-osgi/target/prom-adapters-osgi-1.0.jar"/>
+        <include name="OSGi-Wrappers/jdom2-osgi/target/jdom2-osgi-2.0.6.jar"/>
     </fileset>
     
     <fileset id="fileset-community-assembly" dir="${basedir}">
         <include name="Apromore-Assembly/Editor-Assembly/target/repository/usr/*"/>
         <include name="Apromore-Assembly/Filestore-Assembly/target/repository/usr/*"/>
         <include name="Apromore-Assembly/Predictive-Monitor-Assembly/target/repository/usr/*"/>
+        <include name="Community-Assembly/target/dependency/*.jar"/>
     </fileset>     
     
     <fileset id="fileset-community-properties" dir="${basedir}">
@@ -82,11 +84,13 @@
         <include name="BProVe-Logic/target/gbprove-logic-1.1.jar"/>
 
         <!--<include name="Cmapper/target/cmapper-2.0.jar"/>-->
-        <include name="Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>
+        <!--<include name="plugin-legacy/Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>-->
 
         <include name="Compare-Logic/target/compare-logic-1.1.jar"/>
-        <include name="Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>
+        <!--<include name="plugin-legacy/Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>-->
         <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
+
+        <!--<include name="plugin-legacy/File-Legacy-Portal-Plugin/target/file-legacy-portal-plugin-1.0.jar"/>-->
 
         <include name="LTL-Conf-Logic/target/ltl-conf-logic-1.1.jar"/>
         <include name="LTL-Conf-Portal-Plugin/target/ltl-conf-portal-plugin-1.1.war"/>
@@ -113,8 +117,9 @@
         <include name="Infrequent-Behaviour-Filter-Logic/target/infrequent-behaviour-filter-logic-1.1.jar"/>
         <include name="Infrequent-Behaviour-Filter-Portal-Plugin/target/infrequent-behaviour-filter-portal-plugin-1.1.jar"/>
 
-        <include name="Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>
+        <!--<include name="plugin-legacy/Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>-->
 
+        <include name="Log-Filter-Logic/target/log-filter-logic-1.0.0.jar"/>
         <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
 
         <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
@@ -123,13 +128,10 @@
         <include name="PerformanceMiner-Logic/target/perfmining-logic-1.0.jar"/>
         <include name="PerformanceMiner-Portal-Plugin/target/perfmining-portal-plugin-1.0.jar"/>
 
-        <include name="Process-Discoverer-Logic/target/process-discoverer-logic-2.0.0.jar"/>
-        <include name="Process-Discoverer-Portal-Plugin/target/process-discoverer-portal-plugin-2.0.0.war"/>
-
         <include name="ProDrift-Logic/target/prodrift-logic-1.1.jar"/>
         <include name="ProDrift-Portal-Plugin/target/prodrift-portal-plugin-1.1.jar"/>
 
-        <include name="Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>
+        <!--<include name="plugin-legacy/Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>-->
 
         <include name="StageMining-Logic/target/stagemining-logic-1.1.jar"/>
         <include name="StageMining-Portal-Plugin/target/stagemining-portal-plugin-1.1.jar"/>
@@ -143,7 +145,7 @@
         
         <include name="XES-Selection-Portal-Plugin/target/xes-selection-portal-plugin-1.0.jar"/>
         
-        <include name="Theme-Selection-Portal-Plugin/target/theme-selection-portal-plugin-1.0.jar"/>
+        <!--<include name="plugin-legacy/Theme-Selection-Portal-Plugin/target/theme-selection-portal-plugin-1.0.jar"/>-->
         
         <include name="plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" />
         <include name="plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" />
@@ -193,6 +195,7 @@
     
     <target name="copy-virgo-community" depends="clean-virgo, setup-virgo, create-repository-dirs, copy-core">
         <copy todir="${core-dir-virgo}/repository/usr" flatten="true" overwrite="true">
+            <file file="ApromoreCore/Apromore-Custom-Plugins/CSVImporter-Logic/target/csvimporter-logic-1.0.jar"/>
             <fileset refid="fileset-community-properties"/> 
             <fileset refid="fileset-community-osgi-lib"/> 
             <fileset refid="fileset-community-schema"/>   

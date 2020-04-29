@@ -22,23 +22,25 @@
   #L%
   -->
 
-<window id="win" width="550px" closable="false" position="center,top" title="Inductive Miner Settings">
+<window id="win" width="600px" closable="false" position="center,top" title="Inductive Miner Settings">
     <vbox>
-        <grid sclass="ap-grid">
+        <grid sclass="ap-grid ap-form">
             <columns>
-                <column width="270px" />
-                <column />
+                <column width="50%" />
+                <column width="50%" />
             </columns>
             <rows>
                 <row>
                     <label value="Noise Threshold (%)" />
                     <slider id="noiseThresholdIMf" mold="scale" maxpos="100" curpos="5" width="250px"/>
                 </row>
+                <row spans="2" sclass="ap-window-footer-actions">
+                    <div align="right">
+                        <button id="settingsOKButton" label="OK" iconSclass="z-icon-check-circle"></button>
+                        <button id="settingsCancelButton" label="Cancel" iconSclass="z-icon-times-circle"></button>
+                    </div>
+                </row>
             </rows>
         </grid>
-        <div align="center">
-            <button id="settingsOKButton" label="OK" iconSclass="z-icon-check-circle"></button>
-            <button id="settingsCancelButton" label="Cancel" iconSclass="z-icon-times-circle"></button>
-        </div>
     </vbox>
 </window>

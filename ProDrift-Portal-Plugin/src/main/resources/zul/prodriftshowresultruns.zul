@@ -29,7 +29,7 @@
 
         <div align="left">
             <hbox align="center">
-                <button id="savesublogs" label="Save Sublogs" image="img/save.gif" disabled="false"></button>
+                <button id="savesublogs" label="Save Sublogs" disabled="false"></button>
                 <label id="saveMessage" value="" width="100%" style="color: blue"/>
             </hbox>
         </div>

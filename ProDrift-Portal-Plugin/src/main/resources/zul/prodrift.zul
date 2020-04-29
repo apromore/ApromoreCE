@@ -22,14 +22,10 @@
   #L%
   -->
 
-<window width="1000px" closable="false" position="center,top" title="Process Drift Detection">
-
-   	<caption>
-        <a href="https://apromore.org/documentation/features/prodrift" target="_blank">
-        <button label="Help" image="img/Help.png" style="float: right;"></button>
-        </a>
+<window width="1000px" closable="false" position="center" title="Process Drift Detection">
+    <caption>
+        <toolbarbutton iconSclass="ap-icon ap-icon-help" href="https://apromore.org/documentation/features/prodrif" target="_blank" />
     </caption>
-
 
     <style>
 
@@ -46,7 +42,7 @@
 
     </style>
     <vbox>
-        <grid>
+        <grid sclass="ap-grid ap-form">
             <columns sizable="true">
                 <column width="50%"></column>
                 <column width="50%"></column>
@@ -59,12 +55,10 @@
 
                 <row id="logF" visible="true">
                     <label value="Log File (.xml, .mxml, .xes, .mxml.gz, .xes.gz)" width="100%"/>
-
                     <hbox align="center">
                         <button id="logFileUpload" label="Upload" upload="true,maxsize=-1,multiple=false,native"></button>
                         <label id="fileName" value=" " width="100%"/>
                     </hbox>
-
                 </row>
                 <!--
                     noiseFilterSpinner.value = 10.0;
@@ -114,10 +108,10 @@
                            maximizable="false" minimizable="false" border="normal" collapsible="true" closable="false">
 
                         <panelchildren>
-                            <grid sclass="GridLayoutNoBorder">
+                            <grid sclass="GridLayoutNoBorder ap-grid ap-form">
                                 <columns>
-                                    <column/>
-                                    <column/>
+                                    <column width="50%"></column>
+                                    <column width="50%"></column>
                                 </columns>
                                 <rows>
                                     <row id="withCharacterizationRow" visible="true">
@@ -188,28 +182,23 @@
                             <!--<group id="parameters" label="Parameters"/>-->
                         </panelchildren>
                     </panel>
-
                     <!--</groupbox>-->
                 </row>
-                <!--                <groupfoot>
-                                </groupfoot>-->
-
-
-                <row id="driftButtons" spans="2">
-                    <div align="center">
+                <row id="driftButtons" spans="2" sclass="ap-window-footer-actions">
+                    <div align="right">
                         <button id="proDriftOKButton" label="OK" iconSclass="z-icon-check-circle" disabled="false"></button>
                         <button id="proDriftCancelButton" label="Cancel" iconSclass="z-icon-times-circle"></button>
                     </div>
                 </row>
             </rows>
         </grid>
-    </vbox>
-
-    <div width="100%" height="100%">
-        <hlayout valign="bottom" >
-            <a href="http://www.promtools.org" target="_blank"><image src="img/prom_logo.png" sclass="image" /></a>
+        <hlayout valign="bottom" style="padding: 4px">
+            <a href="http://www.promtools.org"
+               target="_blank">
+                <image src="img/prom_logo.png" sclass="image"/>
+            </a>
             <label value="Part of this plugin uses ProM core libraries."/>
         </hlayout>
-    </div>
+    </vbox>
 </window>
 

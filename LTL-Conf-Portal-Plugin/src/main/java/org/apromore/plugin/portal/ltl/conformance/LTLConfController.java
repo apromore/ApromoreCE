@@ -43,7 +43,7 @@ import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.property.RequestParameterType;
 import org.apromore.portal.common.UserSessionManager;
 import org.apromore.portal.dialogController.SelectDynamicListController;
-import org.apromore.portal.dialogController.dto.SignavioSession;
+import org.apromore.portal.dialogController.dto.ApromoreSession;
 import org.apromore.service.conf.ltl.LTLConfCheckService;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
@@ -133,7 +133,7 @@ public class LTLConfController {
         try {
             String id = UUID.randomUUID().toString();
 
-            SignavioSession session = new SignavioSession(editSession1, null, null, process1, version1, null, null, requestParameterTypes);
+            ApromoreSession session = new ApromoreSession(editSession1, null, null, process1, version1, null, null, requestParameterTypes);
             UserSessionManager.setEditSession(id, session);
 
             String url = "../ltlconf/displayMisconformanceInSignavio.zul?id=" + id;

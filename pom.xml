@@ -21,6 +21,23 @@
     <modules>
         <module>ApromoreCore</module>
         
+        <module>OSGi-Wrappers/bpstruct-osgi</module>
+        <module>OSGi-Wrappers/bpmntk-osgi</module>
+        <module>OSGi-Wrappers/antlr4-runtime-osgi</module>
+        <!--<module>OSGi-Wrappers/apm-verification-osgi</module>-->
+        <module>OSGi-Wrappers/declare-visualizer-osgi</module>
+        <module>OSGi-Wrappers/eventstr-confchecking-osgi</module>
+        <module>OSGi-Wrappers/jbpt-petri-osgi</module>
+        <module>OSGi-Wrappers/ltl-conf-check-osgi</module>
+        <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
+        <module>OSGi-Wrappers/postgresql-osgi</module>
+        <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
+        <module>OSGi-Wrappers/prodrift-osgi</module>
+        <module>OSGi-Wrappers/themis-osgi</module>
+        <module>OSGi-Wrappers/prom-adapters-osgi</module>
+        <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
+        <module>OSGi-Wrappers/jdom2-osgi</module>
+        
         <module>Activity-Filter-Logic</module>
         <module>Activity-Filter-Portal-Plugin</module>
         <!--
@@ -47,42 +64,25 @@
         <module>BProVe-Logic</module>
         <module>CLI-Tools/bpmncmap</module>
         <module>CLI-Tools/cpfImporter</module>
-		<module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
-        <module>Cmapper-Portal-Plugin</module>
+        <module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
+        <!--<module>plugin-legacy/Cmapper-Portal-Plugin</module>-->
+        <module>Community-Assembly</module>
         <module>Compare-Logic</module>
-        <module>Compare-Portal-Plugin</module>
+        <!--<module>plugin-legacy/Compare-Portal-Plugin</module>-->
         <module>Compare-Portal-Plugin2</module>
+        <!--<module>plugin-legacy/File-Legacy-Portal-Plugin</module>-->
         <module>filestore-client</module>
         <module>IBPStruct-Logic</module>
         <module>IBPStruct-Portal-Plugin</module>
         <module>Infrequent-Behaviour-Filter-Logic</module>
         <module>Infrequent-Behaviour-Filter-Portal-Plugin</module>
-        <module>Log-Animation-Portal-Plugin2</module>
+        <!--<module>plugin-legacy/Log-Animation-Portal-Plugin2</module>-->
+        <module>Log-Filter-Logic</module>
         <module>Log-Filter-Portal-Plugin</module>
         <module>LTL-Conf-Logic</module>
         <module>LTL-Conf-Portal-Plugin</module>
         <module>Metrics-Logic</module>
         <module>Metrics-Portal-Plugin</module>
-
-        <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
-        <module>OSGi-Wrappers/antlr4-runtime-osgi</module>
-        <!--<module>OSGi-Wrappers/apm-verification-osgi</module>-->
-        <module>OSGi-Wrappers/declare-visualizer-osgi</module>
-        <module>OSGi-Wrappers/eventstr-confchecking-osgi</module>
-        <module>OSGi-Wrappers/jbpt-petri-osgi</module>
-        <module>OSGi-Wrappers/ltl-conf-check-osgi</module>
-        <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
-        <!--<module>OSGi-Wrappers/pnapi-bpdiff-osgi</module>-->
-        <module>OSGi-Wrappers/postgresql-osgi</module>
-        <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
-        <!--<module>OSGi-Wrappers/prom-pnml-osgi</module>-->
-        <!--<module>OSGi-Wrappers/uma-bpdiff-osgi</module>-->
-        <!--<module>OSGi-Wrappers/lucene-osgi</module>-->
-        <!--<module>OSGi-Wrappers/pql-osgi</module>-->
-        <module>OSGi-Wrappers/prodrift-osgi</module>
-        <module>OSGi-Wrappers/themis-osgi</module>
-        <module>OSGi-Wrappers/prom-adapters-osgi</module>
-        
         <module>PerformanceMiner-Logic</module>
         <module>PerformanceMiner-Portal-Plugin</module>
         <!--
@@ -91,12 +91,11 @@
         <module>PQL-Logic-WS</module>
         <module>PQL-Portal-Plugin</module>
         -->
-        <module>Process-Discoverer-Logic</module>
-        <module>Process-Discoverer-Portal-Plugin</module>
         <module>ProDrift-Logic</module>
         <module>ProDrift-Portal-Plugin</module>
-		<module>Quaestio</module> <!-- this module is compiled but not deployed to Virgo -->
-        <module>Quaestio-Portal-Plugin</module>
+        <module>Quaestio</module> <!-- this module is compiled but not deployed to Virgo -->
+        <!--<module>plugin-legacy/Quaestio-Portal-Plugin</module>-->
+        <module>Sample-Portal-Plugin</module>
         <module>StageMining-Logic</module>
         <module>StageMining-Portal-Plugin</module>
 
@@ -120,7 +119,7 @@
         <module>Predictor-Training-Portal-Plugin</module>
         
         <module>XES-Selection-Portal-Plugin</module>
-        <module>Theme-Selection-Portal-Plugin</module>
+        <!--<module>plugin-legacy/Theme-Selection-Portal-Plugin</module>-->
 
         <!-- Canoniser Plugins -->
         <module>plugin-canoniser/aris</module>
@@ -130,10 +129,13 @@
         <module>plugin-canoniser/yawl</module>
 
         <!-- Annotation Post Processor Plugins -->
+        <!--
+        <module>plugin-annotation/bpmn</module>
         <module>plugin-annotation/epml</module>
         <module>plugin-annotation/pnml</module>
         <module>plugin-annotation/xpdl</module>
         <module>plugin-annotation/yawl</module>
+        -->
 
         <!-- Schemas -->
         <module>Schema/aris-schema</module>
@@ -148,6 +150,14 @@
         <!-- Deployment Plugins -->
         <module>plugin-deployment/deployment-yawl</module>
     </modules>
+    
+    <repositories>
+        <repository>
+            <id>ApromoreCE_SupportLibs.mvn-repo</id>
+            <name>Maven repository for JARs specific to the Apromore CE project</name>
+            <url>https://raw.github.com/apromore/ApromoreCE_SupportLibs/master/mvn-repo/</url>
+        </repository>    
+    </repositories>
 
     <build>
         <pluginManagement>
@@ -271,6 +281,11 @@
             </dependency>
 
             <!-- Annotations PreProcessors -->
+            <dependency>
+                <groupId>org.apromore.plugin</groupId>
+                <artifactId>annotation-bpmn</artifactId>
+                <version>${apromore.annotation.plugin.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.apromore.plugin</groupId>
                 <artifactId>annotation-xpdl</artifactId>

@@ -23,7 +23,9 @@
   -->
 
 <window id="perfminingconfig" width="700px" closable="false" position="center" title="Mining Process Performance">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.6/highstock.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/4.2.6/modules/exporting.js"></script>
     <style>
 
         <!-- Make Plain Grid -->
@@ -34,21 +36,19 @@
 
     </style>
     <vbox>
-        <grid>
+        <grid sclass="ap-grid ap-form">
             <columns sizable="true">
                 <column width="50%"></column>
                 <column width="50%"></column>
             </columns>
             <rows>
-
                 <row spans="2">
                     <label id="errorLabel" value="" width="100%" style="color: red"/>
                 </row>
-
                 <row width="100%" spans="2">
                     <groupbox width="100%">
                         <caption label="Parameters"/>
-                        <grid sclass="GridLayoutNoBorder">
+                        <grid sclass="GridLayoutNoBorder ap-grid ap-form">
                             <columns>
                                 <column/>
                                 <column/>
@@ -70,23 +70,24 @@
                         </grid>
                     </groupbox>
                 </row>
-
-                <row id="Buttons" spans="2">
+                <row id="Buttons" spans="2" sclass="ap-window-footer-actions">
                     <div align="center">
                         <button id="PreviousButton" label="Previous" iconSclass="z-icon-arrow-circle-left" disabled="false" height="30px"></button>
                         <button id="OKButton" label="OK" iconSclass="z-icon-check-circle" disabled="false" height="30px"></button>
                         <button id="CancelButton" label="Cancel" iconSclass="z-icon-times-circle" height="30px"></button>
                     </div>
                 </row>
+
             </rows>
         </grid>
-    </vbox>
-    <textbox visible="false" id="data" />
-
-    <div width="100%" height="100%">
-        <hlayout valign="bottom" >
-            <a href="http://www.promtools.org" target="_blank"><image src="img/prom_logo.png" sclass="image" /></a>
+        <hlayout valign="bottom" style="padding: 4px">
+            <a href="http://www.promtools.org"
+               target="_blank">
+                <image src="img/prom_logo.png"
+                       sclass="image"/>
+            </a>
             <label value="Part of this plugin uses ProM core libraries."/>
         </hlayout>
-    </div>
+    </vbox>
+    <textbox visible="false" id="data" />
 </window>
