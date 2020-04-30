@@ -795,15 +795,16 @@ public class ManagerPortalEndpoint {
         ReadUserByUsernameOutputMsgType res = new ReadUserByUsernameOutputMsgType();
         ResultType result = new ResultType();
         res.setResult(result);
-        try {
-            UserType user = UserMapper.convertUserTypes(secSrv.getUserByName(payload.getUsername()));
+
+        UserType user = UserMapper.convertUserTypes(secSrv.getUserByName(payload.getUsername()));
+        if (user != null) {
             result.setCode(0);
             result.setMessage("");
             res.setUser(user);
-        } catch (Exception ex) {
-            LOGGER.error("Get User by username failed for " + payload.getUsername(), ex);
+        } else {
+            LOGGER.error("Get User by username failed for " + payload.getUsername());
             result.setCode(-1);
-            result.setMessage(ex.getMessage());
+            result.setMessage("Get User by username failed for " + payload.getUsername());
         }
         return WS_OBJECT_FACTORY.createReadUserByUsernameResponse(res);
     }
@@ -820,15 +821,15 @@ public class ManagerPortalEndpoint {
         ReadUserByEmailOutputMsgType res = new ReadUserByEmailOutputMsgType();
         ResultType result = new ResultType();
         res.setResult(result);
-        try {
-            UserType user = UserMapper.convertUserTypes(secSrv.getUserByEmail(payload.getEmail()));
+        UserType user = UserMapper.convertUserTypes(secSrv.getUserByEmail(payload.getEmail()));
+        if (user != null) {
             res.setUser(user);
             result.setCode(0);
             result.setMessage("");
-        } catch (Exception ex) {
-            LOGGER.error("Get User by there email address failed for " + payload.getEmail(), ex);
+        } else {
+            LOGGER.error("Get User by their email address failed for " + payload.getEmail());
             result.setCode(-1);
-            result.setMessage(ex.getMessage());
+            result.setMessage("Get User by their email address failed for " + payload.getEmail());
         }
         return new ObjectFactory().createReadUserByEmailResponse(res);
     }

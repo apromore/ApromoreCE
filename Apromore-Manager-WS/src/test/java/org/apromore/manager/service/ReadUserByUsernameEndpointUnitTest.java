@@ -60,8 +60,8 @@ public class ReadUserByUsernameEndpointUnitTest extends AbstractEndpointUnitTest
         JAXBElement<ReadUserByUsernameOutputMsgType> response = endpoint.readUserByUsername(request);
         Assert.assertNotNull(response.getValue().getResult());
         Assert.assertNotNull(response.getValue().getUser());
-        Assert.assertEquals("Result Code Doesn't Match", response.getValue().getResult().getCode().intValue(), 0);
-        Assert.assertEquals("UserType shouldn't contain anything", response.getValue().getUser().getFirstName(), null);
+        Assert.assertEquals("Result Code Doesn't Match", 0, response.getValue().getResult().getCode().intValue());
+        Assert.assertEquals("UserType shouldn't contain anything", null, response.getValue().getUser().getFirstName());
 
         verify(secSrv);
     }
@@ -79,7 +79,7 @@ public class ReadUserByUsernameEndpointUnitTest extends AbstractEndpointUnitTest
 
         JAXBElement<ReadUserByUsernameOutputMsgType> response = endpoint.readUserByUsername(request);
         Assert.assertNotNull(response.getValue().getResult());
-        Assert.assertEquals("Result Code Doesn't Match", response.getValue().getResult().getCode().intValue(), -1);
+        Assert.assertEquals("Result Code Doesn't Match", -1, response.getValue().getResult().getCode().intValue());
 
         verify(secSrv);
     }
