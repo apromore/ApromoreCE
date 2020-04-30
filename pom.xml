@@ -59,8 +59,10 @@
         <module>BIMP-Editor-Plugin</module>
         <module>BIMP-Editor-Plugin2</module>
         <module>BIMP-Portal-Plugin</module>
+        <!--
         <module>BPMNMiner-Logic</module>
         <module>BPMNMiner-Portal-Plugin</module>
+        -->
         <module>BProVe-Logic</module>
         <module>CLI-Tools/bpmncmap</module>
         <module>CLI-Tools/cpfImporter</module>

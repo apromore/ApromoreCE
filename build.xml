@@ -135,9 +135,11 @@
 
         <include name="StageMining-Logic/target/stagemining-logic-1.1.jar"/>
         <include name="StageMining-Portal-Plugin/target/stagemining-portal-plugin-1.1.jar"/>
-        
+
+        <!--
         <include name="BPMNMiner-Logic/target/bpmnminer-logic-1.1.jar"/>
         <include name="BPMNMiner-Portal-Plugin/target/bpmnminer-portal-plugin-1.1.jar" />
+        -->
         
         <include name="Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar"/>
         <include name="Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war"/>
