@@ -85,7 +85,6 @@
     <artifact type="bundle" name="org.apromore.gbprove-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.gbprove-editor-plugin" version="[1.0.0, 2)"/>
     
-    
     <!--<artifact type="bundle" name="com.processconfiguration.cmapper" version="[2.0.0, 3)"/>-->
     <!--<artifact type="bundle" name="org.apromore.cmapper-portal-plugin" version="[1.0.0, 2)"/>-->
     
@@ -139,9 +138,11 @@
     
     <artifact type="bundle" name="org.apromore.stagemining-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.stagemining-portal-plugin" version="[1.0.0, 2)"/>
-    
+
+    <!--
     <artifact type="bundle" name="org.apromore.bpmnminer-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bpmnminer-portal-plugin" version="[1.0.0, 2)"/>
+    -->
     
     <!--<artifact type="bundle" name="org.apromore.theme-selection-portal-plugin" version="[1.0.0, 2)"/>-->
     
