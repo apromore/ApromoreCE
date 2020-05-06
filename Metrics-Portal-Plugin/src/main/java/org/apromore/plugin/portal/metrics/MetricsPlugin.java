@@ -219,7 +219,7 @@ public class MetricsPlugin extends PluginCustomGui {
 
                         addTab(procName + ": Model Metrics", "", rows, listheaders, null, portalContext);
                     }
-
+                    portalContext.refreshContent();
                     LOGGER.info("Metrics - done!");
                 }
             }
