@@ -133,7 +133,7 @@ public class BebopPlugin extends PluginCustomGui {
                listheaders.add(new Listheader("Understandability Guidelines Check Result"));
 
                addTab("Check model guidelines with BEBoP", "", rows, listheaders, null, context);
-
+               context.refreshContent();
                //DEBUG
                // System.out.println("\nIN PORTAL after context.getMessageHandler().displayInfo(\"Executed example plug-in!\");  ;");
 
