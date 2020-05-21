@@ -37,9 +37,11 @@
         <module>OSGi-Wrappers/prom-adapters-osgi</module>
         <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
         <module>OSGi-Wrappers/jdom2-osgi</module>
-        
+
+        <!--
         <module>Activity-Filter-Logic</module>
         <module>Activity-Filter-Portal-Plugin</module>
+        -->
         <!--
         <module>APM-Logic</module>
         <module>APM-Portal-Plugin</module>
@@ -53,8 +55,10 @@
         <module>Apromore-FileStore</module>
         <module>Apromore-Manager-WS</module>
         <!--<module>Apromore-PQL-Indexer</module>-->
+        <!--
         <module>BEBoP-Logic</module>
         <module>BEBoP-Portal-Plugin</module>
+        -->
         <module>BIMP-Annotation-Logic</module>
         <module>BIMP-Editor-Plugin</module>
         <module>BIMP-Editor-Plugin2</module>
@@ -69,22 +73,26 @@
         <module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
         <!--<module>plugin-legacy/Cmapper-Portal-Plugin</module>-->
         <module>Community-Assembly</module>
-        <module>Compare-Logic</module>
+        <!--<module>Compare-Logic</module>--><!-- disable -->
         <!--<module>plugin-legacy/Compare-Portal-Plugin</module>-->
-        <module>Compare-Portal-Plugin2</module>
+        <!--<module>Compare-Portal-Plugin2</module>--><!-- disable -->
         <!--<module>plugin-legacy/File-Legacy-Portal-Plugin</module>-->
         <module>filestore-client</module>
+        <!--
         <module>IBPStruct-Logic</module>
         <module>IBPStruct-Portal-Plugin</module>
         <module>Infrequent-Behaviour-Filter-Logic</module>
         <module>Infrequent-Behaviour-Filter-Portal-Plugin</module>
+        -->
         <!--<module>plugin-legacy/Log-Animation-Portal-Plugin2</module>-->
         <module>Log-Filter-Logic</module>
         <module>Log-Filter-Portal-Plugin</module>
+        <!--
         <module>LTL-Conf-Logic</module>
         <module>LTL-Conf-Portal-Plugin</module>
         <module>Metrics-Logic</module>
         <module>Metrics-Portal-Plugin</module>
+        -->
         <module>PerformanceMiner-Logic</module>
         <module>PerformanceMiner-Portal-Plugin</module>
         <!--
@@ -93,9 +101,9 @@
         <module>PQL-Logic-WS</module>
         <module>PQL-Portal-Plugin</module>
         -->
-        <module>ProDrift-Logic</module>
-        <module>ProDrift-Portal-Plugin</module>
-        <module>Quaestio</module> <!-- this module is compiled but not deployed to Virgo -->
+        <!--<module>ProDrift-Logic</module>--><!-- disable -->
+        <!--<module>ProDrift-Portal-Plugin</module>--><!-- disable -->
+        <!--<module>Quaestio</module>--><!-- this module is compiled but not deployed to Virgo -->
         <!--<module>plugin-legacy/Quaestio-Portal-Plugin</module>-->
         <module>Sample-Portal-Plugin</module>
         <module>StageMining-Logic</module>
@@ -120,7 +128,7 @@
         <module>Predictive-Monitor-Portal-Plugin</module>
         <module>Predictor-Training-Portal-Plugin</module>
         
-        <module>XES-Selection-Portal-Plugin</module>
+        <!--<module>XES-Selection-Portal-Plugin</module>-->
         <!--<module>plugin-legacy/Theme-Selection-Portal-Plugin</module>-->
 
         <!-- Canoniser Plugins -->

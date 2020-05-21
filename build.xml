@@ -72,9 +72,11 @@
     <fileset id="fileset-community-custom-plugins" dir="${basedir}">
         <include name="Apromore-FileStore/target/filestore.war"/>
         <include name="filestore-client/target/filestore-client.jar"/>
-        
+
+        <!--
         <include name="BEBoP-Logic/target/gbebop-logic-1.1.jar"/>
         <include name="BEBoP-Portal-Plugin/target/gbebop-portal-plugin-1.1.jar"/>
+        -->
 
         <include name="BIMP-Annotation-Logic/target/bimp-annotation-logic-1.0.jar"/>
         <include name="BIMP-Editor-Plugin/target/bimp-editor-plugin-1.0.war"/>
@@ -86,14 +88,16 @@
         <!--<include name="Cmapper/target/cmapper-2.0.jar"/>-->
         <!--<include name="plugin-legacy/Cmapper-Portal-Plugin/target/cmapper-portal-plugin-1.1.war"/>-->
 
-        <include name="Compare-Logic/target/compare-logic-1.1.jar"/>
+        <!--<include name="Compare-Logic/target/compare-logic-1.1.jar"/>-->
         <!--<include name="plugin-legacy/Compare-Portal-Plugin/target/compareBP-portal-plugin-1.1.war"/>-->
-        <include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>
+        <!--<include name="Compare-Portal-Plugin2/target/compareBP-portal-plugin2-1.1.war"/>-->
 
         <!--<include name="plugin-legacy/File-Legacy-Portal-Plugin/target/file-legacy-portal-plugin-1.0.jar"/>-->
 
+        <!--
         <include name="LTL-Conf-Logic/target/ltl-conf-logic-1.1.jar"/>
         <include name="LTL-Conf-Portal-Plugin/target/ltl-conf-portal-plugin-1.1.war"/>
+        -->
         
         <!--
         <include name="APM-Logic/target/apm-logic-1.1.jar"/>
@@ -108,6 +112,7 @@
 
         <include name="Apromore-Manager-WS/target/apromore-manager-ws-1.1.war"/>
 
+        <!--
         <include name="IBPStruct-Logic/target/ibpstruct-logic-1.1.jar"/>
         <include name="IBPStruct-Portal-Plugin/target/ibpstruct-portal-plugin-1.1.jar"/>
 
@@ -116,20 +121,25 @@
 
         <include name="Infrequent-Behaviour-Filter-Logic/target/infrequent-behaviour-filter-logic-1.1.jar"/>
         <include name="Infrequent-Behaviour-Filter-Portal-Plugin/target/infrequent-behaviour-filter-portal-plugin-1.1.jar"/>
+        -->
 
         <!--<include name="plugin-legacy/Log-Animation-Portal-Plugin2/target/log-animation-portal-plugin2-1.0.war"/>-->
 
         <include name="Log-Filter-Logic/target/log-filter-logic-1.0.0.jar"/>
         <include name="Log-Filter-Portal-Plugin/target/log-filter-portal-plugin-1.0.0.jar"/>
 
+        <!--
         <include name="Metrics-Logic/target/metrics-logic-1.1.jar"/>
         <include name="Metrics-Portal-Plugin/target/metrics-portal-plugin-1.1.jar"/>
+        -->
 
         <include name="PerformanceMiner-Logic/target/perfmining-logic-1.0.jar"/>
         <include name="PerformanceMiner-Portal-Plugin/target/perfmining-portal-plugin-1.0.jar"/>
 
+        <!--
         <include name="ProDrift-Logic/target/prodrift-logic-1.1.jar"/>
         <include name="ProDrift-Portal-Plugin/target/prodrift-portal-plugin-1.1.jar"/>
+        -->
 
         <!--<include name="plugin-legacy/Quaestio-Portal-Plugin/target/quaestio-portal-plugin-1.1.war"/>-->
 
@@ -145,14 +155,15 @@
         <include name="Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war"/>
         <include name="Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war"/>
         
-        <include name="XES-Selection-Portal-Plugin/target/xes-selection-portal-plugin-1.0.jar"/>
+        <!--<include name="XES-Selection-Portal-Plugin/target/xes-selection-portal-plugin-1.0.jar"/>-->
         
         <!--<include name="plugin-legacy/Theme-Selection-Portal-Plugin/target/theme-selection-portal-plugin-1.0.jar"/>-->
-        
+        <!--
         <include name="plugin-editor/ibpstruct/target/ibpstruct-editor-plugin-1.1.war" />
         <include name="plugin-editor/metrics/target/metrics-editor-plugin-1.1.war" />
         <include name="plugin-editor/metrics2/target/metrics-editor-plugin2-1.1.war" />
         <include name="plugin-editor/bebop/target/gbebop-editor-plugin-1.1.war" />
+        -->
         <include name="plugin-editor/bprove/target/gbprove-editor-plugin-1.1.war" />        
     </fileset>
     
