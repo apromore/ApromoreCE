@@ -38,6 +38,7 @@
         <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
         <module>OSGi-Wrappers/jdom2-osgi</module>
 
+        <module>About-CE-Plugin</module>
         <!--
         <module>Activity-Filter-Logic</module>
         <module>Activity-Filter-Portal-Plugin</module>
