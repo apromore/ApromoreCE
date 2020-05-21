@@ -70,6 +70,7 @@
     </fileset>     
 
     <fileset id="fileset-community-custom-plugins" dir="${basedir}">
+        <include name="About-CE-Plugin/target/about-ce-portal-plugin-1.0.jar"/>
         <include name="Apromore-FileStore/target/filestore.war"/>
         <include name="filestore-client/target/filestore-client.jar"/>
 
