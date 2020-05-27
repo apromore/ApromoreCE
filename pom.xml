@@ -110,11 +110,11 @@
         <module>StageMining-Logic</module>
         <module>StageMining-Portal-Plugin</module>
 
-        <module>plugin-editor/bebop</module>
+        <!--<module>plugin-editor/bebop</module>-->
         <module>plugin-editor/bprove</module>
-        <module>plugin-editor/ibpstruct</module>
-        <module>plugin-editor/metrics</module>
-        <module>plugin-editor/metrics2</module>
+        <!--<module>plugin-editor/ibpstruct</module>-->
+        <!--<module>plugin-editor/metrics</module>
+        <module>plugin-editor/metrics2</module>-->
         <module>plugin-editor/sample</module>
 
         <!-- <module>apql</module> -->
