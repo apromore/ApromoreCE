@@ -24,24 +24,23 @@
 
 package org.apromore.plugin.portal.stagemining;
 
-import org.apromore.plugin.portal.PortalContext;
-import org.zkoss.zk.ui.Session;
-import org.zkoss.zk.ui.Sessions;
-import org.zkoss.zk.ui.event.Event;
-import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zk.ui.event.UploadEvent;
-import org.zkoss.zul.*;
-
 import java.io.IOException;
-import java.text.ParseException;
 import java.util.Map;
+
+import org.apromore.plugin.portal.PortalContext;
 import org.apromore.service.stagemining.StageMiningService;
 import org.deckfour.xes.model.XLog;
 import org.json.JSONException;
 import org.processmining.stagemining.models.DecompositionTree;
 import org.processmining.stagemining.utils.LogUtilites;
 import org.zkoss.zk.ui.SuspendNotAllowedException;
-import org.zkoss.zul.ext.Selectable;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zul.Button;
+import org.zkoss.zul.Intbox;
+import org.zkoss.zul.Label;
+import org.zkoss.zul.Messagebox;
+import org.zkoss.zul.Window;
 
 
 public class StageMiningController {
@@ -95,17 +94,20 @@ public class StageMiningController {
         Button cancelButton = (Button) this.entryW.getFellow("CancelButton");
 
         this.OKbutton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 mineStage();
             }
         });
         
         this.OKbutton.addEventListener("onOK", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 mineStage();
             }
         });
         cancelButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 cancel();
             }

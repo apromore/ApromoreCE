@@ -1,23 +1,3 @@
-/*
- * Copyright © 2009-2016 The Apromore Initiative.
- *
- * This file is part of "Apromore".
- *
- * "Apromore" is free software; you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as
- * published by the Free Software Foundation; either version 3 of the
- * License, or (at your option) any later version.
- *
- * "Apromore" is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU Lesser General Public License for more details.
- *
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program.
- * If not, see <http://www.gnu.org/licenses/lgpl-3.0.html>.
- */
-
 /*-
  * #%L
  * This file is part of "Apromore Community".
@@ -43,7 +23,6 @@
  */
 package org.apromore.plugin.portal.stagemining;
 
-// Java 2 Standard Edition packages
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -52,13 +31,11 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 
-// Java 2 Enterprise Edition packages
 import javax.inject.Inject;
+
 import org.apromore.model.LogSummaryType;
 import org.apromore.model.SummaryType;
 import org.apromore.model.VersionSummaryType;
-
-// Third party packages
 import org.apromore.plugin.portal.DefaultPortalPlugin;
 import org.apromore.plugin.portal.PortalContext;
 import org.apromore.service.EventLogService;
@@ -69,13 +46,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.zkoss.zk.ui.SuspendNotAllowedException;
 import org.zkoss.zul.Messagebox;
-
-// Local packages
-/*
-import org.apromore.service.CanoniserService;
-import org.apromore.service.DomainService;
-import org.apromore.service.ProcessService;
-*/
 
 /**
  * A user interface to the process drift detection service.
@@ -130,6 +100,7 @@ public class StageMiningPlugin extends DefaultPortalPlugin {
 
         LOGGER.debug("Executed stage mining plug-in!");
 
+        //Clients.evalJavaScript("window.open('org/apromore/plugin/portal/stagemining/test.zul')");
         try {
             new StageMiningController(portalContext, this.stageMiningService, logs);
         } catch (IOException | SuspendNotAllowedException e) {

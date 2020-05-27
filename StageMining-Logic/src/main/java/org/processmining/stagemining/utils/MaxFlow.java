@@ -23,8 +23,7 @@
  */
 package org.processmining.stagemining.utils;
 
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
  
 class MaxFlow

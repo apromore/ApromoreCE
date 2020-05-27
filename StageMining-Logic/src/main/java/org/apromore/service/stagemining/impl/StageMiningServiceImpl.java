@@ -24,33 +24,19 @@
 
 package org.apromore.service.stagemining.impl;
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
 import org.apromore.service.stagemining.StageMiningService;
-import org.deckfour.xes.model.XAttribute;
-import org.deckfour.xes.model.XEvent;
+import org.deckfour.xes.model.XLog;
+import org.processmining.stagemining.algorithms.AbstractStageMining;
+import org.processmining.stagemining.algorithms.StageMiningHighestModularity;
+import org.processmining.stagemining.models.DecompositionTree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Isolation;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-import org.deckfour.xes.model.XLog;
-import org.deckfour.xes.model.XTrace;
-import org.joda.time.DateTime;
-import org.processmining.stagemining.algorithms.AbstractStageMining;
-import org.processmining.stagemining.models.DecompositionTree;
-import org.processmining.stagemining.algorithms.StageMiningHighestModularity;
 
 
 /**
- * Implementation of the ProDriftDetectionService Contract.
- *
- * @author barca
  */
 @Service
-@Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, readOnly = true, rollbackFor = Exception.class)
 public class StageMiningServiceImpl implements StageMiningService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StageMiningServiceImpl.class);
@@ -62,7 +48,6 @@ public class StageMiningServiceImpl implements StageMiningService {
     public StageMiningServiceImpl() {}
 
     @Override
-    @Transactional(readOnly = false)
     public DecompositionTree mine(XLog log, int minStageSize) throws Exception  {
         AbstractStageMining miner = new StageMiningHighestModularity();
         miner.setDebug(true);

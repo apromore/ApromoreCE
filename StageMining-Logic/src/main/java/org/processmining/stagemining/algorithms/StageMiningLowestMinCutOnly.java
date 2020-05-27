@@ -23,22 +23,20 @@
  */
 package org.processmining.stagemining.algorithms;
 
-import org.processmining.stagemining.models.DecompositionTree;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.SortedSet;
+
+import org.deckfour.xes.model.XLog;
 import org.jbpt.hypergraph.abs.IVertex;
-import org.processmining.stagemining.groundtruth.ExampleClass;
+import org.processmining.stagemining.models.DecompositionTree;
 import org.processmining.stagemining.models.graph.Vertex2;
 import org.processmining.stagemining.models.graph.WeightedDirectedGraph;
 import org.processmining.stagemining.utils.GraphUtils;
-import org.processmining.stagemining.utils.LogUtilites;
-import org.processmining.stagemining.utils.Measure;
-import org.processmining.stagemining.utils.OpenLogFilePlugin;
-import org.deckfour.xes.model.XLog;
+
 import com.aliasi.cluster.LinkDendrogram;
 
 /**
@@ -49,58 +47,8 @@ import com.aliasi.cluster.LinkDendrogram;
  */
 public class StageMiningLowestMinCutOnly extends AbstractStageMining {
 	
-	/**
-	 * 1st argument: log file
-	 * 2nd argument: name of ending event
-	 * 3rd argument: transition node will be included in the preceding or suceeding phase
-	 * 4th argument: sequence threshold.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		OpenLogFilePlugin logImporter = new OpenLogFilePlugin();
-		try {
-			System.out.println("Import log file");
-			XLog log = (XLog)logImporter.importFile(System.getProperty("user.dir") + "\\" + args[0]);
-			LogUtilites.addStartEndEvents(log);
-		    
-		    System.out.println("Start phase mining");
-		    AbstractStageMining miner = new StageMiningLowestMinCutOnly();
-			
-			DecompositionTree tree = miner.mine(log, Integer.valueOf(args[1]));
-			miner.setDebug(true);
-			System.out.println("Finish phase mining");
-			
-			
-			//-------------------------------
-			// Print the result
-			//-------------------------------
-			tree.print();
-			
-			//-------------------------------
-			// Calculate Rand index
-			//-------------------------------
-//			int bestLevel = tree.getBestLevelIndex();
-			int bestLevelIndex = tree.getMaxLevelIndex();
-			ExampleClass example = (ExampleClass)Class.forName(args[2]).newInstance();
-			System.out.println("Level Index: " + bestLevelIndex);
-			System.out.println("Transition nodes from beginning: " + tree.getTransitionNodes(bestLevelIndex));
-			System.out.println("Transition nodes by creation order: " + tree.getTransitionNodesByCreationOrder(bestLevelIndex));
-			System.out.println("Stages = " + tree.getActivityLabelSets(bestLevelIndex).toString());
-			System.out.println("Ground Truth = " + example.getGroundTruth(log).toString());
-			
-			double randIndex = Measure.computeMeasure(tree.getActivityLabelSets(bestLevelIndex), example.getGroundTruth(log), 1);
-			double fowlkes = Measure.computeMeasure(tree.getActivityLabelSets(bestLevelIndex), example.getGroundTruth(log), 2);
-			double jaccard = Measure.computeMeasure(tree.getActivityLabelSets(bestLevelIndex), example.getGroundTruth(log), 3);
-			System.out.println("Rand Index = " + randIndex);
-			System.out.println("Fowlkes–Mallows Index = " + fowlkes);
-			System.out.println("Jaccard Index = " + jaccard);
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public DecompositionTree mine(XLog log, int minStageSize) throws Exception {
+	@Override
+    public DecompositionTree mine(XLog log, int minStageSize) throws Exception {
 		
 		//-------------------------------
 		// Build graph from log
