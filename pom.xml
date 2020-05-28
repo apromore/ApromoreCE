@@ -32,7 +32,7 @@
         <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
         <module>OSGi-Wrappers/postgresql-osgi</module>
         <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
-        <module>OSGi-Wrappers/prodrift-osgi</module>
+        <!--<module>OSGi-Wrappers/prodrift-osgi</module>-->
         <module>OSGi-Wrappers/themis-osgi</module>
         <module>OSGi-Wrappers/prom-adapters-osgi</module>
         <module>OSGi-Wrappers/raffaeleconforti-osgi</module>

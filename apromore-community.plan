@@ -27,7 +27,7 @@
     <artifact type="bundle" name="org.postgresql.osgi" version="[9.0.0, 10)"/>
     <!--<artifact type="bundle" name="org.apromore.prom-pnml-osgi" version="[1.0.0, 2)"/>-->
     <!--<artifact type="bundle" name="org.apromore.pn-automata-conv-osgi" version="[1.0.0, 2)"/>-->
-    <artifact type="bundle" name="org.apromore.prodrift-osgi" version="[2.0.0, 3)"/>
+    <!--<artifact type="bundle" name="org.apromore.prodrift-osgi" version="[2.0.0, 3)"/>-->
     <artifact type="bundle" name="org.apromore.prom-adapters-osgi" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bpstruct-osgi" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bpmntk-osgi" version="[2.0.0, 3)"/>
@@ -79,11 +79,13 @@
     <artifact type="bundle" name="org.apromore.gbebop-portal-plugin" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.gbebop-editor-plugin" version="[1.0.0, 2)"/>
     -->
-    
+
+    <!--
     <artifact type="bundle" name="org.apromore.bimp-annotation-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bimp-editor-plugin" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bimp-editor-plugin2" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.bimp-portal-plugin" version="[1.0.0, 2)"/>
+    -->
     
     <artifact type="bundle" name="org.apromore.gbprove-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.gbprove-editor-plugin" version="[1.0.0, 2)"/>
