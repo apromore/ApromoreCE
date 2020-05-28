@@ -25,5 +25,5 @@
 
 <window id="test" width="700px" sizable="true" maximizable="true" closable="true" position="center"
         contentStyle="overflow:auto">
-    TEST WINDOW
+    THIS IS SECURITY HOLE
 </window>

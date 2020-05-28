@@ -123,7 +123,7 @@ public class StageMiningController {
     }
 
     protected void cancel() {
-        showError(""); this.entryW.detach();
+        this.entryW.detach();
     }
 
     protected void mineStage() {
