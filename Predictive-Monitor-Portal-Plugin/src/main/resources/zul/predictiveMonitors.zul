@@ -25,14 +25,19 @@
 <window xmlns:n="http://www.zkoss.org/2005/zk/native"
         xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
+        sclass="ap-pmonits-window"
         width="700px"
         closable="true" position="center" title="Predictive Monitoring setup">
     <caption>
         <toolbarbutton iconSclass="ap-icon ap-icon-help" href="https://apromore.org/documentation/features/visualize-performance-predictions-via-dashboard/" target="_blank" />
     </caption>
     <style>
-        .z-auxheader {
+        .ap-pmonits-window .z-auxheader {
             border-right-width: 0
+        }
+
+        .ap-pmonits-window .z-listheader-content {
+            text-align: left;
         }
     </style>
     <vbox>

@@ -33,6 +33,15 @@
     </system-config>
 
     <library-property>
+        <name>org.zkoss.util.label.web.location</name>
+        <value>/WEB-INF/zk-label.properties</value>
+    </library-property>
+
+    <system-config>
+        <label-location>/WEB-INF/zk-label.properties</label-location>
+    </system-config>
+
+    <library-property>
         <name>org.zkoss.zul.grid.rod</name>
         <value>true</value>
     </library-property>
