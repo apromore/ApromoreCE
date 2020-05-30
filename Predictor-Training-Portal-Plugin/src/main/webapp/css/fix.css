@@ -1,0 +1,8 @@
+.toggle-content {
+    display: none !important;
+}
+
+.toggle-round-flat > label {
+    border: 1px solid #dddddd !important;
+}
+

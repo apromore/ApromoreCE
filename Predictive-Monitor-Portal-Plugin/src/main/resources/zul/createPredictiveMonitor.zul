@@ -23,13 +23,14 @@
   -->
 
 <?xel-method prefix="f"
-             name="formatPredictorType"
-             class="org.apromore.plugin.portal.predictivemonitor.ELFormat"
-             signature="java.lang.String formatPredictorType(java.lang.String)"?>
+    name="formatPredictorType"
+    class="org.apromore.plugin.portal.predictivemonitor.ELFormat"
+    signature="java.lang.String formatPredictorType(java.lang.String)"?>
 
 <window xmlns:n="http://www.zkoss.org/2005/zk/native"
         xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
+        sclass="ap-pmonit-create-pm"
         width="600px"
         closable="true" position="center" title="Predictive Monitoring: Create Predictive Monitor">
     <caption>
@@ -39,12 +40,15 @@
         .z-auxheader {
         border-right-width: 0
         }
+        .ap-pmonit-create-pm .z-listheader-content {
+        text-align: left;
+        }
     </style>
     <vbox>
         <grid sclass="ap-grid">
             <columns>
-               <column width="8em"/>
-               <column/>
+                <column width="8em"/>
+                <column/>
             </columns>
             <rows>
                 <row>
@@ -69,12 +73,12 @@
             </template>
         </listbox>
         <div sclass="ap-window-footer-actions">
-        <div align="center">
-            <button id="create" label="Create Monitor" iconSclass="z-icon-check-circle"/>
-            <button id="loadPredictorFile" label="Load predictor file" />
-            <button id="deletePredictors" label="Delete predictor" />
-            <button id="cancel" label="Cancel" iconSclass="z-icon-times-circle"/>
-        </div>
+            <div align="center">
+                <button id="create" label="Create Monitor" iconSclass="z-icon-check-circle"/>
+                <button id="loadPredictorFile" label="Load predictor file" />
+                <button id="deletePredictors" label="Delete predictor" />
+                <button id="cancel" label="Cancel" iconSclass="z-icon-times-circle"/>
+            </div>
         </div>
     </vbox>
 </window>
