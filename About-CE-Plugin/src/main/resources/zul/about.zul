@@ -30,13 +30,14 @@
                             <image src="themes/${labels.theme}/common/img/brand/logo-white.svg"
                                    width="50%" style="position: relative; top: 3px"/>
                         </div>
-                        <div sclass="ap-edition">Apromore Community Edition is built by Apromore Pty Ltd and contributors.</div>
+                        <div sclass="ap-edition">Apromore Community Edition</div>
                         <div sclass="ap-version">Version: ${arg.version}</div>
                         <div>
-                            Apromore Community Edition is licensed under the
-                            <a href="https://www.gnu.org/licenses/lgpl-3.0.html" target="_blank">GNU Lesser General Public License, Version 3.0</a>.
-                            It also uses third-party libraries, whose open-source licenses are listed
-                            <a href="https://apromore.org/ce-licenses" target="_blank">here</a>.
+                            Apromore Community Edition is built by Apromore Pty Ltd and contributors, and licensed under the
+                            <a href="https://www.gnu.org/licenses/lgpl-3.0.html" target="_blank">GNU LGPL 3.0 license</a>.
+                        </div>
+                        <div>
+                          <a href="https://apromore.org/ce-licenses" target="_blank">Third-party open-source libraries</a>.
                         </div>
                 </vlayout>
                 <space vflex="10"/>
