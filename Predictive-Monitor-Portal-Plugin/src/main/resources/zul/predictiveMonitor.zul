@@ -26,7 +26,7 @@
         xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
         sclass="ap-pmonit-window"
-        width="95%" height="90%" closable="true" position="center" title="Predictive Monitor">
+        width="95%" vflex="min" closable="true" position="center" title="Predictive Monitor">
     <caption>
         <toolbarbutton iconSclass="ap-icon ap-icon-help" href="https://apromore.org/documentation/features/visualize-performance-predictions-via-dashboard/" target="_blank" />
     </caption>
@@ -55,7 +55,7 @@
         }
 
     </style>
-    <vbox width="100%">
+    <vbox width="100%" vflex="min">
         <hbox width="100%" sclass="ap-pmonit-header">
             <groupbox hflex="1">
                 <caption>Running cases</caption>
@@ -85,19 +85,19 @@
                 <button id="csv" label="Download CSV" />
             </vbox>
         </hbox>
-        <tabbox>
+        <tabbox vflex="min">
             <tabs>
                 <tab>Events</tab>
                 <tab>Cases</tab>
             </tabs>
-            <tabpanels>
-                <tabpanel>
+            <tabpanels vflex="min">
+                <tabpanel vflex="min">
                     <listbox id="events" mold="paging">
                         <listhead>
                         </listhead>
                     </listbox>
                 </tabpanel>
-                <tabpanel>
+                <tabpanel vflex="min">
                     <listbox id="cases" mold="paging">
                         <listhead>
                         </listhead>
