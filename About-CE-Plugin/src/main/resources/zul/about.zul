@@ -21,7 +21,7 @@
 <window id="pluginInfo" height="70vh" width="70vw" sizable="false" sclass="ap-about-window">
     <tabbox vflex="1">
         <tabs>
-            <tab label="About Apromore CE" />
+            <tab label="About" />
         </tabs>
         <tabpanels>
             <tabpanel hflex="1">
