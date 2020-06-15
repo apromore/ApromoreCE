@@ -23,7 +23,7 @@ import org.apromore.plugin.portal.about.AboutPlugin;
 
 public class AboutCEPlugin extends AboutPlugin {
 
-    private String label = "About Apromore CE";
+    private String label = "About";
 
     @Override
     public String getLabel(Locale locale) {
