@@ -1,8 +1,9 @@
 /*-
  * #%L
- * This file is part of "Apromore Core".
+ * This file is part of "Apromore Community Edition".
  * %%
- * Copyright (C) 2019 - 2020 The University of Melbourne. All Rights Reserved.
+ * Copyright (C) 2019 - 2020 The University of Melbourne.
+ * Copyright (C) 2020 Apromore Pty Ltd.
  * %%
  * NOTICE:  All information contained herein is, and remains
  * the property of the University of Melbourne and its suppliers,
