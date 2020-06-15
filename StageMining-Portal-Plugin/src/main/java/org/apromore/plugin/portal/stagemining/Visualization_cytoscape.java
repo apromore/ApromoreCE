@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import org.jbpt.hypergraph.abs.IVertex;
-import org.jfree.data.time.TimeTableXYDataset;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

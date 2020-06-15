@@ -23,12 +23,7 @@
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
                 <configuration>
-                    <!-- Generally, no change should be necessary here unless your plug-in relies on a non-OSGi dependency -->
                     <instructions>
-						<Embed-Dependency>
-                            artifactId=jfreechart|jcommon
-                        </Embed-Dependency>
-                        <Embed-Transitive>false</Embed-Transitive>
                         <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>                    
                         <Import-Package>
                             <!-- Needs to be declared because no class from org.apromore.plugin is directly used in this example! -->
@@ -61,17 +56,7 @@
             <groupId>org.json</groupId>
             <artifactId>json-osgi</artifactId>
             <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>jfreechart</artifactId>
-            <version>1.0</version>
-        </dependency>    
-        <dependency>
-            <groupId>org.processmining</groupId>
-            <artifactId>jcommon</artifactId>
-            <version>1.0</version>
-        </dependency>             
+        </dependency>           
     </dependencies>
     
 </project>

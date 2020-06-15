@@ -23,7 +23,6 @@
  */
 package org.processmining.stagemining.algorithms;
 
-import org.processmining.stagemining.models.DecompositionTree;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -31,15 +30,14 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.SortedSet;
+
+import org.deckfour.xes.model.XLog;
 import org.jbpt.hypergraph.abs.IVertex;
-import org.processmining.stagemining.groundtruth.ExampleClass;
+import org.processmining.stagemining.models.DecompositionTree;
 import org.processmining.stagemining.models.graph.Vertex2;
 import org.processmining.stagemining.models.graph.WeightedDirectedGraph;
 import org.processmining.stagemining.utils.GraphUtils;
-import org.processmining.stagemining.utils.LogUtilites;
-import org.processmining.stagemining.utils.Measure;
-import org.processmining.stagemining.utils.OpenLogFilePlugin;
-import org.deckfour.xes.model.XLog;
+
 import com.aliasi.cluster.LinkDendrogram;
 
 /**
@@ -51,153 +49,9 @@ import com.aliasi.cluster.LinkDendrogram;
  */
 public class StageMiningRandomCutPoint extends AbstractStageMining {
 
-	public static void main(String[] args) {
-		
-		/*
-		List<Set<String>> X = new ArrayList<Set<String>>();
-		Set<String> X1 = new HashSet<String>();
-		
-		X1 = new HashSet<String>();
-		X1.add("a");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("b");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("c");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("s1");
-		X.add(X1);
-		
-		X1 = new HashSet<String>();
-		X1.add("d");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("e");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("f");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("s2");
-		X.add(X1);
-		
-		X1 = new HashSet<String>();
-		X1.add("g");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("h");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("i");
-		X.add(X1);
-		X1 = new HashSet<String>();
-		X1.add("s3");
-		X.add(X1);
-		
-//		X1 = new HashSet<String>();
-//		X1.add("j");
-//		X1.add("k");
-//		X1.add("l");
-//		X.add(X1);
-//		
-//		X1 = new HashSet<String>();
-//		X1.add("s4");
-//		X.add(X1);
-		
-		//////////////////////////////////////////
-		
-		List<Set<String>> Y = new ArrayList<Set<String>>();
-		Set<String> Y1 = new HashSet<String>();
-		Y1.add("a");
-		Y1.add("b");
-		Y1.add("c");
-		Y1.add("s1");
-		Y.add(Y1);
-		
-		Y1 = new HashSet<String>();
-		Y1.add("d");
-		Y1.add("e");
-		Y1.add("f");
-		Y1.add("s2");
-		Y.add(Y1);
-		
-		Y1 = new HashSet<String>();
-		Y1.add("g");
-		Y1.add("h");
-		Y1.add("i");
-		Y1.add("s3");
-		Y.add(Y1);
-		
-//		Y1 = new HashSet<String>();
-//		Y1.add("j");
-//		Y1.add("k");
-//		Y1.add("l");
-//		Y1.add("s4");
-//		Y.add(Y1);
-		
-		
-		try {
-			double randIndex = Measure.computeMeasure(X, Y, 1);
-			double fowlkes = Measure.computeMeasure(X, Y, 2);
-			double jaccard = Measure.computeMeasure(X, Y, 3);
-			System.out.println("Rand Index = " + randIndex);
-			System.out.println("Fowlkes = " + fowlkes);
-			System.out.println("Jaccard = " + jaccard);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
-		
-		
-		
-		OpenLogFilePlugin logImporter = new OpenLogFilePlugin();
-		try {
-			System.out.println("Import log file");
-			XLog log = (XLog)logImporter.importFile(System.getProperty("user.dir") + "\\" + args[0]);
-			LogUtilites.addStartEndEvents(log);
-		    
-		    System.out.println("Start phase mining");
-		    AbstractStageMining miner = new StageMiningRandomCutPoint();
-			miner.setDebug(true);
-			
-			DecompositionTree tree = miner.mine(log, Integer.valueOf(args[1]));
-			
-			//-------------------------------
-			// Print the result
-			//-------------------------------
-			tree.print();
-			
-			//-------------------------------
-			// Calculate Rand index
-			//-------------------------------
-			int bestLevelIndex = tree.getBestLevelIndex();
-			ExampleClass example = (ExampleClass)Class.forName(args[2]).newInstance();
-			System.out.println("Best Level Index: " + bestLevelIndex);
-			System.out.println("Transition nodes from beginning: " + tree.getTransitionNodes(bestLevelIndex));
-			System.out.println("Transition nodes by creation order: " + tree.getTransitionNodesByCreationOrder(bestLevelIndex));
-			System.out.println("Modularity by creation order: " + tree.getModularitiesByCreationOrder());
-			
-			double randIndex = Measure.computeMeasure(tree.getActivityLabelSets(bestLevelIndex), example.getGroundTruth(log), 1);
-			double fowlkes = Measure.computeMeasure(tree.getActivityLabelSets(bestLevelIndex), example.getGroundTruth(log), 2);
-			double jaccard = Measure.computeMeasure(tree.getActivityLabelSets(bestLevelIndex), example.getGroundTruth(log), 3);
-			System.out.println("Rand Index = " + randIndex);
-			System.out.println("Fowlkes–Mallows Index = " + fowlkes);
-			System.out.println("Jaccard Index = " + jaccard);
-			
-			System.out.println("Finish phase mining");
 
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-	}
-
-	
-	public DecompositionTree mine(XLog log, int minStageSize) throws Exception {
+	@Override
+    public DecompositionTree mine(XLog log, int minStageSize) throws Exception {
 		
 		//-------------------------------
 		// Build graph from log

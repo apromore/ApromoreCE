@@ -1,0 +1,50 @@
+<!--
+  #%L
+  This file is part of "Apromore Core".
+  Copyright (C) 2012 Felix Mannhardt.
+  Copyright (C) 2011 - 2017 Queensland University of Technology.
+  %%
+  Copyright (C) 2019 - 2020 The University of Melbourne. All Rights Reserved.
+  %%
+  NOTICE:  All information contained herein is, and remains
+  the property of the University of Melbourne and its suppliers,
+  if any.  The intellectual and technical concepts contained
+  herein are proprietary to the University of Melbourne
+  and its suppliers and may be covered by U.S. and Foreign Patents,
+  patents in process, and are protected by trade secret or copyright law.
+  Dissemination of this information or reproduction of this material
+  is strictly forbidden unless prior written permission is obtained
+  from the University of Melbourne.
+  #L%
+  -->
+
+<window id="pluginInfo" height="70vh" width="70vw" sizable="false" sclass="ap-about-window">
+    <tabbox vflex="1">
+        <tabs>
+            <tab label="About" />
+        </tabs>
+        <tabpanels>
+            <tabpanel hflex="1">
+                <vlayout sclass="ap-about-details">
+                        <div sclass="ap-about-logo">
+                            <image src="themes/${labels.theme}/common/img/brand/logo-white.svg"
+                                   width="50%" style="position: relative; top: 3px"/>
+                        </div>
+                        <div sclass="ap-edition">Apromore Community Edition</div>
+                        <div sclass="ap-version">Version: ${arg.version}</div>
+                        <div>
+                            Apromore Community Edition is built by Apromore Pty Ltd and contributors, and licensed under the
+                            <a href="https://www.gnu.org/licenses/lgpl-3.0.html" target="_blank">GNU LGPL 3.0 license</a>.
+                        </div>
+                        <div>
+                          <a href="https://apromore.org/ce-licenses" target="_blank">Third-party open-source libraries</a>.
+                        </div>
+                </vlayout>
+                <space vflex="10"/>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+    <div align="right" style="padding: 10px;">
+        <button id="ok" label="OK" iconSclass="z-icon-check-circle"/>
+    </div>
+</window>

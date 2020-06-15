@@ -23,7 +23,6 @@
  */
 package org.processmining.stagemining.utils;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -50,7 +49,7 @@ public class ConnectedComponentSearch {
 	 */
 	public Set<Set<IVertex>> findConnectedComponents() {
 		for (IVertex vertex : g.getVertices()) {
-			visitedMap.put((Vertex)vertex, false);
+			visitedMap.put(vertex, false);
 		}
 		for (IVertex v : g.getVertices()) {
 			if (!visitedMap.get(v)) {

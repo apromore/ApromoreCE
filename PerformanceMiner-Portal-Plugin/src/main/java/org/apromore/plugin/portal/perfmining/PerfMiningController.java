@@ -24,14 +24,6 @@
 
 package org.apromore.plugin.portal.perfmining;
 
-import org.apromore.plugin.portal.PortalContext;
-import org.zkoss.zk.ui.Session;
-import org.zkoss.zk.ui.Sessions;
-import org.zkoss.zk.ui.event.Event;
-import org.zkoss.zk.ui.event.EventListener;
-import org.zkoss.zk.ui.event.UploadEvent;
-import org.zkoss.zul.*;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -39,40 +31,41 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
+
+import org.apromore.plugin.portal.PortalContext;
 import org.apromore.plugin.portal.perfmining.util.LogUtilites;
 import org.apromore.plugin.portal.perfmining.view.ResultWindowController;
+import org.apromore.service.perfmining.PerfMiningService;
+import org.apromore.service.perfmining.filter.TraceAttributeFilterParameters;
+import org.apromore.service.perfmining.models.SPF;
+import org.apromore.service.perfmining.models.SPFManager;
+import org.apromore.service.perfmining.parameters.SPFConfig;
 import org.deckfour.xes.model.XAttribute;
 import org.deckfour.xes.model.XEvent;
-import org.apromore.service.perfmining.models.SPF;
 import org.deckfour.xes.model.XLog;
 import org.deckfour.xes.model.XTrace;
 import org.joda.time.DateTime;
-import org.json.JSONException;
-import org.apromore.service.perfmining.PerfMiningService;
-import org.apromore.service.perfmining.filter.TraceAttributeFilterParameters;
-import org.apromore.service.perfmining.models.SPFManager;
-import org.apromore.service.perfmining.parameters.SPFConfig;
 import org.zkoss.zk.ui.SuspendNotAllowedException;
-import org.zkoss.zk.ui.util.Clients;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zul.Button;
+import org.zkoss.zul.Checkbox;
+import org.zkoss.zul.Combobox;
+import org.zkoss.zul.Comboitem;
+import org.zkoss.zul.ListModelList;
+import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Messagebox;
+import org.zkoss.zul.Window;
 import org.zkoss.zul.ext.Selectable;
 
 
 public class PerfMiningController {
-
-    private static final long serialVersionUID = 1L;
     private final PortalContext portalContext;
     private final PerfMiningService perfMiningService;
     
     private Window licenseW;
     private Button licenseOKbutton;
     private Button licenseCancelButton;
-    
-    private Window importW;
-    private boolean showImportW = true;
-    private Button logFileUpload;
-    private org.zkoss.util.media.Media logFile = null;
-    private Button importNextbutton;
-    private Button importCancelButton;
     
     private Window configW;
     private Button configPreviousButton;
@@ -82,8 +75,6 @@ public class PerfMiningController {
     private Listbox configExitStatusListbox;
     private Checkbox hasStartEndEventCheckbox;
     
-    private byte[] logByteArray = null;
-    private String logFileName = null;
     private XLog log = null;
     
     private SPFConfig config = new SPFConfig();
@@ -101,12 +92,12 @@ public class PerfMiningController {
                 return;
             } 
             else {
-                this.showImportW = false;
                 this.log = logs.keySet().iterator().next();
             }
         }
         else {
-            this.showImportW = true;
+            showError("Please select one log!");
+            return;
         }
         
         //-----------------------------------------------------------------
@@ -115,12 +106,6 @@ public class PerfMiningController {
         this.licenseW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/license.zul", null, null);
         licenseOKbutton = (Button) this.licenseW.getFellow("OKButton");
         licenseCancelButton = (Button) this.licenseW.getFellow("CancelButton");
-        
-        this.importW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/import.zul", null, null);
-        this.importW.setTitle("Import Log File");
-        importNextbutton = (Button) this.importW.getFellow("NextButton");
-        importNextbutton.setDisabled(true);
-        importCancelButton = (Button) this.importW.getFellow("CancelButton");
         
         this.configW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/configuration.zul", null, null);
         this.configW.setTitle("Performance Mining Parameters");
@@ -131,9 +116,6 @@ public class PerfMiningController {
         configExitStatusListbox = (Listbox) this.configW.getFellow("ExitStatusListBox");
         hasStartEndEventCheckbox = (Checkbox) this.configW.getFellow("hasStartEndEvents");
 
-        this.logFileUpload = (Button) this.importW.getFellow("logFileUpload");
-        final Label l = (Label) this.importW.getFellow("fileName");
-        
         this.licenseW.doModal();
         
         //-----------------------------------------------------------------
@@ -141,112 +123,61 @@ public class PerfMiningController {
         //-----------------------------------------------------------------
 
        licenseOKbutton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 licenseW.detach();
-                if (showImportW) {
-                    importW.doModal();
-                    configPreviousButton.setVisible(true);
-                }
-                else {
-                    SPFManager.getInstance().clear(); //start over for a new SPF
-                    readData(log, config, SPFManager.getInstance());
-                    config.setCheckStartCompleteEvents(true);
-                    initializeTimeZoneBox();
-                    initializeCaseStatusList();
-                    configW.doModal();
-                    configPreviousButton.setVisible(false);
-                }
-            }
-        });      
-       
-        licenseCancelButton.addEventListener("onClick", new EventListener<Event>() {
-            public void onEvent(Event event) throws Exception {
-                licenseW.detach();
-                importW.detach();
-                configW.detach();
-            }
-        });
-        
-        this.logFileUpload.addEventListener("onUpload", new EventListener<Event>() {
-            public void onEvent(Event event) throws Exception {
-                UploadEvent uEvent = (UploadEvent) event;
-                logFile = uEvent.getMedia();
-                if (logFile == null) {
-                    showError("Upload error. No file uploaded.");
-                    return;
-                }
-
-                //logByteArray = logFile.getByteData();
-                logFileName = logFile.getName();
-                OpenLogFilePlugin logImporter = new OpenLogFilePlugin();
-                try {
-                    System.out.println("Import log file");
-                    //log = (XLog)logImporter.importFromStream(logFile.getStreamData(), logFileName, logByteArray.length);
-                    log = (XLog)logImporter.importFromStream(logFile.getStreamData(), logFileName);
-                }
-                catch (Exception e) {
-                    showError(e.getMessage());
-                }
-
-//                Session sess = Sessions.getCurrent();
-//                sess.setAttribute("log", log);
-                importNextbutton.setDisabled(false);
-
-            }
-        });
-
-        importNextbutton.addEventListener("onClick", new EventListener<Event>() {
-            public void onEvent(Event event) throws Exception {
                 SPFManager.getInstance().clear(); //start over for a new SPF
                 readData(log, config, SPFManager.getInstance());
                 config.setCheckStartCompleteEvents(true);
                 initializeTimeZoneBox();
                 initializeCaseStatusList();
-
-                importW.setVisible(false);
                 configW.doModal();
+                configPreviousButton.setVisible(false);
             }
-        });
-        
-        importCancelButton.addEventListener("onClick", new EventListener<Event>() {
+        });      
+       
+        licenseCancelButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
-                importW.detach();
+                licenseW.detach();
                 configW.detach();
             }
         });
         
         configPreviousButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 configW.setVisible(false);
-                importW.setVisible(true);
             }
         });
         
         
         configOKbutton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 TraceAttributeFilterParameters filter = new TraceAttributeFilterParameters();
                 filter.setName("Full SPF");
                 minePerformance(log, config, filter);
-                importW.detach();
                 configW.detach();
             }
         });
         
         configCancelButton.addEventListener("onClick", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 configW.detach();
-                importW.detach();
             }
         });
         
         configTimeZoneCombo.addEventListener("onSelect", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 config.setTimeZone(TimeZone.getTimeZone(configTimeZoneCombo.getSelectedItem().getValue().toString()));
             }
         });     
         
         configExitStatusListbox.addEventListener("onSelect", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 java.util.Set selection = ((Selectable)configExitStatusListbox.getModel()).getSelection();
                 config.setExitTypeList(new ArrayList<String>(selection));
@@ -254,6 +185,7 @@ public class PerfMiningController {
         });     
         
         hasStartEndEventCheckbox.addEventListener("onCheck", new EventListener<Event>() {
+            @Override
             public void onEvent(Event event) throws Exception {
                 config.setCheckStartCompleteEvents(hasStartEndEventCheckbox.isChecked());
             }

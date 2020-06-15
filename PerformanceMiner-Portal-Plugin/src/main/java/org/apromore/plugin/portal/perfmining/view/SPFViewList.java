@@ -28,9 +28,6 @@
  */
 package org.apromore.plugin.portal.perfmining.view;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import org.apromore.plugin.portal.perfmining.view.SPFView;
 import org.apromore.plugin.portal.perfmining.view.queue.SPFQueueArrivalRateView;
 import org.apromore.plugin.portal.perfmining.view.queue.SPFQueueCIPView;
 import org.apromore.plugin.portal.perfmining.view.queue.SPFQueueDepartureRateView;
@@ -40,13 +37,9 @@ import org.apromore.plugin.portal.perfmining.view.service.SPFCIPView;
 import org.apromore.plugin.portal.perfmining.view.service.SPFDepartureRateView;
 import org.apromore.plugin.portal.perfmining.view.service.SPFExitRateView;
 import org.apromore.plugin.portal.perfmining.view.service.SPFFlowEfficiencyView;
-import org.apromore.plugin.portal.perfmining.view.system.SPFAllFlowEfficiencyView;
 import org.apromore.plugin.portal.perfmining.view.system.SPFMainView;
-import org.apromore.plugin.portal.perfmining.view.system.SPFMultipleTISView;
 import org.apromore.service.perfmining.models.SPF;
 import org.apromore.service.perfmining.models.Stage;
-import sun.security.krb5.JavaxSecurityAuthKerberosAccess;
-import sun.tools.jar.resources.jar;
  
 public class SPFViewList {
     private SPFViewTreeNode root;
