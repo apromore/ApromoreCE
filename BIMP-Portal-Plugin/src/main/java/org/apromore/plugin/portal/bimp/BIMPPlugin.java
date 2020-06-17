@@ -104,8 +104,23 @@ public class BIMPPlugin extends DefaultPortalPlugin {
             
             // Go to the BIMP page
             Clients.evalJavaScript(
-                "var bimpWindow = window.open('/bimp/simulator.html','bimp'); " +
-                "bimpWindow.apromoreBPMN = '" + bpmn.replaceAll("'", "\\' ").replaceAll("\n", " ") + "'; ");
+                "var form = document.createElement('form');" +
+                "form.method = 'POST';" +
+                "form.action = 'http://www.qbp-simulator.com/.netlify/functions/uploadfile?to=/simulator%3Ffrom%3Ddemo';" +
+                "form.enctype = 'multipart/form-data';" +
+                "form.target = '_blank';" +
+                "var input = document.createElement('input');" +
+                "input.id = 'file';" +
+                "input.name = 'file';" +
+                "input.type = 'file';" +
+                "var bpmn = '" + bpmn.replaceAll("'", "\\' ").replaceAll("\n", " ") + "';" +
+                "var bpmnFile = new File([bpmn], '" + procName + "', {type:'application/xml'});" +
+                "var dT = new ClipboardEvent('').clipboardData || new DataTransfer();" +
+                "dT.items.add(bpmnFile);" +
+                "input.files = dT.files;" +
+                "form.appendChild(input);" +
+                "document.body.appendChild(form);" +
+                "form.submit();");
 
         } catch (RepositoryException e) {
             Messagebox.show("Unable to read " + procName, "Attention", Messagebox.OK, Messagebox.ERROR);
