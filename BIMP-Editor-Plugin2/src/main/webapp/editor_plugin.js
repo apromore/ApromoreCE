@@ -32,11 +32,11 @@ ORYX.Plugins.BIMPSimulator = Clazz.extend({
 
         this.facade = facade;
         this.facade.offer({
-            'name': 'Simulate in BIMP',
+            'name': 'Simulate model',
             'functionality': this.simulate.bind(this),
             'group': 'Configuration',
-            'icon': "/bimp2/icon.png",
-            'description': 'Simulate in BIMP',
+            'icon': "/bimp2/icon.svg",
+            'description': 'Simulate model',
             'index': 1
         });
     },
