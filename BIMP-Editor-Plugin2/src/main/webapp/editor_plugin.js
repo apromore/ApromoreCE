@@ -42,26 +42,21 @@ ORYX.Plugins.BIMPSimulator = Clazz.extend({
     },
 
     simulate: function() {
-        var bimpWindow = window.open('/bimp2/simulator.html','bimp');
-        bimpWindow.apromoreBPMN = this.facade.getXML();
-
-        // Import new process model
-        // new Ajax.Request('/editor/editor/bpmnexport', {
-        //     parameters: {
-        //         'data': this.facade.getSerializedJSON()
-        //     },
-        //     method: 'POST',
-        //
-        //     onSuccess: function(transport) {
-        //         var bimpWindow = window.open('/bimp2/simulator.html','bimp');
-        //         bimpWindow.apromoreBPMN = transport.responseText;
-        //     }.bind(this),
-        //
-        //     onFailure: function(transport) {
-        //         console.log("Failure");
-        //         console.dir(transport);
-        //         alert("Unable to export BPMN model from editor: " + transport.responseText);
-        //     }.bind(this)
-        // });
+        var form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'http://www.qbp-simulator.com/.netlify/functions/uploadfile?to=/simulator%3Ffrom%3Ddemo';
+        form.enctype = 'multipart/form-data';
+        form.target = '_blank';
+        var input = document.createElement('input');
+        input.id = 'file';
+        input.name = 'file';
+        input.type = 'file';
+        var bpmnFile = new File([this.facade.getXML()], 'process model', {type:'application/xml'});
+        var dT = new ClipboardEvent('').clipboardData || new DataTransfer();
+        dT.items.add(bpmnFile);
+        input.files = dT.files;
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
     }
 });
