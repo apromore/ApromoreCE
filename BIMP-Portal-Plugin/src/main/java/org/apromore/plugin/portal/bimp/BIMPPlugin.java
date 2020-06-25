@@ -1,21 +1,21 @@
 /*-
  * #%L
  * This file is part of "Apromore Community".
- *
+ * 
  * Copyright (C) 2017 Queensland University of Technology.
  * %%
- * Copyright (C) 2018 - 2020 The University of Melbourne.
+ * Copyright (C) 2018 - 2020 Apromore Pty Ltd.
  * %%
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as
  * published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Lesser Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Lesser Public
  * License along with this program.  If not, see
  * <http://www.gnu.org/licenses/lgpl-3.0.html>.
@@ -51,7 +51,7 @@ import org.apromore.service.ProcessService;
 @Component("plugin")
 public class BIMPPlugin extends DefaultPortalPlugin {
 
-    private String label = "Simulate model with BIMP";
+    private String label = "Simulate model";
     private String groupLabel = "Analyze";
 
     @Inject private ProcessService processService;
@@ -113,7 +113,7 @@ public class BIMPPlugin extends DefaultPortalPlugin {
                 "input.id = 'file';" +
                 "input.name = 'file';" +
                 "input.type = 'file';" +
-                "var bpmn = '" + bpmn.replaceAll("'", "\\' ").replaceAll("\n", " ") + "';" +
+                "var bpmn = " + toJavascriptStringLiteral(bpmn) + ";" +
                 "var bpmnFile = new File([bpmn], '" + procName + "', {type:'application/xml'});" +
                 "var dT = new ClipboardEvent('').clipboardData || new DataTransfer();" +
                 "dT.items.add(bpmnFile);" +
@@ -126,5 +126,13 @@ public class BIMPPlugin extends DefaultPortalPlugin {
             Messagebox.show("Unable to read " + procName, "Attention", Messagebox.OK, Messagebox.ERROR);
             e.printStackTrace();
         }
+    }
+
+    /**
+     * @param s  BPMN XML text
+     * @return  <var>s</var> escaped as a Javascript string literal
+     */
+    private String toJavascriptStringLiteral(String s) {
+        return "'" + s.replaceAll("'", "\\'").replaceAll("\n", " ").replaceAll("\r", " ") + "'";
     }
 }
