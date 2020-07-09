@@ -30,6 +30,7 @@
 
     <property name="startup.args" value="-clean"/>  <!-- e.g. pass -Dstartup.args="-clean -debug 8888" to start server in debug mode -->
     
+    <filter token="about-portal.bundle" value="org.apromore.about-ce-portal-plugin"/>
     <filter token="csvimporter-logic.bundle" value="org.apromore.csvimporter-logic"/>
     <filter token="version.edition" value="Apromore Community Edition"/>
     
