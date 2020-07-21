@@ -163,17 +163,14 @@
                             org.apromore.editor-platform-extension-bpmn2_0;resolution:=optional,
                             org.apromore.editor-platform-extension-diagram,
                             org.apromore.editor-platform-extension-downloader,
-                            org.apromore.editor-platform-extension-epc;resolution:=optional,
                             org.apromore.editor-platform-extension-jpdl,
                             org.apromore.editor-platform-extension-pdf,
                             org.apromore.editor-platform-extension-petrinet;resolution:=optional,
                             org.apromore.editor-platform-extension-syntaxchecker;resolution:=optional,
                             org.apromore.editor-platform-extension-xpdl;resolution:=optional,
-                            <!--org.apromore.editor-platform-extension-yawl;resolution:=optional,-->
                             org.apromore.manager-ws-model;version="[1.1,1.1]",
                             org.apromore.manager-security;version="[1.1,1.1]",
                             org.apromore.filestore-client;version="[1.0,1.1]",
-                            <!--org.eclipse.gemini.blueprint.core;bundle-version="[1.0.0,2.0)",-->
                             org.springframework.aop;bundle-version="[3.1.0,4.0)",
                             org.springframework.aspects;bundle-version="[3.1.0,4.0)",
                             org.springframework.web;bundle-version="[3.1.0,4.0)",
@@ -456,11 +453,6 @@
         </dependency>
         <dependency>
             <groupId>org.apromore</groupId>
-            <artifactId>editor-platform-extension-epc</artifactId>
-            <version>${editor-platform-extension.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apromore</groupId>
             <artifactId>editor-platform-extension-jpdl</artifactId>
             <version>${editor-platform-extension.version}</version>
         </dependency>
@@ -482,11 +474,6 @@
         <dependency>
             <groupId>org.apromore</groupId>
             <artifactId>editor-platform-extension-xpdl</artifactId>
-            <version>${editor-platform-extension.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apromore</groupId>
-            <artifactId>editor-platform-extension-yawl</artifactId>
             <version>${editor-platform-extension.version}</version>
         </dependency>
 

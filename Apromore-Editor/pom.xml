@@ -19,16 +19,11 @@
     <modules>
         <module>sscompressor-maven-plugin</module>
         <module>platform</module>
-        <!--<module>platform extensions/bpmn20xmlbasic</module>-->
-        <!--<module>platform extensions/diagram core</module>-->
         <module>platform extensions/downloader</module>
-        <module>platform extensions/epc</module>
         <module>platform extensions/jpdl</module>
-        <!--<module>platform extensions/pdf</module>-->
         <module>platform extensions/petrinet</module>
         <module>platform extensions/syntaxchecker</module>
         <module>platform extensions/xpdl</module>
-        <module>platform extensions/yawl</module>
     </modules>
 
     <build>

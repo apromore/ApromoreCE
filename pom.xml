@@ -23,114 +23,37 @@
         
         <module>OSGi-Wrappers/bpstruct-osgi</module>
         <module>OSGi-Wrappers/bpmntk-osgi</module>
-        <module>OSGi-Wrappers/antlr4-runtime-osgi</module>
-        <!--<module>OSGi-Wrappers/apm-verification-osgi</module>-->
-        <module>OSGi-Wrappers/declare-visualizer-osgi</module>
-        <module>OSGi-Wrappers/eventstr-confchecking-osgi</module>
-        <module>OSGi-Wrappers/jbpt-petri-osgi</module>
-        <module>OSGi-Wrappers/ltl-conf-check-osgi</module>
-        <module>OSGi-Wrappers/ltl-to-automaton-osgi</module>
-        <module>OSGi-Wrappers/postgresql-osgi</module>
-        <module>OSGi-Wrappers/pn-automata-conv-osgi</module>
-        <!--<module>OSGi-Wrappers/prodrift-osgi</module>-->
-        <module>OSGi-Wrappers/themis-osgi</module>
-        <module>OSGi-Wrappers/prom-adapters-osgi</module>
-        <module>OSGi-Wrappers/raffaeleconforti-osgi</module>
-        <module>OSGi-Wrappers/jdom2-osgi</module>
 
         <module>About-CE-Plugin</module>
-        <!--
-        <module>Activity-Filter-Logic</module>
-        <module>Activity-Filter-Portal-Plugin</module>
-        -->
-        <!--
-        <module>APM-Logic</module>
-        <module>APM-Portal-Plugin</module>
-        <module>APM-Compliance-Logic</module>
-        <module>APM-Compliance-Portal-Plugin</module>
-        <module>APM-Comp-Guards-Logic</module>
-        <module>APM-Comp-Guards-Portal-Plugin</module>
-        -->
-        <!--<module>APQL-Portal-Plugin</module> -->
         <module>Apromore-Editor</module>
         <module>Apromore-FileStore</module>
-        <module>Apromore-Manager-WS</module>
-        <!--<module>Apromore-PQL-Indexer</module>-->
-        <!--
-        <module>BEBoP-Logic</module>
-        <module>BEBoP-Portal-Plugin</module>
-        -->
         <module>BIMP-Annotation-Logic</module>
         <module>BIMP-Editor-Plugin</module>
         <module>BIMP-Editor-Plugin2</module>
         <module>BIMP-Portal-Plugin</module>
-        <!--
-        <module>BPMNMiner-Logic</module>
-        <module>BPMNMiner-Portal-Plugin</module>
-        -->
         <module>BProVe-Logic</module>
         <module>CLI-Tools/bpmncmap</module>
         <module>CLI-Tools/cpfImporter</module>
-        <module>Cmapper</module> <!-- this module is compiled but not deployed to Virgo -->
-        <!--<module>plugin-legacy/Cmapper-Portal-Plugin</module>-->
         <module>Community-Assembly</module>
-        <!--<module>Compare-Logic</module>--><!-- disable -->
-        <!--<module>plugin-legacy/Compare-Portal-Plugin</module>-->
-        <!--<module>Compare-Portal-Plugin2</module>--><!-- disable -->
-        <!--<module>plugin-legacy/File-Legacy-Portal-Plugin</module>-->
         <module>filestore-client</module>
-        <!--
-        <module>IBPStruct-Logic</module>
-        <module>IBPStruct-Portal-Plugin</module>
-        <module>Infrequent-Behaviour-Filter-Logic</module>
-        <module>Infrequent-Behaviour-Filter-Portal-Plugin</module>
-        -->
-        <!--<module>plugin-legacy/Log-Animation-Portal-Plugin2</module>-->
         <module>Log-Filter-Logic</module>
         <module>Log-Filter-Portal-Plugin</module>
-        <!--
-        <module>LTL-Conf-Logic</module>
-        <module>LTL-Conf-Portal-Plugin</module>
-        <module>Metrics-Logic</module>
-        <module>Metrics-Portal-Plugin</module>
-        -->
         <module>PerformanceMiner-Logic</module>
         <module>PerformanceMiner-Portal-Plugin</module>
-        <!--
-        <module>PQL-Indexer-Portal-Plugin</module>
-        <module>PQL-Logic</module>
-        <module>PQL-Logic-WS</module>
-        <module>PQL-Portal-Plugin</module>
-        -->
-        <!--<module>ProDrift-Logic</module>--><!-- disable -->
-        <!--<module>ProDrift-Portal-Plugin</module>--><!-- disable -->
-        <!--<module>Quaestio</module>--><!-- this module is compiled but not deployed to Virgo -->
-        <!--<module>plugin-legacy/Quaestio-Portal-Plugin</module>-->
         <module>Sample-Portal-Plugin</module>
         <module>StageMining-Logic</module>
         <module>StageMining-Portal-Plugin</module>
 
-        <!--<module>plugin-editor/bebop</module>-->
         <module>plugin-editor/bprove</module>
-        <!--<module>plugin-editor/ibpstruct</module>-->
-        <!--<module>plugin-editor/metrics</module>
-        <module>plugin-editor/metrics2</module>-->
         <module>plugin-editor/sample</module>
-
-        <!-- <module>apql</module> -->
-        <!--<module>PQLBot</module>-->
 
         <module>Apromore-Assembly/Editor-Assembly</module>
         <module>Apromore-Assembly/Filestore-Assembly</module>
         <module>Apromore-Assembly/Predictive-Monitor-Assembly</module>
-        <!--<module>PQL-Indexer-Assembly</module>-->
         
         <module>Predictive-Monitor-Logic</module>
         <module>Predictive-Monitor-Portal-Plugin</module>
         <module>Predictor-Training-Portal-Plugin</module>
-        
-        <!--<module>XES-Selection-Portal-Plugin</module>-->
-        <!--<module>plugin-legacy/Theme-Selection-Portal-Plugin</module>-->
 
         <!-- Canoniser Plugins -->
         <module>plugin-canoniser/aris</module>
@@ -138,15 +61,6 @@
         <module>plugin-canoniser/pnml</module>
         <module>plugin-canoniser/xpdl</module>
         <module>plugin-canoniser/yawl</module>
-
-        <!-- Annotation Post Processor Plugins -->
-        <!--
-        <module>plugin-annotation/bpmn</module>
-        <module>plugin-annotation/epml</module>
-        <module>plugin-annotation/pnml</module>
-        <module>plugin-annotation/xpdl</module>
-        <module>plugin-annotation/yawl</module>
-        -->
 
         <!-- Schemas -->
         <module>Schema/aris-schema</module>
@@ -158,8 +72,6 @@
         <module>Schema/xpdl-schema</module>
         <module>Schema/yawl-schema</module>
 
-        <!-- Deployment Plugins -->
-        <module>plugin-deployment/deployment-yawl</module>
     </modules>
     
     <repositories>
@@ -242,13 +154,6 @@
                 <version>${apromore.annotation.plugin.version}</version>
             </dependency>
 
-            <!-- Deployment -->
-            <dependency>
-                <groupId>org.apromore.plugin</groupId>
-                <artifactId>deployment-yawl</artifactId>
-                <version>${apromore.plugin.version}</version>
-            </dependency>
-
             <!-- Schema -->
             <dependency>
                 <groupId>org.apromore</groupId>
@@ -290,18 +195,6 @@
                 <groupId>org.apromore</groupId>
                 <artifactId>yawl-schema</artifactId>
                 <version>${apromore.schema.version}</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>com.raffaeleconforti</groupId>
-                <artifactId>assembly</artifactId>
-                <version>1.0.20200211</version>
-            </dependency>
-            
-            <dependency>
-                <groupId>org.apromore</groupId>
-                <artifactId>raffaeleconforti-osgi</artifactId>
-                <version>1.1.1</version>
             </dependency>
 
             <dependency>
