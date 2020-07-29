@@ -52,7 +52,7 @@ import org.apromore.service.ProcessService;
 public class BIMPPlugin extends DefaultPortalPlugin {
 
     private String label = "Simulate model";
-    private String groupLabel = "Analyze";
+    private String groupLabel = "Redesign";
 
     @Inject private ProcessService processService;
 
