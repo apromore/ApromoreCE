@@ -51,7 +51,6 @@
     <artifact type="bundle" name="org.apromore.about-ce-portal-plugin" version="[1.0, 2)"/>   
     <artifact type="bundle" name="org.apromore.gbprove-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.gbprove-editor-plugin" version="[1.0.0, 2)"/>
-    <artifact type="bundle" name="org.apromore.manager-ws" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.log-filter-logic" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.log-filter-portal-plugin" version="[1.0.0, 2)"/>
     <artifact type="bundle" name="org.apromore.perfmining-logic" version="[1.0.0, 2)"/>
