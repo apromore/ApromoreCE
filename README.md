@@ -15,12 +15,14 @@ This repository contains source code of [Apromore Community Edition](https://apr
 
 
 ## Installation instructions
-* Download and unzip the latest [Apromore release](https://github.com/apromore/ApromoreCE/releases/latest) or check out the source code using git: `git clone https://github.com/apromore/ApromoreCore.git`
+* Check out the source code using git: `git clone https://github.com/apromore/ApromoreCE.git`
 * Open command prompt/terminal and change to the root of the project `cd ApromoreCE`
 * Execute the following commands: `git submodule init` and `git submodule update`.  This populates the ApromoreCore subdirectory.
-* Run the maven command `mvn clean install`.  This will build the Apromore manager, portal and editor and all the extra plugins.
+* Given that currently you are on the 'ApromoreCE' directory, go to the 'ApromoreCore' directory 'cd ApromoreCore'
+* Checkout and pull the v7.15 branch of ApromoreCore 'git checkout v7.15' and 'git pull'. 
+* Run the maven command `mvn clean install -DskipTests`.  This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
-* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore.
+* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by running the 'startup.sh' script from '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/' directory.
 * Open a web browser to [http://localhost:9000](http://localhost:9000). Use "admin”/“password” to access as administrator, or create a new account.
 * Keep the prompt/terminal window open.  Ctrl-C on the window will shut the server down.
 
@@ -30,6 +32,10 @@ Many of the configuration options are common to all editions of Apromore.
 These are described in the README document of the [Apromore Core repository](https://github.com/apromore/ApromoreCore).
 
 Configuration options specific to the community edition follow.
+
+###Share a file with all users
+By default ApromoreCE does not allow you to share a file with all users (the "public" group is not supported by default). 
+You can change this by editing the site.properties file present in the 'ApromoreCE/ApromoreCore' directory. Change 'security.publish.enable = false' to 'security.publish.enable = true' to enable file sharing with all users. 
 
 
 ### Applet Code-Signing
@@ -65,30 +71,8 @@ The following properties may usually by left at their default values:
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
 
 
-### PQL setup (optional)
-* [LoLA 2.0](http://service-technology.org/lola/) is required for PQL support
-* PQL queries over the process store are only supported on MySQL.  Create and populate the database with additional tables for PQL:
-```bash
-mysql -u root -p apromore < Supplements/database/PQL.MySQL-1.2.sql
-```
-* In `site.properties`, perform the following changes:
-  - Change `pql.numberOfIndexerThreads` to at least 1
-  - Change `pql.numberOfQueryThreads` to at least 1
-  - Change `pql.lola.dir` to the location of your LoLA 2.0 executable
-  - Change the various `pql.mysql.*` properties to match your MySQL database
-* In `build.xml`, uncomment the inclusion of the following PQL components in the `pickupRepo` fileset:
-  - APQL-Portal-Plugin/target/apql-portal-plugin-1.1.war
-  - Apromore-Assembly/PQL-Indexer-Assembly/src/main/resources/103-pql-indexer.plan
-    PQL-Logic/target/pql-logic-1.1.jar
-  - PQL-Logic-WS/target/pql-logic-ws-1.1.war
-  - PQL-Portal-Plugin/target/pql-portal-plugin-1.1.jar
-* Also, uncomment the following component in the `copy-virgo` target: `PQL-Indexer-Portal-Plugin/target/pql-indexer-portal-plugin-1.1.jar`
-
 
 ## Common problems
-
-> I grabbed the PQL.MySQL-1.2.sql file directly from the PQL sources and it doesn't work!
-* Edit the file and change the uuid attribute of the `jbpt_petri_nodes` table from `VARCHAR(50)` to `VARCHAR(100)` in two places
 
 > Models always show up in the log as unable to be indexed.
 * Check that LoLA executable is correctly configured.
