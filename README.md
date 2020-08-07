@@ -33,17 +33,6 @@ These are described in the README document of the [Apromore Core repository](htt
 
 Configuration options specific to the community edition follow.
 
-### Share a file with all users
-By default ApromoreCE does not allow you to share a file with all users (the "public" group is not supported by default). 
-You can change this by editing the site.properties file present in the 'ApromoreCE/ApromoreCore' directory. Change 'security.publish.enable = false' to 'security.publish.enable = true' to enable file sharing with all users. 
-
-
-### Applet Code-Signing
-Some of Apromore's features are implemented as Java applets running client-side in the browser.  If you possess an code-signing
-certificate (not an SSL certificate), you can edit the top-level `codesigning.properties` file to use your certificate rather
-than the self-signed certificate included in the source tree.  This will avoid browser warnings.
-
-
 ### Predictive monitoring setup (optional)
 
 * Predictive monitoring requires the use of MySQL; see the Apromore Core README for MySQL setup instructions.
