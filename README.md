@@ -22,7 +22,7 @@ This repository contains source code of [Apromore Community Edition](https://apr
 * Checkout and pull the v7.15 branch of ApromoreCore 'git checkout v7.15' and 'git pull'. 
 * Run the maven command `mvn clean install -DskipTests`.  This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
-* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by running the 'startup.sh' script from '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/' directory.
+* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by running the 'startup.sh' script from the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/' directory.
 * Open a web browser to [http://localhost:9000](http://localhost:9000). Use "admin”/“password” to access as administrator, or create a new account.
 * Keep the prompt/terminal window open.  Ctrl-C on the window will shut the server down.
 
@@ -33,7 +33,7 @@ These are described in the README document of the [Apromore Core repository](htt
 
 Configuration options specific to the community edition follow.
 
-###Share a file with all users
+### Share a file with all users
 By default ApromoreCE does not allow you to share a file with all users (the "public" group is not supported by default). 
 You can change this by editing the site.properties file present in the 'ApromoreCE/ApromoreCore' directory. Change 'security.publish.enable = false' to 'security.publish.enable = true' to enable file sharing with all users. 
 
