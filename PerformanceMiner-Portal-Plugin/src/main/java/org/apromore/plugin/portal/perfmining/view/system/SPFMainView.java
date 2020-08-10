@@ -31,6 +31,8 @@ import org.jfree.data.xy.XYDataset;
 import org.apromore.service.perfmining.models.SPF;
 import org.apromore.service.perfmining.models.Stage;
 import org.apromore.plugin.portal.perfmining.view.SPFView;
+import org.zkoss.zk.ui.event.Event;
+import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.util.Clients;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.Window;
@@ -87,36 +89,14 @@ public class SPFMainView extends SPFView {
             Button updateButton = (Button)chartW.getFellow("updateButton");
             updateButton.addEventListener("onUpdate", new UpdateButtonEventListener(chartW, bpf));
             String jsonString = Visualization.createCFDJson(this.createDataset()).toString();
-            String javascript = "loadData('" + jsonString + "');";
-            //System.out.println(javascript);
-            Clients.evalJavaScript(javascript);
-            chartW.setTitle("Staged Process Flow");
-            chartW.doModal();
-        }
-     
-        
-
-
-//        private List<String[]> getUpdatedData(){
-//          ArrayList<String[]> list= new ArrayList<String[]>();
-//
-//          list.add(new String[]{"Test Mail1-updated","TonyQ", "10k"});
-//          list.add(new String[]{"Test Mail12-updated","Ryan", "100k"});
-//          list.add(new String[]{"Test Mail13-updated","Simon", "15k"});
-//          list.add(new String[]{"Test Mail14-updated","Jimmy", "5k"});    
-//          return list;
-//       }
-        
-//            updateButton.addEventListener("onUser", new EventListener<Event>() {
-//                public void onEvent(Event event) throws Exception {
-//                    ForwardEvent eventf = (ForwardEvent) event;
-//                    System.out.println("Range date: " + eventf.getOrigin().getData());
-//                }
-//            });   
-        
-//        public void onUser$updateButton(Event event) throws Exception {
-//            Event eventx = Events.getRealOrigin((ForwardEvent)event);
-//            String test = eventx.getData().toString();
-//            System.out.println(test);
-//        }  
+            chartW.addEventListener("onLoaded", new EventListener<Event>() {
+                @Override
+                public void onEvent(Event event) throws Exception {
+                    String javascript = "loadData('" + jsonString + "');";
+                    Clients.evalJavaScript(javascript);
+                    chartW.setTitle("Staged Process Flow");
+                    chartW.doModal();
+                }
+            });
+        } 
 }

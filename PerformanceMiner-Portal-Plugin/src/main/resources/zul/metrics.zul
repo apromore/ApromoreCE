@@ -33,7 +33,6 @@
         }
 
     </style>
-```
 	<n:div id="chartdiv" style="height:90%;width:100%;position:absolute;"></n:div>	
     
     <script type="text/javascript">
