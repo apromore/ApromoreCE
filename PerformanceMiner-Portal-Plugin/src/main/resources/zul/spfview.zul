@@ -21,9 +21,6 @@
   <http://www.gnu.org/licenses/lgpl-3.0.html>.
   #L%
   -->
-
-<?script src="js/highstock.js"?>
-<?script src="js/exporting.js"?>
     
 <window id="spfMainWin" xmlns:n="http://www.zkoss.org/2005/zk/native" xmlns:w="http://www.zkoss.org/2005/zk/client"
         xmlns:z="http://www.zkoss.org/2005/zul"
