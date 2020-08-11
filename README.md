@@ -33,6 +33,10 @@ These are described in the README document of the [Apromore Core repository](htt
 
 Configuration options specific to the community edition follow.
 
+### Share file to all users
+
+* By default Apromore does not allow you to share a file with all users (i.e. the "public" group is not supported by default). You can change this by editing the site.properties file present in the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/' directory. Specifically, to enable the option to share files and folders with the “public” group, you should set “security.publish.enable = true” in the site.properties file.
+
 ### Predictive monitoring setup (optional)
 
 * Predictive monitoring requires the use of MySQL; see the Apromore Core README for MySQL setup instructions.
