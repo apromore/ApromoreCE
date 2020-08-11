@@ -2,7 +2,7 @@
 
 # Apromore Community Edition
 
-This repository contains source code of [Apromore Community Edition](https://apromore.org/platform/editions/). This edition includes all the experimental plugins developed by the open-source community on top of Apromore Core. You can choose to use the H2 or MySQL database, the plugins you want to install, configure LDAP access and Apromore Portal’s URL, etc. Below you can find instructions to build this edition locally. Alternatively, you can run it from our public node in [Estonia](http://apromore-ce.cloud.ut.ee) or download a contenarized image in [Docker](https://github.com/apromore/ApromoreDocker/releases).
+This repository contains source code of [Apromore Community Edition](https://apromore.org/platform/editions/). This edition includes all the experimental plugins developed by the open-source community on top of Apromore Core. You can choose to use the H2 or MySQL database, the plugins you want to install, configure LDAP access and Apromore Portal’s URL, etc. Below you can find instructions to build this edition locally. Alternatively, you can run it from our public node in [Estonia](http://apromore-ce.cloud.ut.ee) or download a contenarized image in [Docker](https://github.com/apromore/ApromoreDocker/releases). Note: the Docker image is only available for an older version of Apromore CE (version 7.12). 
 
 
 ## System Requirements
@@ -20,7 +20,7 @@ This repository contains source code of [Apromore Community Edition](https://apr
 * Execute the following commands: `git submodule init` and `git submodule update`.  This populates the ApromoreCore subdirectory.
 * Given that currently you are on the 'ApromoreCE' directory, go to the 'ApromoreCore' directory 'cd ApromoreCore'
 * Checkout and pull the v7.15 branch of ApromoreCore 'git checkout v7.15' and 'git pull'. 
-* Run the maven command `mvn clean install -DskipTests`.  This will build the Apromore manager, portal and editor and all the extra plugins.
+* Run the maven command `mvn clean install`.  This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
 * Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by running the 'startup.sh' script from the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/' directory.
 * Open a web browser to [http://localhost:9000](http://localhost:9000). Use "admin”/“password” to access as administrator, or create a new account.
