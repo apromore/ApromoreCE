@@ -60,9 +60,3 @@ The following properties may usually by left at their default values:
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
 
 
-
-## Common problems
-
-> Models always show up in the log as unable to be indexed.
-* Check that LoLA executable is correctly configured.
-
