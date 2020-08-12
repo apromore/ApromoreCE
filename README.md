@@ -2,11 +2,16 @@
 
 # Apromore Community Edition
 
-This repository contains source code of [Apromore Community Edition](https://apromore.org/platform/editions/). This edition includes all the experimental plugins developed by the open-source community on top of Apromore Core. You can choose to use the H2 or MySQL database, the plugins you want to install, configure LDAP access and Apromore Portal’s URL, etc. Below you can find instructions to build this edition locally. Alternatively, you can run it from our public node in [Estonia](http://apromore-ce.cloud.ut.ee) or download a contenarized image in [Docker](https://github.com/apromore/ApromoreDocker/releases). Note: the Docker image is currently available for an older version of Apromore CE (version 7.12). 
+This repository contains the source code of [Apromore Community Edition (CE)](https://apromore.org/platform/editions/). Apromore CE is the free edition of Apromore. It includes Apromore Core (the kernel of the Apromore product) as well as experimental plugins developed by the open-source community. By default, Apromore uses the H2 database for storing process models and the workspace metadata (folder structure, user accounts and access rights). Instructions are provided below to use a MySQL database instead of H2.
 
+The instructions below are for installation of Apromore CE from the source code. For convenience, we also make available a containerized image in [Docker](https://github.com/apromore/ApromoreDocker/releases). Note: the Docker image is currently available for an older version of Apromore CE (version 7.12). An updated Docker image with Apromore CE version 7.15 is expected end of August.
+
+If you simply wish to try Apromore without going through the installation procedure, you can create an account in this [public demo node](http://apromore-ce.cloud.ut.ee). The public node is only for demonstration and trials. It is not actively supported and may be shut down at any time.
+
+If you are looking for the commercial edition (Apromore Enterprise Edition), check the [Apromore web site](http://apromore.com)
 
 ## System Requirements
-* Windows 7 or newer or Mac OSX 10.8 or newer (other users - check out our [Docker-based version](https://github.com/apromore/ApromoreDocker))
+* Linux Ubuntu 18.04 or higher (should work on other Linux distributions), Windows 10/WS2016/WS2019, Mac OSX 10.8 or newer
 * Java SE 8 ["Server JRE"](https://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) or ["JDK"](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) Edition 1.8. Note that newer versions, including Java SE 11, are currently not supported
 * [Apache Maven](https://maven.apache.org/download.cgi) 3.5.2 or newer
 * [Apache Ant](https://ant.apache.org/bindownload.cgi) 1.10.1 or newer
