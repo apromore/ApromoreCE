@@ -30,6 +30,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.apromore.apmlog.APMLog;
+import org.apromore.apmlog.filter.APMLogFilter;
+import org.apromore.apmlog.filter.APMLogFilterPackage;
 import org.apromore.apmlog.filter.rules.LogFilterRule;
 import org.apromore.logfilter.LogFilterService;
 import org.apromore.logfilter.criteria.LogFilterCriterion;
@@ -45,6 +48,8 @@ import org.apromore.plugin.portal.logfilter.generic.LogFilterResultListener;
 import org.deckfour.xes.model.XLog;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.event.EventListener;
+import org.zkoss.zk.ui.event.EventQueue;
+import org.zkoss.zk.ui.event.EventQueues;
 import org.zkoss.zul.Button;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
@@ -129,13 +134,8 @@ public class LogFilterController {
     							long min, long max) throws IOException {
     	this.portalContext = portalContext;
     	this.log = log;
-//    	logFilterService = (LogFilterService)beanFactory.getBean("logFilterService");
-//    	logFilterCriterionFactory = (LogFilterCriterionFactory)beanFactory.getBean("LogFilterCriterionFactory");
-        //this.criteria = logFilterCriterionFactory.copyFilterCriterionList(originalCriteria);
-    	this.criteria = logFilterCriterionFactory.convertFilterCriteria(originalCriteria);
+    	this.criteria = logFilterCriterionFactory.convertFilterRulesToFilterCriteria(originalCriteria);
         
-        //filterSelectorW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/filterCriteria.zul", null, null);
-        //filterSelectorW = (Window) Executions.createComponents("/zul/filterCriteria.zul", null, null);
         filterSelectorW = (Window) portalContext.getUI().createComponent(getClass().getClassLoader(), "zul/filterCriteria.zul", null, null);
         filterSelectorW.setTitle("Log Filter Criteria");
 
@@ -227,13 +227,24 @@ public class LogFilterController {
 
     private void save() {
         try {
-        	XLog filteredLog = this.logFilterService.filter(this.log, criteria);
-        	if (filteredLog.isEmpty()) {
+        	//XLog filteredLog = this.logFilterService.filter(this.log, criteria);
+        	List<LogFilterRule> filterRules = logFilterCriterionFactory.convertFilterCriteriaToFilterRules(criteria);
+        	APMLog apmLog = new APMLog(this.log);
+            APMLogFilter apmLogFilter = new APMLogFilter(apmLog);
+        	apmLogFilter.filter(filterRules);
+            APMLog output = apmLogFilter.getApmLog();
+        	if (output.getTraceList().isEmpty()) {
         		Messagebox.show("The log is empty after applying all filter criteria! Please use different criteria.");
         	}
         	else {
     		    filterSelectorW.detach();
-    		    resultListener.onPluginExecutionFinished(new LogFilterOutputResult(filteredLog, criteria));
+    		    //resultListener.onPluginExecutionFinished(new LogFilterOutputResult(filteredLog, criteria));
+    		    apmLogFilter.updatePrevious(); //20200212
+                APMLogFilterPackage afp = new APMLogFilterPackage("",
+                        output, apmLogFilter.getPLog(), this.log, filterRules);
+                EventQueue eqCriteria = EventQueues.lookup("apmlog_filter_package", EventQueues.DESKTOP, true);
+                eqCriteria.publish(new Event("", null, afp));
+    		    
         	}
         }
         catch (Exception ex) {

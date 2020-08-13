@@ -614,8 +614,8 @@ public class FilterCriterionDialog {
                         if(fromValue > toValue) {
                             Messagebox.show("Please enter valid duration values.", "Error", Messagebox.OK, Messagebox.ERROR);
                         }else{
-                            String fromValueString = dBxDurationFrom.getValue().doubleValue() +  spanFrom;
-                            String toValueString = dBxDurationTo.getValue().doubleValue() +  spanTo;
+                            String fromValueString = dBxDurationFrom.getValue().doubleValue() +  " " + spanFrom;
+                            String toValueString = dBxDurationTo.getValue().doubleValue() +  " " + spanTo;
                             set.add(">" + fromValueString);
                             set.add("<" + toValueString);
                         }

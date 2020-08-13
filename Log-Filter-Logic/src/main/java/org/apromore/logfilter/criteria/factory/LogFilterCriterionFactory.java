@@ -40,7 +40,10 @@ public interface LogFilterCriterionFactory {
     public LogFilterCriterion getLogFilterCriterion(Action action, Containment containment, Level level, String label, String attribute, Set<String> value);
     public LogFilterCriterion copyFilterCriterion(LogFilterCriterion criterion);
     public List<LogFilterCriterion> copyFilterCriterionList(List<LogFilterCriterion> list);
-    public LogFilterCriterion convertFilterCriteria(LogFilterRule rule);
-    public List<LogFilterCriterion> convertFilterCriteria(List<LogFilterRule> list);
-
+    
+    public LogFilterCriterion convertFilterRuleToFilterCriterion(LogFilterRule rule);
+    public List<LogFilterCriterion> convertFilterRulesToFilterCriteria(List<LogFilterRule> list);
+    
+    public LogFilterRule convertFilterCriterionToFilterRule(LogFilterCriterion criterion);
+    public List<LogFilterRule> convertFilterCriteriaToFilterRules(List<LogFilterCriterion> criteria);
 }

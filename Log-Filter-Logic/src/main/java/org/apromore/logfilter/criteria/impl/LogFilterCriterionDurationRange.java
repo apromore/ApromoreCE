@@ -58,24 +58,11 @@ public class LogFilterCriterionDurationRange extends AbstractLogFilterCriterion 
 
         for(String v : value) {
             if(v.startsWith(">")) {
-                int spaceIndex = v.indexOf(" ");
-                String numberString = v.substring(1, spaceIndex);
-                BigDecimal doubleValue = new BigDecimal(numberString);
-                String unit = v.substring(spaceIndex + 1);
-                BigDecimal unitValue = unitStringToBigDecimal(unit);
-                BigDecimal gValue = doubleValue.multiply(unitValue);
-                greaterThan = gValue.longValue();
+                greaterThan = getDurationValue(v);
 
             }
             if(v.startsWith("<")){
-
-                int spaceIndex = v.indexOf(" ");
-                String numberString = v.substring(1, spaceIndex);
-                BigDecimal doubleValue = new BigDecimal(numberString);
-                String unit = v.substring(spaceIndex + 1);
-                BigDecimal unitValue = unitStringToBigDecimal(unit);
-                BigDecimal lValue = doubleValue.multiply(unitValue);
-                lesserThan = lValue.longValue();
+                lesserThan = getDurationValue(v);
             }
         }
 
@@ -90,9 +77,33 @@ public class LogFilterCriterionDurationRange extends AbstractLogFilterCriterion 
     }
 
 
+    public static long getDurationValue (String v) {
+    	long duration = 0;
+        if(v.startsWith(">")) {
+            int spaceIndex = v.indexOf(" ");
+            String numberString = v.substring(1, spaceIndex);
+            BigDecimal doubleValue = new BigDecimal(numberString);
+            String unit = v.substring(spaceIndex + 1);
+            BigDecimal unitValue = unitStringToBigDecimal(unit);
+            BigDecimal gValue = doubleValue.multiply(unitValue);
+            duration = gValue.longValue();
 
+        }
+        if(v.startsWith("<")){
 
-    private BigDecimal unitStringToBigDecimal(String s) {
+            int spaceIndex = v.indexOf(" ");
+            String numberString = v.substring(1, spaceIndex);
+            BigDecimal doubleValue = new BigDecimal(numberString);
+            String unit = v.substring(spaceIndex + 1);
+            BigDecimal unitValue = unitStringToBigDecimal(unit);
+            BigDecimal lValue = doubleValue.multiply(unitValue);
+            duration = lValue.longValue();
+        }
+        
+        return duration;
+    }
+
+    private static BigDecimal unitStringToBigDecimal(String s) {
         if(s.equals("Years")) return new BigDecimal("31536000000");
         if(s.equals("Months")) return new BigDecimal("2678400000");
         if(s.equals("Weeks")) return new BigDecimal("604800000");

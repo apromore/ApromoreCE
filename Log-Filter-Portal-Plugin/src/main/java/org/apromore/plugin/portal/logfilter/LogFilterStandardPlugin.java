@@ -165,33 +165,14 @@ public class LogFilterStandardPlugin extends GenericLogFilterPlugin {
         
     }
 
+    // This event handler must exist to be called from the LogFilterCE
+    // The reason is because LogFilterCE and LogFilterEE don't follow consistent API
+    // LogFilterCE uses the callback while LogFilterEE has changed to using EventQueue.
+    // The LogFilterCriterion design between LogFilterCE and EE is now not the same.
     @Override
     public void onPluginExecutionFinished(LogFilterOutputResult outputParams) throws Exception {
-        XLog filteredLog = outputParams.getLog();
-        //List<LogFilterCriterion> criteria = outputParams.getFilterCriteria();
-        
-        if (filteredLog != null) {
-            if (this.portalContext instanceof PluginPortalContext) {
-                ((PluginPortalContext)portalContext).getMainController().showInputDialog(
-                        "Save filtered log",
-                        "Enter a log name (no more than 60 characters)", 
-                        portalItem.getName() + "_filtered", 
-                        "^[a-zA-Z0-9_\\-\\s]{1,60}$",
-                        "a-z, A-Z, 0-9, hyphen, underscore, and space. No more than 60 chars.",
-                        new EventListener<Event>() {
-                            @Override
-                            public void onEvent(Event event) throws Exception {
-                                if (event.getName().equals("onOK")) {
-                                    String logName = (String)event.getData();
-                                    saveLog(portalContext, filteredLog, logName, portalItem);
-                                }
-                            }
-                        });
-            }
-            else {
-                Messagebox.show("The current context is not a valid plugin portal context", "Attention", Messagebox.OK, Messagebox.ERROR);
-            }
-        }
+//        XLog filteredLog = outputParams.getLog();
+//        List<LogFilterCriterion> criteria = outputParams.getFilterCriteria();
     }
 
 

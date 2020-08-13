@@ -25,6 +25,7 @@ package org.apromore.logfilter.criteria.impl.util;
 import org.deckfour.xes.extension.std.XTimeExtension;
 import org.deckfour.xes.model.XEvent;
 
+import java.text.DecimalFormat;
 import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -56,4 +57,41 @@ public class TimeUtil {
         ZonedDateTime zdt = ZonedDateTime.ofInstant(Instant.ofEpochMilli(milliseconds), ZoneId.systemDefault());
         return zdt.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss.SSS"));
     }
+    
+	public static String valueToUnit(long milliseconds) {
+		DecimalFormat decimalFormat = new DecimalFormat("##############0.##");
+		double seconds = milliseconds / 1000.0D;
+		double minutes = seconds / 60.0D;
+		double hours = minutes / 60.0D;
+		double days = hours / 24.0D;
+		double weeks = days / 7.0D;
+		double months = days / 30.0D;
+		double years = days / 365.0D;
+	    
+		if (years > 1.0D) {
+			return decimalFormat.format(years) + " Years";
+		}
+	  
+		if (months > 1.0D) {
+		  return decimalFormat.format(months) + " Months";
+		}
+	
+		if (weeks > 1.0D) {
+		  return decimalFormat.format(weeks) + " Weeks";
+		}
+	
+		if (days > 1.0D) {
+		  return decimalFormat.format(days) + " Days";
+		}
+	
+		if (hours > 1.0D) {
+		  return decimalFormat.format(hours) + " Hours";
+		}
+	
+		if (minutes > 1.0D) {
+		  return decimalFormat.format(minutes) + " Minutes";
+		}
+	  
+		return decimalFormat.format(seconds) + " Seconds";
+	}
 }
