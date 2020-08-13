@@ -132,6 +132,8 @@ public class LogFilterCriterionFactoryImpl implements LogFilterCriterionFactory 
     	return newList;
     }
 	
+	//////////////////////// FROM LogFilterRule to LogFilterCriterion //////////////////////
+	
     @Override
     public LogFilterCriterion convertFilterRuleToFilterCriterion(LogFilterRule rule) {
         return this.getLogFilterCriterion(
@@ -142,6 +144,15 @@ public class LogFilterCriterionFactoryImpl implements LogFilterCriterionFactory 
                 getCriterionAttribute(rule), 
                 getCriterionValueSet(rule));
     }
+    
+	@Override
+    public List<LogFilterCriterion> convertFilterRulesToFilterCriteria(List<LogFilterRule> list) {
+	    List<LogFilterCriterion> criteria = new ArrayList<>();
+	    for (LogFilterRule rule : list) {
+	    	criteria.add(this.convertFilterRuleToFilterCriterion(rule));
+	    }
+	    return criteria;
+	}
     
     private String getCriterionAttribute(LogFilterRule rule) {
     	if (rule.getFilterType()==FilterType.DIRECT_FOLLOW) {
@@ -212,15 +223,10 @@ public class LogFilterCriterionFactoryImpl implements LogFilterCriterionFactory 
     	
     	return valueSet;
     }
-	
-	@Override
-    public List<LogFilterCriterion> convertFilterRulesToFilterCriteria(List<LogFilterRule> list) {
-	    List<LogFilterCriterion> criteria = new ArrayList<>();
-	    for (LogFilterRule rule : list) {
-	    	criteria.add(this.convertFilterRuleToFilterCriterion(rule));
-	    }
-	    return criteria;
-	}
+    
+    
+    
+    ////////////////////////FROM LogFilterCriterion to LogFilterRule //////////////////////
 	
 	@Override
     public LogFilterRule convertFilterCriterionToFilterRule(LogFilterCriterion criterion) {
@@ -233,6 +239,15 @@ public class LogFilterCriterionFactoryImpl implements LogFilterCriterionFactory 
 				getRuleValueSet(criterion.getValue(), criterion.getAttribute(), getFilterType(criterion), criterion.getLabel()), 
 				new HashSet<>());
     	
+    }
+	
+	@Override
+    public List<LogFilterRule> convertFilterCriteriaToFilterRules(List<LogFilterCriterion> criteria) {
+		List<LogFilterRule> rules = new ArrayList<>();
+	    for (LogFilterCriterion c : criteria) {
+	    	rules.add(this.convertFilterCriterionToFilterRule(c));
+	    }
+	    return rules;
     }
 	
 	private String getKey(LogFilterCriterion criterion) {
@@ -357,26 +372,6 @@ public class LogFilterCriterionFactoryImpl implements LogFilterCriterionFactory 
         RuleValue from = new RuleValue(FilterType.EVENTUAL_FOLLOW, OperationType.FROM, attributeKey, edgeParts[0]);
         RuleValue to = new RuleValue(FilterType.EVENTUAL_FOLLOW, OperationType.TO, attributeKey, edgeParts[1]);
         return new HashSet<RuleValue>(Arrays.asList(new RuleValue[] {from,to}));
-    }
-    
-	@Override
-    public List<LogFilterRule> convertFilterCriteriaToFilterRules(List<LogFilterCriterion> criteria) {
-		List<LogFilterRule> rules = new ArrayList<>();
-	    for (LogFilterCriterion c : criteria) {
-	    	rules.add(this.convertFilterCriterionToFilterRule(c));
-	    }
-	    return rules;
-    }
-	
-    private BigDecimal unitStringToBigDecimal(String s) {
-        if(s.equals("Years")) return new BigDecimal("31536000000");
-        if(s.equals("Months")) return new BigDecimal("2678400000");
-        if(s.equals("Weeks")) return new BigDecimal("604800000");
-        if(s.equals("Days")) return new BigDecimal("86400000");
-        if(s.equals("Hours")) return new BigDecimal("3600000");
-        if(s.equals("Minutes")) return new BigDecimal("60000");
-        if(s.equals("Seconds")) return new BigDecimal("1000");
-        return new BigDecimal(0);
     }
 	
 }
