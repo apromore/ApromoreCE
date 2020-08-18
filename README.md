@@ -65,4 +65,13 @@ The following properties may usually by left at their default values:
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
   - Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by running the `startup.sh` script present in the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/' directory.
 
+## Virgo Admin Console (Security)
+* For security purpose, it is advisable to deactivate the virgo admin console.
+
+* Go to the directory:
+cd $HOME/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/pickup
+
+* And delete the ‘org.eclipse.virgo.management.console_3.6.4.RELEASE.jar’ file:
+sudo rm -rf org.eclipse.virgo.management.console_3.6.4.RELEASE.jar
+
 
