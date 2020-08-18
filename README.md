@@ -2,7 +2,7 @@
 
 # Apromore Community Edition
 
-This repository contains the source code of [Apromore Community Edition (CE)](https://apromore.org/platform/editions/). Apromore CE is the free edition of Apromore. It includes Apromore Core (the kernel of the Apromore product) as well as experimental plugins developed by the open-source community. By default, Apromore uses the H2 database for storing process models and the workspace metadata (folder structure, user accounts and access rights). Instructions are provided below to use a MySQL database instead of H2.
+This repository contains the source code of [Apromore Community Edition (CE)](https://apromore.org/platform/editions/). Apromore CE is the free edition of Apromore. It includes [Apromore Core](https://github.com/apromore/ApromoreCore) — the kernel of the Apromore platform — as well as experimental plugins developed by the open-source community. By default, Apromore uses the H2 database for storing process models and the workspace metadata (folder structure, user accounts and access rights). Instructions are provided below to use a MySQL database instead of H2.
 
 The instructions below are for installation of Apromore CE from the source code. For convenience, we also make available a containerized image in [Docker](https://github.com/apromore/ApromoreDocker/releases). Note: the Docker image is currently available for an older version of Apromore CE (version 7.12). An updated Docker image with Apromore CE version 7.15 is expected end of August.
 
