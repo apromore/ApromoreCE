@@ -11,7 +11,7 @@ If you simply wish to try Apromore without going through the installation proced
 If you are looking for the commercial edition (Apromore Enterprise Edition), check the [Apromore web site](http://apromore.com)
 
 ## System Requirements
-* Linux Ubuntu 18.04 or higher (should work on other Linux distributions), Windows 10/WS2016/WS2019, Mac OSX 10.8 or newer
+* Linux Ubuntu 18.04 (We do not support newer versions as it may lead to dependency issues), Windows 10/WS2016/WS2019, Mac OSX 10.8 or newer
 * Java SE 8 ["Server JRE"](https://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) or ["JDK"](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) Edition 1.8. Note that newer versions, including Java SE 11, are currently not supported
 * [Apache Maven](https://maven.apache.org/download.cgi) 3.5.2 or newer
 * [Apache Ant](https://ant.apache.org/bindownload.cgi) 1.10.1 or newer
@@ -27,16 +27,12 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 * Checkout and pull the v7.15 branch of ApromoreCore 'git checkout v7.15' and 'git pull'. 
 * Run the maven command `mvn clean install`.  This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
-* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by running the 'startup.sh' script from the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/' directory.
+* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by running the `startup.sh` script from the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/' directory.
 * Open a web browser to [http://localhost:9000](http://localhost:9000). Use "admin”/“password” to access as administrator, or create a new account.
 * Keep the prompt/terminal window open.  Ctrl-C on the window will shut the server down.
 
 
 ## Configuration
-Many of the configuration options are common to all editions of Apromore.
-These are described in the README document of the [Apromore Core repository](https://github.com/apromore/ApromoreCore).
-
-Configuration options specific to the community edition follow.
 
 ### Share file to all users (optional)
 
@@ -44,28 +40,29 @@ Configuration options specific to the community edition follow.
 
 ### Predictive monitoring setup (optional)
 
-* Predictive monitoring requires the use of MySQL; see the Apromore Core README for MySQL setup instructions.
-  Populate the database with additional tables as follows:
+* Predictive monitoring requires the use of MySQL; see the [Apromore Core README](https://github.com/apromore/ApromoreCore) for MySQL setup instructions.
+  Once that is done, populate the database with additional tables as follows:
 ```bash
-mysql -u root -p apromore < Supplements/database/Nirdizati.MySQL-1.0.sql
+mysql -u root -p apromore < /$HOME/ApromoreCE/ApromoreCore/Supplements/database/Nirdizati.MySQL-1.0.sql
 ```
 * Check out predictive monitoring repository from GitHub:
 ```bash
 git clone https://github.com/nirdizati/nirdizati-training-backend.git
 ```
-* Set up additional servers (alongside the Apromore server), as directed in `nirdizati-training-backend/apromore/README.md`
-* In site.properties, set the following properties:
+* Set up additional servers (alongside the Apromore server), as directed in [Nirdizati README](https://github.com/nirdizati/nirdizati-training-backend/blob/master/apromore/README.md)
+* Set the following properties in `site.properties` present in the following directory: '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr'
   - `training.python` must be set to the location of a Python 3 executable
    - `training.backend` must be directory containing `nirdizati-training-backend`
    - `training.tmpDir` must be a writable directory for temporary files
    - `training.logFile` must be a writable file path for logging
 The following properties may usually by left at their default values:
-   - `kafka.host` can be left at the default `localhost:909`2, presuming Zookeeper and Kafka are running locally
+   - `kafka.host` can be left at the default `localhost:9092`, presuming Zookeeper and Kafka are running locally. Note: Make sure that port 9092 is open on the server because kafka.host runs on port 9092 by default.
    - the various `kafka.*.topic` properties should already match those used in the `nirdizati-training-backend` scripts
 * Stop and restart the server so that it picks up the changes to `site.properties`.
-* Ensure that the following bundles are present in the Virgo `pickup` directory (`ant start-virgo` copies them there on startup):
+* Ensure that the following bundles are present in the Virgo `pickup` directory (`ant start-virgo-community` copies them there on startup):
   - Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar
   - Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
+Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by running the `startup.sh` script present in the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/' directory.
 
 
