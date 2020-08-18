@@ -67,11 +67,8 @@ The following properties may usually by left at their default values:
 
 ## Virgo Admin Console (Security)
 * For security purpose, it is advisable to deactivate the virgo admin console.
-
-* Go to the directory:
-cd $HOME/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/pickup
-
-* And delete the ‘org.eclipse.virgo.management.console_3.6.4.RELEASE.jar’ file:
-sudo rm -rf org.eclipse.virgo.management.console_3.6.4.RELEASE.jar
+* Go to the directory
+´cd $HOME/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/pickup´
+* And delete the ‘org.eclipse.virgo.management.console_3.6.4.RELEASE.jar’ file ´sudo rm -rf org.eclipse.virgo.management.console_3.6.4.RELEASE.jar´
 
 
