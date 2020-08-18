@@ -63,6 +63,6 @@ The following properties may usually by left at their default values:
   - Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar
   - Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
-Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by running the `startup.sh` script present in the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/' directory.
+  - Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by running the `startup.sh` script present in the '/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/' directory.
 
 
