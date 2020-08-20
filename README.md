@@ -23,6 +23,7 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 ## Installation instructions
 * Note: These instructions are tested with Linux Ubuntu 18.04. In Linux Ubuntu 20.04 there may be some dependency management issues. With minor adaptations, these instructions may be used for Windows 10/WS20016/WS2019 and Max OS 10.8 or newer. 
 * Check out the source code using git: `git clone https://github.com/apromore/ApromoreCE.git`
+* Check out the tag: `git checkout tags/v7.15`
 * Open command prompt/terminal and change to the root of the project `cd ApromoreCE`
 * Execute the following commands: `git submodule init` and `git submodule update`.  This populates the ApromoreCore subdirectory.
 * Given that currently you are on the 'ApromoreCE' directory, go to the 'ApromoreCore' directory `cd ApromoreCore`
