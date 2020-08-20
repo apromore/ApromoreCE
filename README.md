@@ -19,9 +19,9 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 * [Lessc](http://lesscss.org/usage/) 3.9.0 or newer
 * (optional) [MySQL server](https://dev.mysql.com/downloads/mysql/5.7.html) 5.6 or 5.7. Note that version 8.0 is currently not supported.
 
+* Note: These instructions are tested with Linux Ubuntu 18.04. In Linux Ubuntu 20.04 there may be some dependency management issues. With minor adaptations, these instructions may be used for Windows 10/WS20016/WS2019 and Max OS 10.8 or newer. 
 
 ## Installation instructions
-* Note: These instructions are tested with Linux Ubuntu 18.04. In Linux Ubuntu 20.04 there may be some dependency management issues. With minor adaptations, these instructions may be used for Windows 10/WS20016/WS2019 and Max OS 10.8 or newer. 
 * Check out the source code using git: `git clone https://github.com/apromore/ApromoreCE.git`
 * Check out the tag: `git checkout tags/v7.15`
 * Open command prompt/terminal and change to the root of the project `cd ApromoreCE`
@@ -44,7 +44,7 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 ### Predictive monitoring setup (optional)
 
 * Predictive monitoring requires the use of MySQL; see the [Apromore Core README](https://github.com/apromore/ApromoreCore) for MySQL setup instructions.
-  Once that is done, populate the database with additional tables as follows (There might be a slight change in the path of the .sql file based on the location of your "ApromoreCE" folder):
+  Once that is done, populate the database with additional tables as follows (There may be a slight change in the path of the .sql file based on the location of your "ApromoreCE" folder):
 ```bash
 mysql -u root -p apromore < /ApromoreCE/ApromoreCore/Supplements/database/Nirdizati.MySQL-1.0.sql
 ```
