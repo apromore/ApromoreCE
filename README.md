@@ -27,7 +27,7 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 * Open command prompt/terminal and change to the root of the project `cd ApromoreCE`
 * Execute the following commands: `git submodule init` and `git submodule update`.  This populates the ApromoreCore subdirectory.
 * Given that currently you are on the 'ApromoreCE' directory, go to the 'ApromoreCore' directory `cd ApromoreCore`
-* Checkout and pull the v7.15 branch of ApromoreCore `git checkout v7.15` and `git pull`. 
+* Check out the tagv7.15 of ApromoreCore `git checkout tags/v7.15`. 
 * Go to the 'ApromoreCE' directory and run the maven command `mvn clean install`. This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
 * Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by executing the `sudo ./startup.sh -clean` command from the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/" directory.
