@@ -37,6 +37,31 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 
 ## Configuration
 
+### Backup and restore
+Apromore stores its data objects in two places:
+* Database: all data, except the event logs
+* Event logs which are by default located in the top-level `Event-Logs-Repository` directory
+
+As such, both need to be backed up and restored.
+* To backup h2 database, it is enough to copy access the `Manager-Repository.h2.db` file
+* To backup MySQL database, the following command may be used  (If prompted for password, enter the password of the ‘apromore’ user i.e ‘MAcri’):
+```bash
+mysqldump -u apromore -p apromore > backup.sql
+```
+
+To backup only one table (rather than the whole database), the following command may be used:
+```bash
+mysqldump -u root -p apromore tablename > tablename.sql
+```
+
+To restore, use
+```bash
+mysql --max_allowed_packet=1G --user=root -p -h localhost apromore < backup.sql
+```
+
+* For the event logs directory, it is recommended to zip the directory before copying it across
+
+
 ### Share file to all users (optional)
 
 * By default Apromore does not allow you to share a file with all users (i.e. the "public" group is not supported by default). You can change this by editing the site.properties file present in the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/" directory. Specifically, to enable the option to share files and folders with the “public” group, you should set “security.publish.enable = true” in the site.properties file.
