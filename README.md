@@ -13,12 +13,18 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 
 ## System Requirements
 * Linux Ubuntu 18.04 (We do not support newer versions as it may lead to dependency issues), Windows 10/WS2016/WS2019, Mac OSX 10.8 or newer
-* Java SE 8 ["Server JRE"](https://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) or ["JDK"](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) Edition 1.8. Note that newer versions, including Java SE 11, are currently not supported
+* Java SE 8 ["Server JRE"](https://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) or ["JDK"](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) Edition 1.8. Note that newer versions, including Java SE 11, are currently not supported. For Ubuntu, it can be installed as
+```bash
+sudo apt install openjdk-8-jdk
+```
 * [Apache Maven](https://maven.apache.org/download.cgi) 3.5.2 or newer
 * [Apache Ant](https://ant.apache.org/bindownload.cgi) 1.10.1 or newer
 * [Lessc](http://lesscss.org/usage/) 3.9.0 or newer
-* (optional) [MySQL server](https://dev.mysql.com/downloads/mysql/5.7.html) 5.6 or 5.7. Note that version 8.0 is currently not supported.
-
+* (optional) [MySQL server](https://dev.mysql.com/downloads/mysql/5.7.html) 5.6 or 5.7. Note that version 8.0 is currently not supported. For Ubuntu, it can be installed as (taken [from here](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04))
+```bash
+sudo apt install mysql-server
+sudo mysql_secure_installation
+```
 * Note: These instructions are tested with Linux Ubuntu 18.04. In Linux Ubuntu 20.04 there may be some dependency management issues. With minor adaptations, these instructions may be used for Windows 10/WS20016/WS2019 and Max OS 10.8 or newer. 
 
 ## Installation instructions
@@ -40,7 +46,7 @@ If you are looking for the commercial edition (Apromore Enterprise Edition), che
 
 ### Share file to all users (optional)
 
-* By default Apromore does not allow you to share a file with all users (i.e. the "public" group is not supported by default). You can change this by editing the site.properties file present in the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/" directory. Specifically, to enable the option to share files and folders with the “public” group, you should set “security.publish.enable = true” in the site.properties file.
+* By default Apromore does not allow you to share a file with all users (i.e. the "public" group is not supported by default). You can change this by editing the site.properties file present in the `/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/` directory. Specifically, to enable the option to share files and folders with the “public” group, you should set “security.publish.enable = true” in the site.properties file.
 
 ### Predictive monitoring setup (optional)
 
@@ -67,7 +73,7 @@ The following properties may usually by left at their default values:
   - Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar
   - Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
-  - Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by executing the `sudo ./startup.sh -clean` command present in the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/" directory.
+  - Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by executing the `./startup.sh -clean` command present in the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/" directory.
 
 ### Backup and restore
 Apromore stores its data objects in two places:
@@ -97,7 +103,13 @@ mysql --max_allowed_packet=1G --user=root -p -h localhost apromore < backup.sql
 ## Virgo Admin Console (Security)
 * For security purpose, it is advisable to deactivate the virgo admin console.
 * Go to the directory
- "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/pickup"
+ `/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/pickup`
 * And delete the ‘org.eclipse.virgo.management.console_3.6.4.RELEASE.jar’ file `sudo rm -rf org.eclipse.virgo.management.console_3.6.4.RELEASE.jar`
+
+## Change Port Number (optional)
+* Change line#12 in the `site.properties` file present in the `/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr` directory.
+* Change line#14 in the `tomcat-server.xml` file present in the `/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/configuration` directory.
+
+
 
 
