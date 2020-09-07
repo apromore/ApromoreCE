@@ -36,7 +36,7 @@ sudo mysql_secure_installation
 * Check out the v7.15 tag of ApromoreCore `git checkout tags/v7.15`. 
 * Go to the 'ApromoreCE' directory and run the maven command `mvn clean install`. This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
-* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by executing the `./startup.sh -clean` command from the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/" directory.
+* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by executing the `sudo ./startup.sh -clean` command from the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/" directory.
 * Open a web browser to [http://localhost:9000](http://localhost:9000). Use "admin”/“password” to access as administrator, or create a new account.
 * Keep the prompt/terminal window open.  Ctrl-C on the window will shut the server down.
 
@@ -73,7 +73,7 @@ The following properties may usually by left at their default values:
   - Predictive-Monitor-Logic/target/predictive-monitor-logic-1.0.jar
   - Predictive-Monitor-Portal-Plugin/target/predictive-monitor-portal-plugin-1.0.war
   - Predictor-Training-Portal-Plugin/target/predictor-training-portal-plugin-1.0.war
-  - Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by executing the `./startup.sh -clean` command present in the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/" directory.
+  - Note: You can run the `ant start-virgo-community` command only once i.e at the startup. Later, you can start the server by executing the `sudo ./startup.sh -clean` command present in the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/" directory.
 
 ### Backup and restore
 Apromore stores its data objects in two places:
