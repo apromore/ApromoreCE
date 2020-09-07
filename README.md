@@ -46,7 +46,7 @@ sudo mysql_secure_installation
 
 ### Share file to all users (optional)
 
-* By default Apromore does not allow you to share a file with all users (i.e. the "public" group is not supported by default). You can change this by editing the site.properties file present in the `/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/` directory. Specifically, to enable the option to share files and folders with the “public” group, you should set “security.publish.enable = true” in the site.properties file.
+* By default Apromore does not allow you to share a file with all users (i.e. the "public" group is not supported by default). You can change this by editing the site.properties file present in the `/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr/` directory. Specifically, to enable the option to share files and folders with the “public” group, you should set `security.publish.enable = true` in the site.properties file.
 
 ### Predictive monitoring setup (optional)
 
@@ -59,7 +59,7 @@ mysql -u root -p apromore < /ApromoreCE/ApromoreCore/Supplements/database/Nirdiz
 ```bash
 git clone https://github.com/nirdizati/nirdizati-training-backend.git
 ```
-* Set up additional servers (alongside the Apromore server), as directed in [Nirdizati README](https://github.com/nirdizati/nirdizati-training-backend/blob/master/apromore/README.md)
+* Set up additional servers (alongside the Apromore server), as directed in [Nirdizati README](https://github.com/nirdizati/nirdizati-training-backend/blob/dev/apromore/README.md)
 * Set the following properties in `site.properties` present in the following directory: "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/repository/usr"
   - `training.python` must be set to the location of a Python 3 executable
    - `training.backend` must be directory containing `nirdizati-training-backend`
