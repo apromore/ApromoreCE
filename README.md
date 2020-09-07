@@ -36,7 +36,7 @@ sudo mysql_secure_installation
 * Check out the v7.15 tag of ApromoreCore `git checkout tags/v7.15`. 
 * Go to the 'ApromoreCE' directory and run the maven command `mvn clean install`. This will build the Apromore manager, portal and editor and all the extra plugins.
 * Create an empty H2 database `ant create-h2`.  Only do this once, unless you just want to reset to a blank database later on.
-* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by executing the `sudo ./startup.sh -clean` command from the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/" directory.
+* Run the ant command `ant start-virgo-community`.  This will install, configure and start Eclipse Virgo, and deploy Apromore. Only do this once. Later, You can start the server by executing the `./startup.sh -clean` command from the "/ApromoreCE/ApromoreCore/Apromore-Assembly/virgo-tomcat-server-3.6.4.RELEASE/bin/" directory. <b>Note:</b> If you deploy to port 80 (or another port below 1024), you will need to run the above command as sudo. 
 * Open a web browser to [http://localhost:9000](http://localhost:9000). Use "admin”/“password” to access as administrator, or create a new account.
 * Keep the prompt/terminal window open.  Ctrl-C on the window will shut the server down.
 
