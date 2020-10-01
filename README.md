@@ -82,7 +82,7 @@ Apromore stores its data objects in two places:
 * Event logs which are by default located in the top-level `Event-Logs-Repository` directory
 
 As such, both need to be backed up and restored.
-* To backup h2 database, it is enough to copy access the `Manager-Repository.h2.db` file
+* To backup h2 database, it is enough to copy across the `Manager-Repository.h2.db` file
 * To backup MySQL database, the following command may be used  (If prompted for password, enter the password of the ‘apromore’ user i.e ‘MAcri’):
 ```bash
 mysqldump -u apromore -p apromore > backup.sql
