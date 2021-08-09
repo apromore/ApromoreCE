@@ -1,4 +1,4 @@
-![apromore](http://apromore.org/wp-content/uploads/2019/11/Apromore-banner_narrow.png "apromore")
+![apromore](https://apromore.org/wp-content/uploads/2021/08/Apromore-banner_red.png "apromore")
 
 # Apromore Community Edition
 
