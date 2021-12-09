@@ -25,7 +25,7 @@
     </licenses>
 
     <properties>
-        <jackson.version>2.9.10</jackson.version>
+        <jackson.version>2.9.10.8</jackson.version>
         <!-- <sass.executable>/opt/local/bin/sassc</sass.executable> -->
     </properties>
 
