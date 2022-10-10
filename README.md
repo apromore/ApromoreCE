@@ -1,15 +1,14 @@
-![apromore](https://apromore.org/wp-content/uploads/2021/08/Apromore-banner_red.png "apromore")
+# Apromore Community Edition (DEPRECATED)
 
-# Apromore Community Edition
+Warning: The source code available in this repository is deprecated.
 
-This repository contains the source code of [Apromore Community Edition (CE)](https://apromore.org/platform/editions/). Apromore CE is the free edition of Apromore. It includes [Apromore Core](https://github.com/apromore/ApromoreCore) — the kernel of the Apromore platform — as well as experimental plugins developed by the open-source community. By default, Apromore uses the H2 database for storing process models and the workspace metadata (folder structure, user accounts and access rights). Instructions are provided below to use a MySQL database instead of H2.
+This repository contains the source code of Apromore Community Edition (CE). Apromore CE was the open-source edition of Apromore until August 2020, when Apromore CE was replaced by [Apromore Core](https://github.com/apromore/ApromoreCore). Apromore Core contains the main plugins of Apromore CE, including the Portal and the Process Discovery plugin.
 
-The instructions below are for installation of Apromore CE from the source code. For convenience, we also make available a containerized image in [Docker](https://github.com/apromore/ApromoreDocker).
+If you are looking for the commercial edition of Apromore (Apromore Enterprise Edition), check the [Apromore web site](http://apromore.com)
 
-If you simply wish to try Apromore without going through the installation procedure, you can create an account in this [public demo node](http://apromore-ce.cloud.ut.ee). The public node is only for demonstration and trials. It is not actively supported and may be shut down at any time.
+## Installation
 
-If you are looking for the commercial edition (Apromore Enterprise Edition), check the [Apromore web site](http://apromore.com)
-
+The instructions below are for installation of Apromore CE from the source code.
 
 ## System Requirements
 * Linux Ubuntu 18.04 (We do not support newer versions as it may lead to dependency issues), Windows 10/WS2016/WS2019, Mac OSX 10.8 or newer
